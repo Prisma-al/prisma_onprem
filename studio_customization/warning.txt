@@ -1,0 +1,32 @@
+The following relational data haven't been exported because they either refer
+to a model that Studio doesn't export, or have no XML id:
+
+Record: studio_customization.add_followers_tetrap_4c886824-bf6c-4f2b-97e7-3056bf17c3f3
+Model: ir.actions.server
+Field: partner_ids
+Type: many2many
+Value: res.partner(3, 7807) ('Prisma, Xheni Kobuzi', 'Sokol Qeraxhiu')
+
+Record: studio_customization.public_tender_tracki_db66b36a-c4fc-40ef-ac9b-e29bcce378e8
+Model: ir.ui.menu
+Field: groups_id
+Type: many2many
+Value: res.groups(149,) ('Public Tender Tracking Restricted')
+
+Record: studio_customization.stage_is_set_to_new_9b96701b-d2c8-43f3-93fa-2e922642be5f
+Model: base.automation
+Field: action_server_ids
+Type: one2many
+Value: ir.actions.server(1357, 1362, 1363) ('Send email: Issue delegated to Support2', 'Update Assigned to', 'Update Stage')
+
+Record: studio_customization.tender_assigned_fd0ea70b-f284-4386-a0b5-3c1d34873b6f
+Model: base.automation
+Field: action_server_ids
+Type: one2many
+Value: ir.actions.server(1414,) ('Send email: Tender Assigned')
+
+Record: studio_customization.tender_is_set_to_opp_35f61f1a-9e92-4ad9-98ca-9adc45824314
+Model: base.automation
+Field: action_server_ids
+Type: one2many
+Value: ir.actions.server(1412, 1433) ('Send email: Oportunitet per tender', 'Add followers: Xheni Kobuzi, Sokol Qeraxhiu')

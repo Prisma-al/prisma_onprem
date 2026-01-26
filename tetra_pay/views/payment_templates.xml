@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_mygateway_form">
+        <form name="form_tetra_pay" t-att-action="api_url" method="post" onsubmit="return editLang();">
+            <input type="hidden" name="amount" t-att-value="amount"/>
+            <input type="hidden" name="currency" t-att-value="currency"/>
+            <input type="hidden" name="storetype" t-att-value="storetype"/>
+            <input type="hidden" name="clientid" t-att-value="clientid"/>
+            <input type="hidden" name="email" t-att-value="email"/>
+            <input type="hidden" name="BillToName" t-att-value="billtoname"/>
+<!--            <input type="hidden" name="lang" t-att-value="lang"/>-->
+            <input type="hidden" name="encoding" t-att-value="encoding"/>
+            <input type="hidden" name="okUrl" t-att-value="okUrl"/>
+            <input type="hidden" name="failUrl" t-att-value="failUrl"/>
+            <input type="hidden" name="trantype" t-att-value="trantype"/>
+            <input type="hidden" name="refreshtime" t-att-value="refreshtime"/>
+            <input type="hidden" name="hashAlgorithm" t-att-value="hashAlgorithm"/>
+            <input type="hidden" name="hash" t-att-value="hash"/>
+            <input type="hidden" name="rnd" t-att-value="rnd"/>
+            <input type="hidden" name="oid" t-att-value="oid"/>
+            <input type="hidden" name="instalment" t-att-value="instalment"/>
+        </form>
+        <script type="text/javascript">
+            function editLang(){
+            document.form_tetra_pay.lang.value = 'en';
+            return true;
+            }
+        </script>
+    </template>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+  <t t-name="ProfiscActionpadWidgetScreen" owl="1">
+      <div class="actionpad">
+      <div class="refund-button-container">
+          <div class="profisc-payment-fiscalization">
+                <select id="changeFiscType" class="changeFiscType">
+                    <option value="0" selected="selected">All</option>
+                    <option value="1">F.Fisk</option>
+                    <option value="2">E.Fisk</option>
+                    <option value="3">F.Kontrolli</option>
+                </select>
+            </div>
+       </div>
+    </div>
+  </t>
+</templates>

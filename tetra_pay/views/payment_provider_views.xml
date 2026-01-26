@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="acquirer_form_tpay" model="ir.ui.view">
+            <field name="name">acquirer.form.tpay</field>
+            <field name="model">payment.provider</field>
+            <field name="inherit_id" ref="payment.payment_provider_form"/>
+            <field name="arch" type="xml">
+                <group name="provider_config" position='inside'>
+                    <group invisible = "code != 'tetra_pay' ">
+                        <field name="tpay_clientid"/>
+                        <field name="tpay_storekey" password="True"/>
+                        <field name="tpay_storetype"/>
+                        <field name="tpay_ok_url"/>
+                        <field name="tpay_fail_url"/>
+                        <field name="tpay_trantype" invisible="1"/>
+                        <field name="tpay_currency"/>
+                        <field name="tpay_lang"/>
+                        <field name="tpay_refreshtime"/>
+                        <field name="tpay_hash_algorithm"/>
+                        <field name="tpay_encoding"/>
+
+                        <a colspan="2" href="https://tetrapro.al/" target="_blank">About us?</a>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</odoo>

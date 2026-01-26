@@ -1,0 +1,152 @@
+<odoo>
+    <data>
+        <!-- Model: profisc.sale_book -->
+        <record id="model_profisc_sale_book" model="ir.model">
+            <field name="name">Profisc:: profisc.sale_book</field>
+            <field name="model">profisc.sale_book</field>
+        </record>
+
+        <!-- View: profisc.sale_book.tree -->
+        <record id="view_profisc_sale_book_tree" model="ir.ui.view">
+            <field name="name">profisc.sale_book.tree</field>
+            <field name="model">profisc.sale_book</field>
+            <field name="arch" type="xml">
+                <tree string="Purchase Books">
+                    <field name="businessUnitCode"/>
+                    <field name="buyerName"/>
+                    <field name="buyerNuis"/>
+                    <field name="buyerCity"/>
+                    <field name="buyerCountry"/>
+                    <field name="invoiceType"/>
+                    <field name="period"/>
+                    <field name="fiscInvoiceNumber"/>
+                    <field name="fic"/>
+                    <field name="iic"/>
+                    <field name="paymentType"/>
+                    <field name="salesTot"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--         View: profisc.sale_book.form-->
+        <record id="view_profisc_sale_book_form" model="ir.ui.view">
+            <field name="name">Profisc:: profisc.sale_book.form</field>
+            <field name="model">profisc.sale_book</field>
+            <field name="arch" type="xml">
+                <form string="Sale Invoices" js_class="account_move_form">
+                    <header>
+                        <button name="add_attachments" string="Extract" class="btn btn-primary" type="object"
+                                data-hotkey="v"/>
+<!--                                invisible="'isExtracted','=',True"-->
+                    </header>
+                    <sheet string="profisc.sale_book">
+                            <div class="oe_button_box" position="inside">
+                            <!-- Other buttons if any -->
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="partner_id" placeholder="Odoo supplier"/>
+                            </h1>
+                        </div>
+                        <group colspan="2">
+                            <group id="header_left_group">
+                                <field name="partner_id"/>
+                                <field name="businessUnitCode"/>
+                                <field name="buyerName"/>
+                                <field name="buyerNuis"/>
+                                <field name="buyerCity"/>
+                                <field name="buyerCountry"/>
+                                <field name="invoiceType"/>
+                                <field name="qr_url"/>
+                                <field name="period"/>
+                                <field name="fiscInvoiceNumber"/>
+                                <field name="fic"/>
+                                <field name="paymentType"/>
+                                <field name="salesTot"/>
+                            </group>
+                            <group>
+                                <field name="issueDate"/>
+                                <field name="startDate"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Book Lines">
+                                <field name="book_lines_ids">
+                                    <tree editable="bottom">
+                                        <field name="itemName"/>
+                                        <field name="itemCode"/>
+                                        <field name="unitOfMeasure"/>
+                                        <field name="itemQuantity"/>
+                                        <field name="unitPriceBefore"/>
+                                        <field name="vatRate"/>
+                                        <field name="itemAllowancePercent"/>
+                                        <field name="allowanceValue"/>
+                                        <field name="vatAmount"/>
+                                        <field name="invoiceType"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Attachments">
+                                <field name="attachment_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!-- Attachment preview -->
+                    <div class="o_attachment_preview">
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="profisc_sale_tree_inherit_js_class" model="ir.ui.view">
+            <field name="name">profisc.sale.tree.inherit</field>
+            <field name="model">profisc.sale_book</field>
+            <field name="inherit_id" ref="view_profisc_sale_book_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="js_class">button_in_tree</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_profisc_invoice_wizard_form_sale" model="ir.ui.view">
+            <field name="name">profisc.invoice_wizard.form</field>
+            <field name="model">profisc.invoice_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Get Sale Invoices from Profisc">
+                    <group>
+                        <field name="from_date"/>
+                    </group>
+                    <!-- Button to trigger your Python method -->
+                    <footer>
+                        <button string="Search" type="object" class="btn-primary" name="action_confirm_sale"/>
+                        <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <menuitem id="menu_profisc_book" name="My Books"
+                  parent="profisc.menu_profisc_management"
+                  sequence="20"/>
+
+        <!-- Action: action_profisc_sale_book -->
+        <record id="action_profisc_sale_book" model="ir.actions.act_window">
+            <field name="name">Sales Book</field>
+            <field name="res_model">profisc.sale_book</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--Menu Action: menu_profisc_sale_book-->
+        <menuitem id="menu_profisc_sale_book" name="Sales Book"
+                  action="action_profisc_sale_book"
+                  parent="menu_profisc_book"
+                  sequence="21"/>
+
+
+    </data>
+
+</odoo>

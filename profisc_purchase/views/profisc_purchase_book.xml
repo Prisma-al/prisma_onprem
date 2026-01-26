@@ -1,0 +1,277 @@
+<odoo>
+    <data>
+        <!-- Model: profisc.purchase_book -->
+        <record id="model_profisc_purchase_book" model="ir.model">
+            <field name="name">Profisc:: profisc.purchase_book</field>
+            <field name="model">profisc.purchase_book</field>
+        </record>
+
+        <!-- View: profisc.purchase_book.tree -->
+        <record id="view_profisc_purchase_book_tree" model="ir.ui.view">
+            <field name="name">profisc.purchase_book.tree</field>
+            <field name="model">profisc.purchase_book</field>
+            <field name="arch" type="xml">
+                    <tree string="Purchase Invoice on CIS">
+                            <header>
+                            <!-- Add your custom button -->
+                                <button string="Import to Vendor Bill"
+                                    type="object"
+                                    name="import_bills"
+                                    class="btn-primary"
+                                />
+                                <button string="Accept"
+                                    type="object"
+                                    name="accept_bills"
+                                    class="btn-primary"
+                                />
+                                <button string="Reject"
+                                    type="object"
+                                    name="reject_bills"
+                                    class="btn-primary"
+                                />
+                                <button string="DELETE"
+                                    type="object"
+                                    name="delete"
+                                    class="btn-primary"/>
+                            </header>
+                        <field name="purch_ublId" optional="show"/>
+                        <field name="purch_sellerName" optional="show"/>
+                        <field name="purch_issue_date" optional="show"/>
+                        <field name="purch_period" optional="show"/>
+                        <field name="purch_due_date" optional="show"/>
+                        <field name="id" optional="show"/>
+                        <field name="purch_currency_id" optional="show" on_change="1"/>
+                        <field name="purch_tax_excluded" optional="show"/>
+                        <field name="purch_tax_value" optional="show"/>
+                        <field name="purch_amount" optional="show"/>
+                        <field name="purch_cis_status" optional="show"/>
+                        <field name="purch_is_imported" widget="badge" decoration-success="purch_is_imported == 'imported'" decoration-info="purch_is_imported == 'not_imported'" optional="show" on_change="1"/>
+                        <field name="purch_paymentType" optional="show"/>
+                            <!--Optional-->
+                        <field name="purch_is_einvoice" optional="hide"/>
+                        <field name="purch_is_custom" optional="hide"/>
+                        <field name="purch_is_onlyFisc" optional="hide"/>
+                        <field name="purch_start_date" optional="hide"/>
+                        <field name="purch_end_date" optional="hide"/>
+                        <field name="purch_imported_date" optional="hide"/>
+                        <field name="purch_total_in_currency" optional="hide"/>
+                        <field name="purch_base_currency" optional="hide"/>
+                        <field name="purch_exRate" optional="hide"/>
+                    </tree>
+            </field>
+        </record>
+
+        <!--         View: profisc.purchase_book.form-->
+        <record id="view_profisc_purchase_book_form" model="ir.ui.view">
+            <field name="name">Profisc:: profisc.purchase_book.form</field>
+            <field name="model">profisc.purchase_book</field>
+            <field name="arch" type="xml">
+                <form string="Purchase Invoices" js_class="account_move_form">
+                    <header>
+                        <!-- Add your custom button -->
+                        <button string="Accept Bill"
+                                type="object"
+                                name="accept_bill"
+                                class="btn-primary"
+                                invisible="not purch_is_visible_Accept_Reject"/>
+                        <button string="Reject Bill"
+                                type="object"
+                                name="reject_bill"
+                                class="btn-primary"
+                                invisible="not purch_is_visible_Accept_Reject"/>
+                        <button string="Import to Vendor Bill"
+                                type="object"
+                                name="import_bills_template"
+                                class="btn-primary" invisible="purch_is_imported=='imported'"/>
+                        <button string="Create Supplier"
+                                type="object"
+                                name="create_supplier"
+                                class="btn-primary" invisible="purch_isSupplierCreated==True" />
+                        <button string="Import PDF"
+                                type="object"
+                                name="add_attachment_CisPurchase"
+                                class="btn-primary"
+                                invisible="purch_is_visible_Import"/>
+                        <button string="Check Status"
+                                type="object"
+                                name="checkSingleInvoiceStatus"
+                                invisible="purch_is_einvoice==False"
+                                />
+                        <field name="purch_is_imported" widget="statusbar" statusbar_visible="not_imported,imported"/>
+                    </header>
+                    <sheet string="profisc.purchase_book">
+                        <div class="oe_button_box" name="button_box">
+                            <!-- Other buttons if any -->
+                            <button name="open_VendorBill" type="object" class="oe_start_button" icon="fa-pencil-square-o" invisible = "purch_is_imported == 'not_imported'">
+                                <span class="o_stat_text">Vendor Bill</span>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="partner_id" placeholder="Odoo supplier"/>
+                            </h1>
+                        </div>
+                        <group colspan="2">
+                            <group id="header_left_group" >
+                                <field name="purch_sellerName"/>
+                                <field name="purch_sellerNuis"/>
+                                <field name="purch_fiscInvoiceNumber"/>
+                                <field name="purch_fic"/>
+                                <field name="purch_iic"/>
+                                <field name="purch_invoiceType"/>
+                                <field name="purch_cis_status" readonly="1"/>
+                                <field name="purch_eic" invisible = "purch_is_einvoice == False"/>
+                                <field name="purch_total_in_currency"/>
+                                <field name="purch_base_currency"/>
+                                <field name="purch_exRate"/>
+                                <field name="purch_is_einvoice" invisible="1"/>
+                                <field name="purch_is_custom" invisible="1"/>
+                                <field name="purch_is_onlyFisc" invisible="1"/>
+                                <field name="purch_isSupplierCreated" invisible="1"/>
+                                <field name="purch_is_AttachmentExtracted" invisible="1"/>
+                                <field name="purch_is_visible_Accept_Reject" invisible="1"/>
+                                <field name="purch_is_visible_Import" invisible="1"/>
+                            </group>
+                            <group id="header_right_group">
+                                <field name="purch_issue_date"/>
+                                <field name="purch_start_date"/>
+                                <field name="purch_end_date"/>
+                                <field name="purch_due_date"/>
+                                <field name="purch_period"/>
+                                <field name="purch_currency_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Invoice Lines">
+                                <field name="book_lines_ids" readonly="1">
+                                    <tree>
+                                        <field name="itemName"/>
+                                        <field name="itemCode" optional="hide"/>
+                                        <field name="unitOfMeasure" optional="hide"/>
+                                        <field name="itemQuantity"/>
+                                        <field name="unitPrice"/>
+                                        <field name="tax_ids" widget="many2one_tags"/>
+                                        <field name="vatAmount"/>
+                                        <field name="invoiceType" optional="hide"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Attachments">
+                                <field name="attachment_ids"/>
+                            </page>
+                        </notebook>
+                        <group class="oe_subtotal_footer oe_right">
+                            <field name="purch_tax_excluded" widget='monetary'
+                                   options="{'currency_field': 'purch_currency_id'}" class="oe_inline custom-text-size2"
+                                   readonly="1"/>
+                            <field name="purch_tax_value" widget='monetary'
+                                   options="{'currency_field': 'purch_currency_id'}" class="oe_inline custom-text-size2"
+                                   readonly="1"/>
+                            <field name="purch_amount" widget='monetary'
+                                   options="{'currency_field': 'purch_currency_id'}" class="oe_inline custom-text-size2"
+                                   readonly="1"/>
+                        </group>
+                    </sheet>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'always'}"/>
+                    </div>
+                    <!-- Attachment preview -->
+                </form>
+            </field>
+        </record>
+
+        <record id="view_profisc_purchase_book_search" model="ir.ui.view">
+            <field name="name">Profisc:: profisc.purchase_book.search</field>
+            <field name="model">profisc.purchase_book</field>
+            <field name="arch" type="xml">
+                    <search string="Purchase Bills">
+                        <field name="purch_sellerName"/>
+                        <field name="purch_fic"/>
+                        <field name="purch_eic"/>
+                        <field name="purch_iic"/>
+                        <field name="purch_currency_id"/>
+                        <field name="purch_period"/>
+                        <field name="purch_fiscInvoiceNumber"/>
+                        <filter string="eInvoice" name="purch_is_einvoice" domain="[('purch_is_einvoice', '=', True)]"/>
+                        <filter string="Customs" name="purch_is_custom" domain="[('purch_is_custom', '=', True)]"/>
+                        <filter string="Only Fiscalization" name="purch_is_onlyFisc" domain="[('purch_is_onlyFisc', '=', True)]"/>
+                        <separator/>
+                        <filter string="Not Imported" name="purch_is_imported" domain="[('purch_is_imported', '=', 'not_imported')]"/>
+                        <filter string="Imported" name="purch_is_imported" domain="[('purch_is_imported', '=', 'imported')]"/>
+                        <separator/>
+                        <filter string="DELIVERED" name="purch_cis_status" domain="[('purch_cis_status', '=', 'DELIVERED')]"/>
+                        <filter string="ACCEPTED" name="purch_cis_status" domain="[('purch_cis_status', '=', 'ACCEPTED')]"/>
+                        <filter string="REFUSED" name="purch_cis_status" domain="[('purch_cis_status', '=', 'REFUSED')]"/>
+                        <filter string="PARTIALLY PAID" name="purch_cis_status" domain="[('purch_cis_status', '=', 'PARTIALLY_PAID')]"/>
+                        <filter string="PAID" name="purch_cis_status" domain="[('purch_cis_status', '=', 'PAID')]"/>
+                        <separator/>
+                        <filter name="purch_issue_date" string="Invoice Date" date="purch_issue_date"/>
+                        <filter name="purch_due_date" string="Due Date" date="purch_due_date"/>
+                        <group expand="1" string="Group By">
+                            <filter string="Tax Status" name="purch_cis_status" context="{'group_by' : 'purch_cis_status'}"/>
+                            <filter string="Imported Status" name="purch_is_imported" context="{'group_by' : 'purch_is_imported'}"/>
+                            <filter string="Payment Method" name="purch_paymentType" context="{'group_by' : 'purch_paymentType'}"/>
+                            <filter string="Invoice Date" name="purch_issue_date" context="{'group_by' : 'purch_issue_date'}"/>
+                            <filter string="Due Date" name="purch_due_date" context="{'group_by' : 'purch_due_date'}"/>
+                            <filter string="Invoice Period" name="purch_period" context="{'group_by' : 'purch_period'}"/>
+                        </group>
+                    </search>
+            </field>
+        </record>
+
+
+        <record id="profisc_purchase_tree_inherit_js_class" model="ir.ui.view">
+            <field name="name">profisc.purchase.tree.inherit</field>
+            <field name="model">profisc.purchase_book</field>
+            <field name="inherit_id" ref="view_profisc_purchase_book_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="js_class">button_in_tree_purchase</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_profisc_invoice_wizard_form_purchase" model="ir.ui.view">
+            <field name="name">profisc.purchase_wizard.form</field>
+            <field name="model">profisc.purchase_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Get Purchase Invoices from Profisc">
+                    <group>
+                        <group id="header_left_group">
+                            <field name="month"/>
+                            <field name="year"/>
+                            <field name="request_type"/>
+                        </group>
+                        <field name="period" invisible="1"/>
+                    </group>
+                    <!-- Button to trigger your Python method -->
+                    <footer>
+                        <button string="Search" type="object" class="btn-primary" name="action_confirm_purchase"/>
+                        <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action: action_profisc_purchase_book -->
+        <record id="action_profisc_purchase_book" model="ir.actions.act_window">
+            <field name="name">Purchase Invoice on CIS</field>
+            <field name="res_model">profisc.purchase_book</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Menu Action: menu_profisc_purchase_book-->
+        <menuitem id="menu_profisc_purchase_book" name="Purchase Invoice on CIS"
+                  action="action_profisc_purchase_book"
+                  parent="menu_profisc_book"
+                  sequence="22"/>
+
+        <menuitem id="menu_profisc_purchase_book_vendor" name="Purchase Invoice on CIS"
+                  action="action_profisc_purchase_book"
+                  parent="account.menu_finance_payables"
+                  sequence="3000"/>
+    </data>
+</odoo>

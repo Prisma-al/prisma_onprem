@@ -1,0 +1,16 @@
+
+17.0.0.1 ==> When inventory valuation based on automated and create purchase order and bill for different rate at that time wrong journal entry will be created for that.
+
+17.0.0.2 ==> Added manual currency rate boolean and manual currency rate field in account payment.
+
+17.0.0.3 ==> When create invoice with company currency and after that in register payment change currency and do payment for that invoice at that time trace back occurs.
+
+17.0.0.4 ==> Completed all customizaction points which is mention in document.
+
+17.0.0.5 ==> Update when apply manual currency rate on product based on that stock valuation layer value and journal item value will be show.
+
+17.0.0.6 ==> Update amount currecny value in stock journal entry.
+
+17.0.0.7 ==> Update code regarding inventory valuation.
+
+17.0.0.8 ==> Fixed issue of when inventory valuation based on AVCO & FIFO and confrim bill from purchase order at that time in general ledger report create extra entry in stock valuation journal.

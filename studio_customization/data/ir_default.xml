@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.active_online_paymen_23bdc434-ceb2-44ba-8156-c192c7f868c4" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.active_online_paymen_48c5b3c2-682a-46c3-9beb-562e776ec43a"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">true</field>
+  </record>
+  <record id="studio_customization.active_public_tender_6c4b33b8-b576-4cb1-b6ff-2bf215f6aeb7" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.active_public_tender_8bc7e0cf-5dc2-488b-bbb6-b3b056a7de40"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">true</field>
+  </record>
+  <record id="studio_customization.analytic_distributio_31f1c460-3a4a-4af7-ab85-93b2e1927e0b" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="hr_expense.field_hr_expense__analytic_distribution"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"Event Oracle 2023"</field>
+  </record>
+  <record id="studio_customization.bu_code_journal_entr_2c3bd7f7-f107-4121-8b68-74e7ec6df96a" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_selection_journa_de2ea225-8426-4165-8bee-d147a98f5a16"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"cs862wh907"</field>
+  </record>
+  <record id="studio_customization.business_unit_journa_dcb784e2-6ff1-421d-8dfa-b8955625f072" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="profisc.field_account_move__profisc_bu_code"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"ti041zi789"</field>
+  </record>
+  <record id="studio_customization.cis_type_journal_ent_5b507106-2572-4028-8930-bd08064a06db" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_selection_journa_4d5ca4c9-d4af-4670-8331-4b5396257182"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"0"</field>
+  </record>
+  <record id="studio_customization.code_description_pay_7b73e636-07fb-48c5-8f91-8cea75b7cc75" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_text_payment_ter_65e0589d-90c1-4eb4-bc1b-d83072249d57"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">" BANKNOTE"</field>
+  </record>
+  <record id="studio_customization.code_payment_terms_414b59b8-1919-4916-be11-4a40125f82e9" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_text_payment_ter_6c8c07ad-0e88-41a4-b1b5-10193b6b1e17"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"10"</field>
+  </record>
+  <record id="studio_customization.currency_public_tend_ecb66570-fbc8-4df0-8b4f-98f53580ad3c" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.currency_public_tend_efc0f88a-e34b-46e2-9282-393ee46a966a"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">118</field>
+  </record>
+  <record id="studio_customization.invoice_type_journal_15136518-aa79-4a77-8427-b9f2fcc67fcc" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_selection_journa_92405205-5e50-4f83-baa5-400ff9275a20"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"380"</field>
+  </record>
+  <record id="studio_customization.profile_id_journal_e_e04ec983-739a-4ad7-b806-e1f9971c2b52" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_selection_journa_0fc7fcf0-0cba-4a15-8d88-20fe0ee6805c"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"P1"</field>
+  </record>
+  <record id="studio_customization.sequence_online_paym_7b9fcc5d-ff1d-45cb-8b23-0aa8bcfdc655" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.sequence_online_paym_1f94ebc1-2dfe-4a54-ae6b-ee262c1acf17"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">10</field>
+  </record>
+  <record id="studio_customization.sequence_public_tend_f657d158-fb24-4979-9325-3ad81963d593" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.sequence_public_tend_01b65c72-e92c-4044-b93a-c0f9d15a54a8"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">10</field>
+  </record>
+  <record id="studio_customization.tcr_code_journal_ent_1f0d2790-e5c5-4e7c-82ba-99b03d6d745d" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="studio_customization.new_selection_journa_12d6b474-f53f-4627-b998-31b6cea9e588"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"qh707fm959"</field>
+  </record>
+  <record id="studio_customization.tcr_code_journal_ent_6812652e-dd39-4d83-823e-97d656e0fc91" model="ir.default" context="{'studio': True}">
+    <field name="field_id" ref="profisc.field_account_move__profisc_tcr_code"/>
+    <field name="condition" eval="False"/>
+    <field name="json_value">"vk812xs021"</field>
+  </record>
+</odoo>

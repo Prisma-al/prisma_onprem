@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.automatic_email_for__27f719d5-876d-46c4-b002-7290f947811d" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_leads_ema_f0f66fc4-7257-4cc0-838a-5d0061e0509c')])]"/>
+    <field name="active" eval="False"/>
+    <field name="filter_domain">[('tag_ids', 'in', [5])]</field>
+    <field name="filter_pre_domain">[('tag_ids', 'not in', [5])]</field>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_tag_set</field>
+    <field name="model_id" ref="crm.model_crm_lead"/>
+    <field name="name">Automatic Email for Leads</field>
+  </record>
+  <record id="studio_customization.create_helpdesk_tick_1a6c094d-e893-4056-9ac2-7416196beaea" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.execute_code_98b3caf0-bb72-42a1-8fd7-e277fcdff1e0')])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain" eval="False"/>
+    <field name="filter_pre_domain">["&amp;", "&amp;", ("state", "=", "posted"), ("invoice_line_ids", "ilike", "profisc"), "|", ("payment_state", "=", "paid"), ("payment_state", "=", "in_payment")]</field>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="model_id" ref="account.model_account_move"/>
+    <field name="name">Create Helpdesk Ticket when Invoice Payment Status is Paid</field>
+  </record>
+  <record id="studio_customization.new_bug_has_not_been_9dec56c1-367b-4a1c-8337-17f3f715d745" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_new_bug_h_c4761c2d-ee77-4575-8795-6fca371ebe34')])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain">["&amp;", "&amp;", "&amp;", ("team_id", "in", [2]), ("stage_id", "not in", [4, 8]), ("ticket_type_id", "in", [10]), ("stage_id", "not in", [3, 20])]</field>
+    <field name="filter_pre_domain">["&amp;", "&amp;", "&amp;", ("team_id", "in", [2]), ("stage_id", "not in", [4, 8]), ("ticket_type_id", "in", [10]), ("stage_id", "not in", [3, 20])]</field>
+    <field name="last_run">2025-11-20 16:09:16</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="helpdesk.field_helpdesk_ticket__create_date"/>
+    <field name="trg_date_range">12</field>
+    <field name="trg_date_range_type">hour</field>
+    <field name="trigger">on_time_created</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">New bug has not been Solved</field>
+  </record>
+  <record id="studio_customization.new_bug_incident_has_320aadd9-c821-4929-9674-5643875e22e7" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_new_bug_i_3893232d-cc84-41cf-8a77-c9476d6038d4')])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain">["&amp;", "&amp;", ("team_id", "in", [2]), ("ticket_type_id", "in", [10, 7]), ("stage_id", "not in", [4, 8, 3, 20])]</field>
+    <field name="filter_pre_domain">["&amp;", "&amp;", ("team_id", "in", [2]), ("ticket_type_id", "in", [10, 7]), ("stage_id", "not in", [4, 8, 3, 20])]</field>
+    <field name="last_run">2025-11-20 16:09:16</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="helpdesk.field_helpdesk_ticket__create_date"/>
+    <field name="trg_date_range">6</field>
+    <field name="trg_date_range_type">hour</field>
+    <field name="trigger">on_time_created</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">New bug, incident has been recorded</field>
+  </record>
+  <record id="studio_customization.sla_failure_on_a_tic_952fc861-aec9-41fe-bf83-a95aac322554" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_sla_failu_999e7acd-6101-4a42-8902-74ddd107fd0b')])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain">["&amp;", "&amp;", ("team_id", "in", [2]), ("use_sla", "=", True), ("stage_id", "not in", [3, 20])]</field>
+    <field name="filter_pre_domain">["&amp;", "&amp;", ("team_id", "in", [2]), ("use_sla", "=", True), ("stage_id", "not in", [3, 20])]</field>
+    <field name="last_run">2025-11-20 16:09:16</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="helpdesk.field_helpdesk_ticket__sla_deadline"/>
+    <field name="trg_date_range">72</field>
+    <field name="trg_date_range_type">hour</field>
+    <field name="trigger">on_time</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">SLA failure on a ticket more than 3 days</field>
+  </record>
+  <record id="studio_customization.sla_failure_on_a_tic_9f3c25b3-1312-4dc1-9977-03fadf540e77" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_sla_failu_33dfed6e-1131-4f45-b2f0-36073cea402c')])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain">["&amp;", "&amp;", ("team_id", "in", [2]), ("use_sla", "=", True), ("stage_id", "not in", [3, 20])]</field>
+    <field name="filter_pre_domain">["&amp;", "&amp;", ("team_id", "in", [2]), ("use_sla", "=", True), ("stage_id", "not in", [3, 20])]</field>
+    <field name="last_run">2025-11-20 16:09:16</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="helpdesk.field_helpdesk_ticket__sla_deadline"/>
+    <field name="trg_date_range">4</field>
+    <field name="trg_date_range_type">hour</field>
+    <field name="trigger">on_time</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">SLA failure on a ticket</field>
+  </record>
+  <record id="studio_customization.sla_failure_on_a_tic_d7c08087-de22-4408-99d6-8f28d61d872f" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_sla_failu_6441d79d-de42-46bf-a044-064799a6442e')])]"/>
+    <field name="active" eval="False"/>
+    <field name="filter_domain">["&amp;", ("team_id", "in", [3]), ("use_sla", "=", True)]</field>
+    <field name="filter_pre_domain">["&amp;", ("team_id", "in", [3]), ("use_sla", "=", True)]</field>
+    <field name="last_run">2025-01-31 13:48:00</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="helpdesk.field_helpdesk_ticket__sla_deadline"/>
+    <field name="trg_date_range">4</field>
+    <field name="trg_date_range_type">hour</field>
+    <field name="trigger">on_time</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">SLA failure on a ticket</field>
+  </record>
+  <record id="studio_customization.stage_is_set_to_new_9b96701b-d2c8-43f3-93fa-2e922642be5f" model="base.automation" context="{'studio': True}">
+    <field name="active" eval="False"/>
+    <field name="filter_domain">["&amp;", ("team_id", "in", [2]), ("stage_id", "not in", [18, 3, 4, 5, 8, 19])]</field>
+    <field name="filter_pre_domain">["&amp;", ("team_id", "in", [2]), ("stage_id", "not in", [18, 3, 4, 5, 8, 19])]</field>
+    <field name="last_run">2024-10-18 12:48:43</field>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" ref="helpdesk.field_helpdesk_ticket__date_last_stage_update"/>
+    <field name="trg_date_range">2</field>
+    <field name="trg_date_range_type">hour</field>
+    <field name="trigger">on_time</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Stage is set to "New", "In Progress" or "Level2"</field>
+  </record>
+  <record id="studio_customization.tender_assigned_fd0ea70b-f284-4386-a0b5-3c1d34873b6f" model="base.automation" context="{'studio': True}">
+    <field name="active" eval="False"/>
+    <field name="filter_domain">[('x_studio_user_id', '!=', False)]</field>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_user_set</field>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_e8be91b1-9d0f-4cc6-a2d6-6255b8ce3627"/>
+    <field name="name">Tender Assigned</field>
+  </record>
+  <record id="studio_customization.tender_is_set_to_opp_35f61f1a-9e92-4ad9-98ca-9adc45824314" model="base.automation" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="filter_domain">[('x_studio_stage_id', '=', 12)]</field>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_stage_set</field>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_e8be91b1-9d0f-4cc6-a2d6-6255b8ce3627"/>
+    <field name="name">Tender is set to "Opportunity"</field>
+  </record>
+  <record id="studio_customization.test_64b1f130-0ba4-446c-ba96-52d5e43ea022" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain" eval="False"/>
+    <field name="filter_pre_domain" eval="False"/>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_create_or_write</field>
+    <field name="model_id" ref="sale.model_sale_order"/>
+    <field name="name">test</field>
+  </record>
+  <record id="studio_customization.when_support_2_is_as_e6e9f5cf-dd1f-4772-ae07-560ce850f949" model="base.automation" context="{'studio': True}">
+    <field name="action_server_ids" eval="[(6, 0, [ref('studio_customization.send_email_issue_del_a50dff2b-c7f9-4f3d-a244-721ec395c51e')])]"/>
+    <field name="active" eval="True"/>
+    <field name="filter_domain">[('stage_id', '=', 17)]</field>
+    <field name="filter_pre_domain">["&amp;", ("user_id", "in", [50]), ("team_id", "in", [2])]</field>
+    <field name="last_run" eval="False"/>
+    <field name="on_change_field_ids" eval="[(6, 0, [])]"/>
+    <field name="trg_date_id" eval="False"/>
+    <field name="trg_date_range" eval="False"/>
+    <field name="trg_date_range_type" eval="False"/>
+    <field name="trigger">on_stage_set</field>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">When Support 2 is assigned</field>
+  </record>
+</odoo>

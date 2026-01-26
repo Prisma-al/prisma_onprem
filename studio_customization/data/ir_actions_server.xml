@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.add_followers_tetrap_4c886824-bf6c-4f2b-97e7-3056bf17c3f3" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_e8be91b1-9d0f-4cc6-a2d6-6255b8ce3627"/>
+    <field name="name">Add followers: Xheni Kobuzi, Sokol Qeraxhiu</field>
+    <field name="sequence">6</field>
+    <field name="state">followers</field>
+  </record>
+  <record id="studio_customization.execute_code_98b3caf0-bb72-42a1-8fd7-e277fcdff1e0" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[try:
+    _logger.info("Starting process for Account Move %s", record.ref)
+
+    # Verify the environment is initialized
+    if not env:
+        _logger.error("Environment not initialized.")
+        raise ValueError("Environment not initialized.")
+
+    # Check for account moves with the given reference
+    move_obj = env['account.move']
+    _logger.info("Searching for Account Move with reference %s", record.ref)
+    move_ids = move_obj.search([('name', '=', record.ref)])
+
+    if not move_ids:
+        _logger.warning("No account moves found with reference %s", record.ref)
+        raise ValueError(f"No account moves found with reference {record.ref}")
+
+    move = move_ids[0]
+    move_type = 'Rinovim' if move.x_studio_rinovim else 'New Account'
+    
+    if not move.partner_id:
+        _logger.warning("Account Move %s has no partner_id", move.name)
+        raise ValueError(f"Account Move {move.name} has no partner_id")
+
+    _logger.info("Processing Account Move for partner %s", move.partner_id.name)
+    
+    team_obj = env['helpdesk.team']
+    _logger.info("Searching for Helpdesk Team named 'Profisc'")
+    profisc_team = team_obj.search([('name', '=', 'ProFisc')], limit=1)
+
+    # Check and log attachments
+    attachments = move.attachment_ids
+    req_attachment = None
+    for attachment in attachments:
+        _logger.info("Checking attachment %s", attachment.name)
+        if attachment.name == 'fisc_invoice_pdf':
+            req_attachment = attachment
+            _logger.info("Found required attachment: %s", attachment.name)
+            break  # Exit loop once the required attachment is found
+
+    # Check if at least one invoice line contains 'profisc'
+    any_line_contains_profisc = any(
+        line.product_id and 
+        line.product_id.name and 
+        'profisc' in line.product_id.name.lower() 
+        for line in move.invoice_line_ids
+    )
+
+    if not any_line_contains_profisc:
+        _logger.warning("No invoice lines contain 'profisc', ticket creation aborted.")
+        raise ValueError("No invoice lines contain 'profisc'")
+
+    _logger.info("Found 'profisc' in invoice lines, creating helpdesk ticket.")
+    ticket = env['helpdesk.ticket'].create({
+        'name': f"{move_type} in Profisc",
+        'partner_id': move.partner_id.id,
+        'team_id': profisc_team.id  # Assign to Profisc team
+
+    })
+
+    if not ticket:
+        _logger.error("Failed to create helpdesk ticket.")
+        raise ValueError("Failed to create helpdesk ticket.")
+
+    _logger.info("Helpdesk ticket %s created", ticket.name)
+    
+    if req_attachment:
+        _logger.info("Creating attachment for the helpdesk ticket")
+        attachment_values = {
+            'name': req_attachment.name,
+            'datas': req_attachment.datas,  # Use the actual document content
+            'res_model': 'helpdesk.ticket',
+            'res_id': ticket.id
+        }
+        attachment = env['ir.attachment'].create(attachment_values)
+
+        if not attachment:
+            _logger.error("Failed to create attachment for helpdesk ticket.")
+            raise ValueError("Failed to create attachment for helpdesk ticket.")
+
+        _logger.info("Attachment created for ticket %s", ticket.name)
+    
+    env['mail.message'].create({
+        'model': 'helpdesk.ticket',
+        'res_id': ticket.id,
+        'message_type': 'comment',
+        'body': f"{move_type} in Profisc: {move.name}",
+    })
+    _logger.info("Comment added to helpdesk ticket %s", ticket.name)
+
+except Exception as e:
+    _logger.error("An error occurred: %s", str(e))
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="account.model_account_move"/>
+    <field name="name">Execute Code</field>
+    <field name="sequence">5</field>
+    <field name="state">code</field>
+  </record>
+  <record id="studio_customization.send_email_issue_del_a50dff2b-c7f9-4f3d-a244-721ec395c51e" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: Issue delegated to Support2</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_leads_ema_f0f66fc4-7257-4cc0-838a-5d0061e0509c" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="crm.model_crm_lead"/>
+    <field name="name">Send email: Leads Email Template</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_new_bug_h_c4761c2d-ee77-4575-8795-6fca371ebe34" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: New bug has not been Solved</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_new_bug_i_3893232d-cc84-41cf-8a77-c9476d6038d4" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: New bug, incident has been recorded</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_new_issue_fa87cbbd-43c0-4646-9eb2-e8ed3b95ded5" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: Issue delegated to Support2</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_sla_failu_33dfed6e-1131-4f45-b2f0-36073cea402c" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: SLA failure on a ticket</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_sla_failu_6441d79d-de42-46bf-a044-064799a6442e" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: SLA failure on a ticket ERP</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.send_email_sla_failu_999e7acd-6101-4a42-8902-74ddd107fd0b" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" eval="False"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Send email: SLA failure on a ticket more than 3 days</field>
+    <field name="sequence">5</field>
+    <field name="state">mail_post</field>
+  </record>
+  <record id="studio_customization.update_stage_95e909aa-3ac0-4a42-9f08-ceaac361bf9c" model="ir.actions.server" context="{'studio': True}">
+    <field name="binding_model_id" eval="False"/>
+    <field name="binding_type">action</field>
+    <field name="binding_view_types">list,form</field>
+    <field name="child_ids" eval="[(6, 0, [])]"/>
+    <field name="code"><![CDATA[# Available variables:
+#  - env: environment on which the action is triggered
+#  - model: model of the record on which the action is triggered; is a void recordset
+#  - record: record on which the action is triggered; may be void
+#  - records: recordset of all records on which the action is triggered in multi-mode; may be void
+#  - time, datetime, dateutil, timezone: useful Python libraries
+#  - float_compare: utility function to compare floats based on specific precision
+#  - log: log(message, level='info'): logging function to record debug information in ir.logging table
+#  - _logger: _logger.info(message): logger to emit messages in server logs
+#  - UserError: exception class for raising user-facing warning messages
+#  - Command: x2many commands namespace
+# To return an action, assign: action = {...}
+
+
+
+]]></field>
+    <field name="crud_model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="help" eval="False"/>
+    <field name="link_field_id" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Update Stage</field>
+    <field name="sequence">7</field>
+    <field name="state">object_write</field>
+  </record>
+</odoo>

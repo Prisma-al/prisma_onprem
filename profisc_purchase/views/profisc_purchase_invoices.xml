@@ -1,0 +1,179 @@
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash; Model: profisc.purchase_invoices &ndash;&gt;-->
+<!--        <record id="model_profisc_purchase_invoices" model="ir.model">-->
+<!--            <field name="name">Profisc:: profisc.purchase_invoices</field>-->
+<!--            <field name="model">profisc.purchase_invoices</field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; View: profisc.purchase_invoices.tree &ndash;&gt;-->
+<!--        <record id="view_profisc_purchase_invoices_tree" model="ir.ui.view">-->
+<!--            <field name="name">profisc.purchase_invoices.tree</field>-->
+<!--            <field name="model">profisc.purchase_invoices</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Purchase Invoices">-->
+<!--                    <header>-->
+<!--                        <button name="extract_invoices" title="Extract selected Invoice" type="object"-->
+<!--                                class="btn btn-odoo" string="Extract selected"/>-->
+<!--                    </header>-->
+<!--                    <button name="extractInvoice" title="Extract Invoice" type="object"-->
+<!--                            class="btn btn-secondary fa fa-file-archive-o"-->
+<!--                            invisible="'purch_is_extracted','=',True"/>-->
+<!--                    <field name="partner_id"/>-->
+<!--                    <field name="purch_nuis"/>-->
+<!--                    <field name="purch_amount"/>-->
+<!--                    <field name="purch_tax_excluded"/>-->
+<!--                    <field name="purch_tax_value"/>-->
+<!--                    <field name="purch_imported_date"/>-->
+<!--                    <field name="purch_cis_status"/>-->
+<!--                    <field name="purch_issue_date"/>-->
+<!--                    <field name="purch_profile_id"/>-->
+<!--                    <field name="purch_debit_credit_invoice" widget="selection"/>-->
+<!--                    <field name="purch_start_date"/>-->
+<!--                    <field name="purch_end_date"/>-->
+<!--                    <field name="purch_is_extracted"/>-->
+<!--                    <field name="purch_is_imported"/>-->
+<!--                    <field name="purch_tax_value"/>-->
+<!--                    <button name="importInvoice" title="Import Invoice" type="object"-->
+<!--                            class="btn btn-secondary fa-solid fa fa-book"-->
+<!--                            invisible="'|', ('purch_is_imported', '=', 'True'), ('purch_is_extracted', '=', False)"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; View: profisc.purchase_invoices.form &ndash;&gt;-->
+<!--        <record id="view_profisc_purchase_invoices_form" model="ir.ui.view">-->
+<!--            <field name="name">Profisc:: profisc.purchase_invoices.form</field>-->
+<!--            <field name="model">profisc.purchase_invoices</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Purchase Invoices" js_class="account_move_form">-->
+<!--                    <header>-->
+<!--                        <button name="extractInvoice" string="Extract" class="btn btn-primary" type="object"-->
+<!--                                data-hotkey="v"-->
+<!--                                invisible="'purch_is_extracted','=',True"-->
+<!--                        />-->
+
+<!--                    </header>-->
+<!--                    <sheet string="profisc.purchase_invoices">-->
+<!--                        <div class="oe_button_box" position="inside">-->
+<!--                            &lt;!&ndash; Other buttons if any &ndash;&gt;-->
+<!--                        </div>-->
+<!--                        <div class="oe_title">-->
+<!--                            <h1>-->
+<!--                                <field name="purch_supplier_odoo" placeholder="Odoo supplier"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+<!--                        <group colspan="2">-->
+<!--                            <group id="header_left_group">-->
+<!--                                <field name="partner_id"/>-->
+<!--                                <field name="purch_party_type" widget="selection"/>-->
+<!--                                <field name="purch_nuis"/>-->
+<!--                                <field name="purch_cis_status"/>-->
+<!--                                <field name="purch_profile_id" widget="selection"/>-->
+<!--                                <field name="purch_debit_credit_invoice"/>-->
+<!--                                <field name="purch_amount"/>-->
+<!--                                <field name="purch_tax_excluded"/>-->
+<!--                                <field name="purch_tax_value"/>-->
+<!--                                <field name="purch_tax_inc_value"/>-->
+<!--                                <field name="purch_currency"/>-->
+<!--                                <field name="purch_currency_ex_rate"/>-->
+<!--                                <field name="purch_doc_number"/>-->
+<!--                                <field name="purch_iic"/>-->
+<!--                                <field name="purch_fic"/>-->
+<!--                                <field name="purch_eic"/>-->
+<!--                                <field name="purch_imported_bill_id"/>-->
+<!--                                <field name="purch_cor_ref_iic"/>-->
+<!--                                <field name="purch_cor_ref_date"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="purch_is_extracted"/>-->
+<!--                                <field name="purch_is_imported"/>-->
+<!--                                <field name="purch_imported_date"/>-->
+<!--                                <field name="purch_issue_date"/>-->
+<!--                                <field name="purch_start_date"/>-->
+<!--                                <field name="purch_end_date"/>-->
+<!--                                <field name="purch_due_date"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                        <notebook>-->
+<!--                            <page string="Invoice Lines">-->
+<!--                                <field name="invoice_lines_ids">-->
+<!--                                    <tree editable="bottom">-->
+<!--                                        <field name="itemName"/>-->
+<!--                                        <field name="priceAmount"/>-->
+<!--                                        <field name="lineExtAmount"/>-->
+<!--                                        <field name="vatRate"/>-->
+<!--                                        <field name="vatCategory"/>-->
+<!--                                        <field name="vatExemptinReason"/>-->
+<!--                                        <field name="allowance"/>-->
+<!--                                        <field name="allowanceCharge"/>-->
+<!--                                        <field name="quantity"/>-->
+<!--                                        <field name="unitOfMeasurement"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </page>-->
+<!--                            <page string="Attachments">-->
+<!--                                <field name="attachment_ids"/>-->
+<!--                            </page>-->
+<!--                        </notebook>-->
+<!--                    </sheet>-->
+<!--                    &lt;!&ndash; Attachment preview &ndash;&gt;-->
+<!--                    <div class="o_attachment_preview"/>-->
+<!--                    &lt;!&ndash; Chatter &ndash;&gt;-->
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids" groups="base.group_user"/>-->
+<!--                        <field name="activity_ids"/>-->
+<!--                        <field name="message_ids"/>-->
+<!--                    </div>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+<!--        <record id="profisc_purchase_tree_inherit_js_class" model="ir.ui.view">-->
+<!--            <field name="name">profisc.purchase.tree.inherit</field>-->
+<!--            <field name="model">profisc.purchase_invoices</field>-->
+<!--            <field name="inherit_id" ref="view_profisc_purchase_invoices_tree"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//tree" position="attributes">-->
+<!--                    <attribute name="js_class">button_in_tree</attribute>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+<!--        <record id="view_profisc_invoice_wizard_form" model="ir.ui.view">-->
+<!--            <field name="name">profisc.invoice_wizard.form</field>-->
+<!--            <field name="model">profisc.invoice_wizard</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Get Purchase Invoices from Profisc">-->
+<!--                    <group>-->
+<!--                        <field name="from_date"/>-->
+<!--                        <field name="to_date"/>-->
+<!--                        <field name="invoice_type"/>-->
+<!--                    </group>-->
+<!--                    &lt;!&ndash; Button to trigger your Python method &ndash;&gt;-->
+<!--                    <footer>-->
+<!--                        <button string="Search" type="object" class="btn-primary" name="action_confirm"/>-->
+<!--                        <button string="Cancel" type="object" class="btn-secondary" special="cancel"/>-->
+<!--                    </footer>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Action: action_profisc_purchase_invoices &ndash;&gt;-->
+<!--        <record id="action_profisc_purchase_invoices" model="ir.actions.act_window">-->
+<!--            <field name="name">Purchase Invoices</field>-->
+<!--            <field name="res_model">profisc.purchase_invoices</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--        </record>-->
+
+<!--&lt;!&ndash;         Menu Action: menu_profisc_purchase_invoices&ndash;&gt;-->
+<!--        <menuitem id="menu_profisc_purchase_invoices" name="Purchase Invoices"-->
+<!--                  action="action_profisc_purchase_invoices"-->
+<!--                  parent="profisc.menu_profisc_management"-->
+<!--                  sequence="16"/>-->
+
+<!--    </data>-->
+
+<!--</odoo>-->

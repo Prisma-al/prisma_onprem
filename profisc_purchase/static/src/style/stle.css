@@ -1,0 +1,20 @@
+.custom-text-size {
+    font-size: 14px; /* Adjust as needed */
+}
+
+.custom-text-size2{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.refresh-btn{
+    background-color: #007567;
+    border-color: #007567;
+    color: #fff;
+}
+
+.refresh-btn:hover{
+    background-color: #007567;
+    border-color: #007567;
+    color: #fff;
+}

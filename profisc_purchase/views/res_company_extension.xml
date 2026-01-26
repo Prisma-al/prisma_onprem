@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="res_purchase_company_extension" model="ir.ui.view">
+            <field name="name">Purchase:: res_company_extension</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Purchase Configuration">
+                        <group colspan="2">
+                            <group>
+                                <field name="prof_pu_param1"/>
+                                <field name="prof_pu_param2"/>
+                                <field name="prof_pu_param3"/>
+                                <field name="prof_pu_param4"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

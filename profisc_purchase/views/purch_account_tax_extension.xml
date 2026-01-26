@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="account_tax_extension" model="ir.ui.view">
+            <field name="name">Purch:: account_tax_extension</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='active']" position="after">
+                    <field name="type_tax_use" invisible="1"/>
+                    <field name="purch_allow_product_mapping" invisible = "type_tax_use == 'sale'"/>
+                    <field name="purch_product_id" invisible = "type_tax_use == 'sale'"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

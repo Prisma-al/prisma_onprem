@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+        <record id="payment_acquirer_tpay" model="payment.provider">
+            <field name="name">Tetra Pay</field>
+            <field name="code">tetra_pay</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="redirect_form_view_id" ref="payment_mygateway_form"/>
+            <field name="payment_method_ids"
+               eval="[(6, 0, [
+                   ref('payment.payment_method_card'),
+                   ref('payment.payment_method_netbanking'),
+                   ref('payment.payment_method_emi'),
+                   ref('payment.payment_method_upi'),
+               ])]"/>
+        </record>
+</odoo>

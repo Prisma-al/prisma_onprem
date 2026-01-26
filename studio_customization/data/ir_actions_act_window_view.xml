@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.account_out_invoice__45cfe6b2-31a5-4bc8-963d-753259eb3b80" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.action_move_in_invoice_type"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence" eval="False"/>
+    <field name="view_id" ref="account.view_in_invoice_bill_tree"/>
+    <field name="view_mode">tree</field>
+  </record>
+  <record id="studio_customization.false_41fad5cd-0ddc-4a4c-839f-3d65d9b18e44" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.action_move_in_invoice_type"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">2</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">form</field>
+  </record>
+  <record id="studio_customization.false_6de3ef7d-9a4f-46c4-874a-0d4d2747d71a" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.action_move_in_invoice_type"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">4</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">pivot</field>
+  </record>
+  <record id="studio_customization.false_738f0f65-4d0e-4ab3-a2b6-f457df881b54" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.action_move_in_invoice_type"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">3</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">activity</field>
+  </record>
+  <record id="studio_customization.false_90f29624-0a4f-4eb8-b2d0-5e0136addb39" model="ir.actions.act_window.view" context="{'studio': True}">
+    <field name="act_window_id" ref="account.action_move_in_invoice_type"/>
+    <field name="multi" eval="False"/>
+    <field name="sequence">1</field>
+    <field name="view_id" eval="False"/>
+    <field name="view_mode">kanban</field>
+  </record>
+</odoo>

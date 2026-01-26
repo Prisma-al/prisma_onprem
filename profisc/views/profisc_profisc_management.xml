@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="profisc_wtn_vehicles" model="ir.ui.view">
+        <field name="name">profisc.wtn_vehicles.form</field>
+        <field name="model">profisc.wtn_vehicles</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="plate"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="profisc_wtn_business_units" model="ir.ui.view">
+        <field name="name">profisc.profisc_wtn_business_units.form</field>
+        <field name="model">profisc.business_units</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="company_id"/>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="address"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="profisc_wtn_tcr" model="ir.ui.view">
+        <field name="name">profisc.profisc_wtn_tcr.form</field>
+        <field name="model">profisc.tcr</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="company_id"/>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="bu_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_profisc_wtn_vehicles" model="ir.actions.act_window">
+        <field name="name">Vehicles</field>
+        <field name="res_model">profisc.wtn_vehicles</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_profisc_wtn_business_units" model="ir.actions.act_window">
+        <field name="name">Business Units</field>
+        <field name="res_model">profisc.business_units</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_profisc_wtn_tcr" model="ir.actions.act_window">
+        <field name="name">TCR</field>
+        <field name="res_model">profisc.tcr</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_profisc_management" name="Profisc" sequence="10"
+              web_icon="profisc,static/description/icon.png"/>
+    <menuitem id="menu_profisc_settings" name="Settings" sequence="11" parent="menu_profisc_management"/>
+
+    <menuitem id="menu_profisc_wtn_vehicles" name="Vehicle Management" sequence="13"
+              action="action_profisc_wtn_vehicles"
+              parent="menu_profisc_settings"/>
+
+    <menuitem id="menu_profisc_uoms" name="Uoms Management" sequence="14"
+              action="action_profisc_uoms"
+              parent="menu_profisc_settings"/>
+
+    <menuitem id="menu_profisc_wtn_business_units" name="BU Management" sequence="15"
+              action="action_profisc_wtn_business_units"
+              parent="menu_profisc_settings"/>
+
+    <menuitem id="menu_profisc_wtn_tcr" name="TCR Management" sequence="16"
+              action="action_profisc_wtn_tcr"
+              parent="menu_profisc_settings"/>
+
+</odoo>

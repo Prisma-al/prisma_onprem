@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.mail_microsoft_graph_0f3e3c3a-7119-4147-bfb4-eedeb0c903b1" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.mail_microsoft_graph_4979b1ae-25cf-465a-919c-9034b04f2ac2"/>
+    <field name="name">mail_microsoft_graph group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.mail_microsoft_graph_9702f55f-12f5-4f7f-a701-b7d2c7c228d4" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.mail_microsoft_graph_4979b1ae-25cf-465a-919c-9034b04f2ac2"/>
+    <field name="name">mail_microsoft_graph group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.online_payments_grou_27ac9403-94d6-44ba-85a2-1739b998831b" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.online_payments_6b190cde-db2d-4a93-a2d0-a9fe59e95ec2"/>
+    <field name="name">Online Payments group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.online_payments_grou_4af0596e-baa5-48c8-918d-1c538cde37fe" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.online_payments_6b190cde-db2d-4a93-a2d0-a9fe59e95ec2"/>
+    <field name="name">Online Payments group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_2ba94ba1-41ed-41a0-9c2d-6317fa25df71" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_6da827bb-f9dd-42e0-a4ad-b408e8f3a6e8"/>
+    <field name="name">Public Tender Tracking Tags group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_41ed57f8-7513-4df6-981a-50b451ea84d7" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_67231abf-ccf7-4498-9b7f-704b48783fa3"/>
+    <field name="name">Public Tender Tracking Stages group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_7b078a58-af2d-4b29-a8b0-69dee7079eb2" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_e8be91b1-9d0f-4cc6-a2d6-6255b8ce3627"/>
+    <field name="name">Public Tender Tracking group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_890f5240-a60a-430c-8bb7-b03fcada3aa6" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_ab08292c-faff-4403-bac7-4b82c637a7ea"/>
+    <field name="name">public_tender_tracki_line group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_99253c05-04d5-46cb-ae08-b4231f49d2af" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_6da827bb-f9dd-42e0-a4ad-b408e8f3a6e8"/>
+    <field name="name">Public Tender Tracking Tags group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_cde10299-c2ed-46a6-9e9d-2a8da23bb921" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_67231abf-ccf7-4498-9b7f-704b48783fa3"/>
+    <field name="name">Public Tender Tracking Stages group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_e19e1e26-5838-42aa-9274-c559ade02a48" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_e8be91b1-9d0f-4cc6-a2d6-6255b8ce3627"/>
+    <field name="name">Public Tender Tracking group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_fa740e63-9740-4531-a8b4-d9554740fec3" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_ab08292c-faff-4403-bac7-4b82c637a7ea"/>
+    <field name="name">public_tender_tracki_line group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.server_group_system_703324ae-0b64-47b0-84bf-7b659c96985a" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.server_810854fe-00c3-47aa-a75c-3d7f4832d9b3"/>
+    <field name="name">Server group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.server_group_user_ee7a75b1-42e4-40bf-8269-aa421412fe6f" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.server_810854fe-00c3-47aa-a75c-3d7f4832d9b3"/>
+    <field name="name">Server group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.server_profisc_group_26dee16b-a478-4dfb-bb77-692b6041c378" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_system"/>
+    <field name="model_id" ref="studio_customization.server_profisc_c8818917-f839-4ef7-869c-2c9ef66b1fc8"/>
+    <field name="name">Server Profisc group_system</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="True"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+  <record id="studio_customization.server_profisc_group_2ec692f8-a7eb-47a4-af47-5ce1d37bb473" model="ir.model.access" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="group_id" ref="base.group_user"/>
+    <field name="model_id" ref="studio_customization.server_profisc_c8818917-f839-4ef7-869c-2c9ef66b1fc8"/>
+    <field name="name">Server Profisc group_user</field>
+    <field name="perm_create" eval="True"/>
+    <field name="perm_read" eval="True"/>
+    <field name="perm_unlink" eval="False"/>
+    <field name="perm_write" eval="True"/>
+  </record>
+</odoo>

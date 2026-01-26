@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.leads_email_template_a5910cb5-a87e-455e-a752-aae13a38f034" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Përshëndetje,&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Faleminderit për interesimin tuaj mbi Odoo, sistemin me mbi 12 milionë klientë në gjithë botën.&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Ne jemi Prisma, partner dhe implementues zyrtar i Odoo, kompani lider&amp;nbsp;mbi 15 vite ne treg&amp;nbsp;që ofron produkte dhe shërbime profesionale në botën e IT në Shqipëri dhe rajon, të specializuar për sistemet e administrimit të biznesit.&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Prisma&amp;nbsp;është e certifikuar nga Departamenti i Përgjithshëm i Tatimeve (DPT) dhe Agjencia Kombëtare e Shoqërisë së Informacionit (AKSHI) për programe Fiskalizimi, prodhim faturash dhe integrimin me tatimet për faturat në shitje dhe blerje.&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Në listën e partnerëve tanë përfshihen shumë histori suksesi me klientë të mesëm dhe të mëdhenj, në fushat e administrimit financiar dhe të biznesit.&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Shërbimi ynë i suportit do t’ju ofrojë shërbim profesional nga ekspertë që do t’ju japin zgjidhje për të gjitha çështjet tuaja, 24/7. Suksesi juaj është qëllimi ynë.&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Për më shumë mbi Odoo:&amp;nbsp;&lt;a href="https://prisma.al/sq/odoo/" style="text-decoration:none;box-sizing:border-box;color:#008f8c;"&gt;https://prisma.al/sq/odoo/&lt;/a&gt;&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Për më shumë mbi Prisma:&amp;nbsp;&lt;a href="https://prisma.al/sq/home-shqip/" style="text-decoration:none;box-sizing:border-box;color:#008f8c;"&gt;https://prisma.al/sq/home-shqip/&lt;/a&gt;&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Për më shumë mbi ProFisc, programin tonë të fiskalizimit:&amp;nbsp;&lt;a href="https://profisc.al/" target="_blank" style="text-decoration:none;box-sizing:border-box;color:#008f8c;"&gt;https://profisc.al/&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;&amp;nbsp;&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Për çdo pyetje që mund të keni, jeni të mirëpritur në çdo kohë, do të jemi të lumtur t’ju ofrojmë suportin tonë.&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;&amp;nbsp;&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Me respekt,&lt;/p&gt;&lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;Prisma&lt;/p&gt;</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">odoo@tetrapro.al</field>
+    <field name="email_to" eval="False"/>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="crm.model_crm_lead"/>
+    <field name="name">Leads Email Template</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">Odoo nga Prisma</field>
+    <field name="use_default_to" eval="True"/>
+  </record>
+  <record id="studio_customization.level_2_support_prof_d70436b6-2689-4662-9572-d8c787f5fb7e" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;div&gt;
+    Dear Support,&lt;br&gt;&lt;br&gt;
+    
+    I wanted to inform you that a new ticket &lt;t t-out="object.ticket_ref or ''"&gt;"{{ object.ticket_ref }}"&lt;/t&gt; with description &lt;t t-out="object.name or ''"&gt;"{{ object.name }}"&lt;/t&gt; remains in Level 2.&lt;br&gt;&lt;br&gt;
+    
+    &lt;div style="text-align: center; padding: 16px 0px 16px 0px;"&gt;
+                &lt;a style="box-sizing:border-box;background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;" t-att-href="object.get_portal_url()" target="_blank"&gt;View the ticket&lt;/a&gt;&lt;br&gt;
+    &lt;/div&gt;
+
+    Thank you,&lt;br&gt;&lt;br&gt;
+    Prisma&amp;nbsp;Team.
+&lt;/div&gt;
+</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">odoo@tetrapro.al</field>
+    <field name="email_to">mprofi@tetrapro.al, xhkobuzi@tetrapro.al, nmilaqi@prisma.al, nspiro@tetrapro.al, sbedulla@tetrapro.al</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Level 2 Support Profisc eshte 4 ore</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">Ticket in Level 2 Support {{ object.partner_id.name }}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+  <record id="studio_customization.new_bug_has_not_been_5f1d3ebe-5b88-4d66-975f-4e2ed66e8f0b" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;div&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Dear Support,&lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        I wanted to inform you that a new ticket &lt;t t-out="object.ticket_ref"&gt;&lt;/t&gt; with description &lt;t t-out="object.name"&gt;&lt;/t&gt; is classified as a new bug and has not been solved.
+    &lt;/p&gt;
+
+    &lt;div style="text-align: center; padding: 16px 0px;"&gt;
+        &lt;a class="btn btn-primary" t-att-href="object.get_portal_url()" target="_blank" style="text-decoration:none;border-radius:4px;border-style:solid;padding:5px 10px 5px 10px;box-sizing:border-box;transition-property:none;transition-delay:0s;transition-timing-function:ease;transition-duration:0s;transition-behavior:normal;font-size:14px;border-left-color:#714b67;border-bottom-color:#714b67;border-right-color:#714b67;border-top-color:#714b67;border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;background-color:#714b67;user-select:none;cursor:pointer;vertical-align:middle;text-align:center;line-height:1.5;font-weight:500;display:inline-block;color:#ffffff;"&gt;View the ticket&lt;/a&gt;&lt;br&gt;
+    &lt;/div&gt;
+
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Thank you,
+    &lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Prisma&amp;nbsp;Team.
+    &lt;/p&gt;
+&lt;/div&gt;
+</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">odoo@tetrapro.al</field>
+    <field name="email_to">mprofi@tetrapro.al, nmilaqi@prisma.al, xhkobuzi@tetrapro.al, sqeraxhiu@tetrapro.al</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">New bug has not been Solved</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">New bug has not been Solved  {{ object.partner_id.name }}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+  <record id="studio_customization.new_bug_incident_has_1e02aa8b-5260-48a7-ad27-18e91daeb352" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;div&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Dear Support,&lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        I wanted to inform you that ticket &lt;t t-out="object.ticket_ref"&gt;&lt;/t&gt; with description &lt;t t-out="object.name"&gt;&lt;/t&gt; is classified as a new bug, and an incident has been recorded.
+    &lt;/p&gt;
+
+    &lt;div style="text-align: center; padding: 16px 0px;"&gt;
+        &lt;a class="btn btn-primary" t-att-href="object.get_portal_url()" target="_blank" style="text-decoration:none;border-radius:4px;border-style:solid;padding:5px 10px 5px 10px;box-sizing:border-box;transition-property:none;transition-delay:0s;transition-timing-function:ease;transition-duration:0s;transition-behavior:normal;font-size:14px;border-left-color:#714b67;border-bottom-color:#714b67;border-right-color:#714b67;border-top-color:#714b67;border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;background-color:#714b67;user-select:none;cursor:pointer;vertical-align:middle;text-align:center;line-height:1.5;font-weight:500;display:inline-block;color:#ffffff;"&gt;View the ticket&lt;/a&gt;&lt;br&gt;
+    &lt;/div&gt;
+
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Thank you,
+    &lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Prisma&amp;nbsp;Team.
+    &lt;/p&gt;
+&lt;/div&gt;
+</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">odoo@tetrapro.al</field>
+    <field name="email_to">mprofi@tetrapro.al, nmilaqi@prisma.al, xhkobuzi@tetrapro.al, sqeraxhiu@tetrapro.al</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">New bug, incident has been recorded</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">New bug, incident has been recorded  {{ object.partner_id.name }}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+  <record id="studio_customization.new_issue_not_assign_182b82a9-8a2f-4048-9516-9afad2f40757" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;div&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Dear Support,
+    &lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        I wanted to inform you that ticket &lt;t t-out="object.ticket_ref"&gt;&lt;/t&gt; with description &lt;t t-out="object.name"&gt;&lt;/t&gt; is reassigned to Support2.
+    &lt;/p&gt;
+
+    &lt;div style="text-align: center; padding: 16px 0px;"&gt;
+         &lt;a class="btn btn-primary" t-att-href="object.get_portal_url()" target="_blank" style="text-decoration:none;border-radius:4px;border-style:solid;padding:5px 10px 5px 10px;box-sizing:border-box;transition-property:none;transition-delay:0s;transition-timing-function:ease;transition-duration:0s;transition-behavior:normal;font-size:14px;border-left-color:#714b67;border-bottom-color:#714b67;border-right-color:#714b67;border-top-color:#714b67;border-left-width:1px;border-bottom-width:1px;border-right-width:1px;border-top-width:1px;background-color:#714b67;user-select:none;cursor:pointer;vertical-align:middle;text-align:center;line-height:1.5;font-weight:500;display:inline-block;color:#ffffff;"&gt;View the ticket&lt;/a&gt;&lt;br&gt;
+    &lt;/div&gt;
+
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Thank you,
+    &lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Prisma&amp;nbsp;Team.
+    &lt;/p&gt;
+&lt;/div&gt;
+</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">odoo@tetrapro.al</field>
+    <field name="email_to">mprofi@tetrapro.al, xhkobuzi@tetrapro.al, nspiro@tetrapro.al, sbedulla@tetrapro.al</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">Issue delegated to Support2</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">Issue delegated to Support2 {{ object.partner_id.name }}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+  <record id="studio_customization.oportunitet_per_tend_6775a202-91ae-48ce-97b8-d34b54061519" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;div&gt;
+    Pershendetje,&lt;br&gt;&lt;br&gt;
+    
+    Ju informojmë se është regjistruar procedura e tenderit 
+    &lt;t t-out="object.x_name or ''"&gt;"{{ object.x_name }}"&lt;/t&gt;&lt;br&gt;
+    
+    &lt;strong style="box-sizing:border-box;font-weight:bolder;"&gt;me afat deri më&lt;/strong&gt; 
+    &lt;t t-out="object.x_studio_due_date or ''"&gt;"{{ object.x_studio_due_date }}"&lt;/t&gt;&lt;br&gt;&lt;span style="box-sizing: border-box;"&gt;&lt;em&gt;&lt;u&gt;Më shumë detaje:&lt;br&gt;&lt;/u&gt;&lt;/em&gt;&lt;/span&gt;Data e krijimit:&amp;nbsp;&lt;t t-out="object.x_studio_date"&gt;&lt;/t&gt;&lt;br&gt;Fondi Limit:L&lt;t t-esc="'{:,.2f}'.format(object.x_studio_value)"&gt;&lt;/t&gt;&lt;br&gt;Autoriteti Kontraktor:&amp;nbsp;&lt;t t-out="object.x_studio_partner_id.complete_name"&gt;&lt;/t&gt;&lt;br&gt;Objekti:&amp;nbsp;&lt;t t-out="object.x_studio_objekti"&gt;&lt;/t&gt;&lt;br&gt;
+Tipi i procedurës:&amp;nbsp;&lt;t t-out="object.x_studio_tipi_i_procedurs"&gt;&lt;/t&gt;&lt;br&gt;Nr. references:&amp;nbsp;&lt;t t-out="object.x_studio_nr_reference"&gt;&lt;/t&gt;&lt;br&gt;Dokumentat ne Onedrive:&amp;nbsp;&lt;t t-out="object.x_studio_dokumentat_ne_onedrive"&gt;&lt;/t&gt;&lt;br&gt;Kohëzgjatja e kontratës:&amp;nbsp;&lt;t t-out="object.x_studio_kohezgjatja_e_kontrates"&gt;&lt;/t&gt;&lt;br&gt;&lt;br&gt;Shenime:&lt;br&gt;&lt;t t-out="object.x_studio_notes"&gt;&lt;/t&gt;&lt;br&gt;&lt;br&gt;
+
+    &lt;div style="text-align: center; padding: 16px 0px 16px 0px;"&gt;
+ &lt;a t-attf-href="https://tpro7.odoo.com/web#id={{ object.id}}&amp;amp;cids=1&amp;amp;menu_id=905&amp;amp;action=1409&amp;amp;model=x_public_tender_tracki&amp;amp;view_type=form" style="box-sizing:border-box;background-color: #875A7B; padding: 8px 16px; text-decoration: none; color: white; border-radius: 5px; font-size:13px;" target="_blank"&gt;
+           Shiko tenderin
+        &lt;/a&gt;&lt;/div&gt;
+
+    Faleminderit,&lt;br&gt;&lt;br&gt;
+    Prisma&amp;nbsp;Team.
+&lt;/div&gt;
+</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from" eval="False"/>
+    <field name="email_to">sqeraxhiu@tetrapro.al, xhkobuzi@tetrapro.al</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="studio_customization.public_tender_tracki_e8be91b1-9d0f-4cc6-a2d6-6255b8ce3627"/>
+    <field name="name">Oportunitet per tender</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">Oportunitet per tender {{ object.x_studio_partner_id.name }}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+  <record id="studio_customization.sla_failure_on_a_tic_dfa1e477-4fa5-473a-8d48-45e85254e401" model="mail.template" context="{'studio': True}">
+    <field name="auto_delete" eval="False"/>
+    <field name="body_html">&lt;div&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Dear Support,&lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        I wanted to inform you that ticket &lt;t t-out="object.ticket_ref"&gt;&lt;/t&gt; with description &lt;t t-out="object.name"&gt;&lt;/t&gt; failed SLA.
+    &lt;/p&gt;
+
+    &lt;div style="text-align: center; padding: 16px 0px;"&gt;
+        &lt;a style="box-sizing:border-box;background-color: #875A7B; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;" t-att-href="object.get_portal_url()" target="_blank"&gt;View the ticket&lt;/a&gt;&lt;br&gt;
+    &lt;/div&gt;
+
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Thank you,
+    &lt;/p&gt;
+    &lt;p style="margin:0px 0 16px 0;box-sizing:border-box;"&gt;
+        Prisma&amp;nbsp;Team.
+    &lt;/p&gt;
+&lt;/div&gt;
+</field>
+    <field name="email_cc" eval="False"/>
+    <field name="email_from">odoo@tetrapro.al</field>
+    <field name="email_to">mprofi@tetrapro.al, nmilaqi@prisma.al, xhkobuzi@tetrapro.al, sqeraxhiu@tetrapro.al</field>
+    <field name="lang" eval="False"/>
+    <field name="model_id" ref="helpdesk.model_helpdesk_ticket"/>
+    <field name="name">SLA failure on a ticket more than 3 days</field>
+    <field name="partner_to" eval="False"/>
+    <field name="ref_ir_act_window" eval="False"/>
+    <field name="reply_to" eval="False"/>
+    <field name="report_template_ids" eval="[(6, 0, [])]"/>
+    <field name="scheduled_date" eval="False"/>
+    <field name="subject">SLA failure on a ticket more than 3 days {{ object.partner_id.name }}</field>
+    <field name="use_default_to" eval="False"/>
+  </record>
+</odoo>

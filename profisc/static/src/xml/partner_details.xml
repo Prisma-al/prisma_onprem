@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+            <t t-name="PartnerDetailsEdit" t-inherit="point_of_sale.PartnerDetailsEdit" t-inherit-mode="extension">
+                   <xpath expr="//div[hasclass('partner-details-box')]" position="inside">
+                <div class="partner-detail col">
+                    <label class="form-label label" for="profisc_customer_vat_type">ID Type</label>
+                    <select class="detail form-select" id="profisc_customer_vat_type" name="profisc_customer_vat_type"
+                            t-model="changes.profisc_customer_vat_type"
+                            t-att-class="{'border-danger': missingFields.includes('profisc_customer_vat_type')}">
+                        <option value="">None</option>
+                         <t t-foreach="pos.id_types" t-as="id_type" t-key="id_type.id">
+                            <option t-att-value="id_type.id">
+                                <t t-esc="id_type.name" />
+                            </option>
+                        </t>
+                </select>
+
+                </div>
+                </xpath>
+        </t>
+        </templates>
+

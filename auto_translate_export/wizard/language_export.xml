@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wizard_lang_export_inherit" model="ir.ui.view">
+        <field name="name">Export Translations - Override Msgstr</field>
+        <field name="model">base.language.export</field>
+        <field name="inherit_id" ref="base.wizard_lang_export"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='domain']" position="after">
+                    <field name="override_msgstr"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

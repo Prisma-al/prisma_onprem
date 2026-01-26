@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="studio_customization.accounting_mail_micr_f30049d2-5450-4706-b38e-dc3f37ad0077" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.mail_microsoft_graph_33347579-0c59-4a6f-b8cb-f8d96e537101"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">mail_microsoft_graph</field>
+    <field name="parent_id" ref="account_accountant.menu_accounting"/>
+    <field name="sequence">36</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.bkt_payments_3e983546-fbb8-40b3-a3d0-51957bce77f4" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">BKT Payments</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-diamond,#f1c40f,#34495e</field>
+  </record>
+  <record id="studio_customization.bkt_payments_online__b4583bca-1da0-45ab-a25c-ca74d31aea2b" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.online_payments_aadaafcf-6da6-4760-881f-1daa1ad4377a"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Online Payments</field>
+    <field name="parent_id" ref="studio_customization.bkt_payments_3e983546-fbb8-40b3-a3d0-51957bce77f4"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_db66b36a-c4fc-40ef-ac9b-e29bcce378e8" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="name">Public Tender Tracking</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-diamond,#f1c40f,#34495e</field>
+  </record>
+  <record id="studio_customization.public_tender_tracki_0206a0dc-30be-42cc-afb5-a9d7c01c4fa2" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.public_tender_tracki_3f3849fb-aeeb-46aa-80c1-673a0d2176a7"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Public Tender Tracking</field>
+    <field name="parent_id" ref="studio_customization.public_tender_tracki_db66b36a-c4fc-40ef-ac9b-e29bcce378e8"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_694fba53-44f6-4e25-aecf-4d4fb181df5f" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Configuration</field>
+    <field name="parent_id" ref="studio_customization.public_tender_tracki_db66b36a-c4fc-40ef-ac9b-e29bcce378e8"/>
+    <field name="sequence">100</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_4477111a-ef48-41e2-a40f-7b83645fee93" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.public_tender_tracki_12380f0c-fbbc-4a12-9fa5-88c21ed320f1"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Public Tender Tracking Tags</field>
+    <field name="parent_id" ref="studio_customization.public_tender_tracki_694fba53-44f6-4e25-aecf-4d4fb181df5f"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.public_tender_tracki_497ee821-f066-4815-a05c-c3645ed72b11" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.public_tender_tracki_b4f7cf91-111a-43e0-95e2-5c2a53bb2517"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Public Tender Tracking Stages</field>
+    <field name="parent_id" ref="studio_customization.public_tender_tracki_694fba53-44f6-4e25-aecf-4d4fb181df5f"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+</odoo>
