@@ -82,6 +82,10 @@ class ProfiscPurchaseBook(models.Model):
     purch_is_visible_Accept_Reject = fields.Boolean(compute='is_visible_Accept_Reject', string='Is Visible')
     purch_is_visible_Import = fields.Boolean(compute='is_visible_Import', string='Is Visible Import')
 
+    company_id = fields.Many2one(
+        'res.company',
+        string='Company')
+
     @api.depends('purch_is_einvoice', 'purch_cis_status')
     def is_visible_Accept_Reject(self):
         for record in self:

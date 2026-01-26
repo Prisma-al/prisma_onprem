@@ -83,7 +83,7 @@ class profisc_book_actions(models.Model):
 
                             attachment_id = self.env['ir.attachment'].sudo().create(values)
 
-                            old_obj = self.env['profisc.purchase_book'].search([('purch_fic', '=', item['fic'])],limit=1)
+                            old_obj = self.env['profisc.purchase_book'].search([('purch_fic', '=', item['fic']), ('company_id', '=', company.id)],limit=1)
 
                             if not old_obj:
 
@@ -96,6 +96,11 @@ class profisc_book_actions(models.Model):
                                     startDate = datetime.fromtimestamp(item['startDate'] / 1000.0)
                                 else:
                                     startDate = None
+
+                                if item['dueDate'] != None:
+                                    dueDate = datetime.fromtimestamp(item['dueDate'] / 1000.0)
+                                else:
+                                    dueDate = None
 
                                 if item['endDate'] != None:
                                     endDate = datetime.fromtimestamp(item['endDate'] / 1000.0)
@@ -129,6 +134,7 @@ class profisc_book_actions(models.Model):
                                 print(currency.name)
 
                                 obj = {
+                                    "company_id": company.id,
                                     "purch_ublId": item['ublId'],
                                     "purch_currency_id": currency.id,
                                     "purch_imported_date": date.today(),
@@ -138,6 +144,7 @@ class profisc_book_actions(models.Model):
                                     "purch_issue_date": issue_date,
                                     "purch_start_date": startDate,
                                     "purch_end_date": endDate,
+                                    "purch_due_date": dueDate,
                                     "purch_iic": item['iic'],
                                     "purch_fiscInvoiceNumber": item['fiscInvoiceNumber'],
                                     "purch_invoiceType": item['invoiceType'],
@@ -249,11 +256,14 @@ class profisc_book_actions(models.Model):
                 zeropercent_totsum = 0
                 notax_totsum = 0
 
+                currency = self.env['res.currency'].search([('name', '=', bill.purch_base_currency)], limit=1)
+
                 bill_obj = {
+                    "company_id": bill.company_id.id,
                     "move_type": "in_invoice",
                     "partner_id": bill.partner_id.id,
                     "journal_id": journal.id,
-                    "currency_id": bill.purch_currency_id.id,
+                    "currency_id": currency.id,
                     "profisc_fic": bill.purch_fic,
                     "profisc_iic": bill.purch_iic,
                     "profisc_eic": bill.purch_eic,

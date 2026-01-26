@@ -6,6 +6,13 @@
             <field name="model">profisc.purchase_book</field>
         </record>
 
+        <!--Rule:: rule for company-->
+        <record id="your_model_company_rule" model="ir.rule">
+            <field name="name">Your Model Company Rule</field>
+            <field name="model_id" ref="model_profisc_purchase_book"/>
+            <field name="domain_force">[('company_id', 'in', (user.env.context.get('allowed_company_ids') or []))]</field>
+        </record>
+
         <!-- View: profisc.purchase_book.tree -->
         <record id="view_profisc_purchase_book_tree" model="ir.ui.view">
             <field name="name">profisc.purchase_book.tree</field>

@@ -89,6 +89,9 @@ class ProfiscSaleBook(models.Model):
     zeroVatPurchaseAmount = fields.Float(string = 'Zero VAT and Purchase Amount')
     zeroVatRated = fields.Boolean(string = 'Zero VAT Rated')
     isExtracted = fields.Boolean(string = 'Extracted', default=False)
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string='Company')
 
     def get_all_sale_books(self):
         response = self.env['profisc.book_actions'].get_all_sale_books()
