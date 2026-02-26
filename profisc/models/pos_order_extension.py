@@ -268,7 +268,7 @@ class PosOrder(models.Model):
             "invoiceId": record.access_token,
             'date': str(record.date_order.strftime("%d/%m/%Y ") + current_time),
             'dueDate': str(record.date_order.strftime("%d/%m/%Y ") + current_time),
-            'invoiceCode': 383 if not ref_order else 384,
+            'invoiceCode': 388 if not ref_order else 384,
             'invoiceType': 'invoice' if not ref_order else 'credit',
             'currency': "ALL",
             'exchangeRate': 1,
