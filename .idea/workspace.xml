@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="changed the version of the studio custom module" />
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fixed all xpaths">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_actions_act_window.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_actions_act_window.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_actions_act_window_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_actions_act_window_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,7 +113,7 @@
       <workItem from="1781879942614" duration="132000" />
       <workItem from="1782399534893" duration="849000" />
       <workItem from="1782722699373" duration="1782000" />
-      <workItem from="1784279964593" duration="7322000" />
+      <workItem from="1784279964593" duration="8879000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -150,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784296367820</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed all xpaths">
+      <option name="closed" value="true" />
+      <created>1784296558715</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1784296558715</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +186,8 @@
     <MESSAGE value="adding requirements" />
     <MESSAGE value="deleting requirements from manifest" />
     <MESSAGE value="changed the version of the studio custom module" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the version of the studio custom module" />
+    <MESSAGE value="fixed all xpaths" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed all xpaths" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

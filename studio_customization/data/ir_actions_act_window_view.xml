@@ -5,7 +5,7 @@
     <field name="multi" eval="False"/>
     <field name="sequence" eval="False"/>
     <field name="view_id" ref="account.view_in_invoice_bill_tree"/>
-    <field name="view_mode">tree</field>
+    <field name="view_mode">list</field>
   </record>
   <record id="studio_customization.false_41fad5cd-0ddc-4a4c-839f-3d65d9b18e44" model="ir.actions.act_window.view" context="{'studio': True}">
     <field name="act_window_id" ref="account.action_move_in_invoice_type"/>

@@ -13,6 +13,8 @@
           <button name="action_invoice_sent" type="object" string="Send &amp; Print" invisible="state != 'posted' or not is_being_sent and not invoice_pdf_report_id or move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund')" data-hotkey="y"/>
           <!-- Register Payment (only invoices / receipts) -->
           <button name="action_register_payment" id="account_invoice_payment_btn" type="object" class="oe_highlight" invisible="state != 'posted' or payment_state not in ('not_paid', 'partial') or move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt')" context="{'dont_redirect_to_payments': True, 'display_account_trust': True}" string="Register Payment" data-hotkey="g" groups="account.group_account_invoice"/>
+          <!-- Odoo 18: secondary register-payment button expected by account_payment inherit view -->
+          <button name="action_register_payment" id="account_invoice_payment_secondary_btn" type="object" invisible="state != 'posted' or payment_state not in ('not_paid', 'partial', 'in_payment') or move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund', 'out_receipt', 'in_receipt') or not invoice_has_outstanding" context="{'dont_redirect_to_payments': True, 'display_account_trust': True}" string="Pay" data-hotkey="g" groups="account.group_account_invoice"/>
           <!-- Preview (only customer invoices) -->
           <button name="preview_invoice" type="object" string="Preview" data-hotkey="o" title="Preview invoice" invisible="move_type not in ('out_invoice', 'out_refund')"/>
           <!-- Reverse -->
@@ -183,7 +185,7 @@
           <notebook>
             <page id="invoice_tab" name="invoice_tab" string="Invoice Lines" invisible="move_type == 'entry'">
               <field name="invoice_line_ids" widget="section_and_note_one2many" mode="tree,kanban" context="{                                            'default_move_type': context.get('default_move_type'),                                            'journal_id': journal_id,                                            'default_partner_id': commercial_partner_id,                                            'default_currency_id': currency_id or company_currency_id,                                            'default_display_type': 'product',                                            'quick_encoding_vals': quick_encoding_vals,                                        }" readonly="state != 'draft'">
-                <tree editable="bottom" string="Journal Items" default_order="sequence, id">
+                <list editable="bottom" string="Journal Items" default_order="sequence, id">
                   <control>
                     <create name="add_line_control" string="Add a line"/>
                     <create name="add_section_control" string="Add a section" context="{'default_display_type': 'line_section'}"/>
@@ -212,7 +214,7 @@
                   <!-- /l10n_in_edi.test_edi_json -->
                   <!-- required for @api.onchange('product_id') -->
                   <field name="product_uom_id" column_invisible="True"/>
-                </tree>
+                </list>
                 <kanban class="o_kanban_mobile">
                   <!-- Displayed fields -->
                   <field name="name"/>
@@ -319,7 +321,7 @@
             </page>
             <page id="aml_tab" string="Journal Items" groups="account.group_account_readonly" name="aml_tab">
               <field name="line_ids" mode="tree,kanban" context="{                                            'default_move_type': context.get('default_move_type'),                                            'line_ids': line_ids,                                            'journal_id': journal_id,                                            'default_partner_id': commercial_partner_id,                                            'default_currency_id': currency_id or company_currency_id,                                            'kanban_view_ref': 'account.account_move_line_view_kanban_mobile',                                        }" invisible="payment_state == 'invoicing_legacy' and move_type != 'entry'" readonly="state != 'draft'">
-                <tree editable="bottom" string="Journal Items" decoration-muted="display_type in ('line_section', 'line_note')" default_order="sequence, id">
+                <list editable="bottom" string="Journal Items" decoration-muted="display_type in ('line_section', 'line_note')" default_order="sequence, id">
                   <!-- Displayed fields -->
                   <field name="account_id" invisible="display_type in ('line_section', 'line_note')" required="display_type not in ('line_section', 'line_note')" domain="[('company_id', 'parent_of', parent.company_id), ('deprecated', '=', False)]"/>
                   <field name="partner_id" optional="show" domain="['|', ('parent_id', '=', False), ('is_company', '=', True)]" column_invisible="parent.move_type != 'entry'"/>
@@ -347,7 +349,7 @@
                   <field name="id" column_invisible="True"/>
                   <field name="account_internal_group" column_invisible="True"/>
                   <field name="account_type" column_invisible="True"/>
-                </tree>
+                </list>
                 <!-- Form view to cover mobile use -->
                 <form>
                   <group>
@@ -417,11 +419,7 @@
         <!-- Attachment preview -->
         <div class="o_attachment_preview" invisible="move_type not in ('out_invoice', 'out_refund', 'in_invoice', 'in_refund') or state != 'draft'"/>
         <!-- Chatter -->
-        <div class="oe_chatter">
-          <field name="message_follower_ids" groups="base.group_user"/>
-          <field name="activity_ids"/>
-          <field name="message_ids"/>
-        </div>
+        <chatter/>
       </form>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
@@ -454,7 +452,7 @@
           <notebook>
             <page name="pricelist_rules" string="Price Rules">
               <field name="item_ids" nolabel="1" context="{'default_base':'list_price'}">
-                <tree groups="!product.group_sale_pricelist" string="Pricelist Rules" editable="bottom">
+                <list groups="!product.group_sale_pricelist" string="Pricelist Rules" editable="bottom">
                   <field name="product_tmpl_id" string="Products" required="1"/>
                   <field name="product_id" string="Variants" groups="product.group_product_variant" domain="[('product_tmpl_id', '=', product_tmpl_id)]" options="{'no_create':1}"/>
                   <field name="min_quantity"/>
@@ -467,11 +465,11 @@
                   <field name="base" column_invisible="True"/>
                   <field name="applied_on" column_invisible="True"/>
                   <field name="company_id" column_invisible="True"/>
-                </tree>
+                </list>
                 <!-- When in advanced pricelist mode : pricelist rules
                                     Should open in a form view and not be editable inline anymore.
                                 -->
-                <tree groups="product.group_sale_pricelist" string="Pricelist Rules">
+                <list groups="product.group_sale_pricelist" string="Pricelist Rules">
                   <field name="product_tmpl_id" column_invisible="True"/>
                   <field name="name" string="Applicable On"/>
                   <field name="min_quantity"/>
@@ -482,7 +480,7 @@
                   <field name="price_discount" column_invisible="True"/>
                   <field name="applied_on" column_invisible="True"/>
                   <field name="compute_price" column_invisible="True"/>
-                </tree>
+                </list>
               </field>
             </page>
             <page name="pricelist_config" string="Configuration">
@@ -497,11 +495,7 @@
             </page>
           </notebook>
         </sheet>
-        <div class="oe_chatter">
-          <field name="activity_ids"/>
-          <field name="message_follower_ids"/>
-          <field name="message_ids"/>
-        </div>
+        <chatter/>
       </form>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
@@ -650,11 +644,7 @@
             </page>
           </notebook>
         </sheet>
-        <div class="oe_chatter" name="oe_chatter">
-          <field name="message_follower_ids"/>
-          <field name="message_ids"/>
-          <field name="activity_ids"/>
-        </div>
+        <chatter/>
       </form>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
@@ -715,11 +705,7 @@
             <group name="studio_group_6dea28_right"/>
           </group>
         </sheet>
-        <div class="oe_chatter" name="oe_chatter">
-          <field name="message_follower_ids"/>
-          <field name="message_ids"/>
-          <field name="activity_ids"/>
-        </div>
+        <chatter/>
       </form>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
@@ -878,9 +864,9 @@
   <record id="studio_customization.default_list_view_fo_2335d7ee-aea5-4d68-970b-9136db0db74e" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree>
+      <list>
         <field name="x_name"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -894,10 +880,10 @@
   <record id="studio_customization.default_list_view_fo_55f5ba69-0dff-4d1d-8290-bc047df040a3" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree editable="bottom">
+      <list editable="bottom">
         <field name="x_studio_sequence" widget="handle"/>
         <field name="x_name"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -911,11 +897,11 @@
   <record id="studio_customization.default_list_view_fo_785256ec-cec1-454d-8682-fce2d4d85b1e" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree>
+      <list>
         <field name="x_studio_sequence" widget="handle"/>
         <field name="x_name"/>
         <field name="x_studio_partner_id"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -929,10 +915,10 @@
   <record id="studio_customization.default_list_view_fo_7fa04744-3b7e-48a4-8117-d280e5cf2c01" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree editable="bottom">
+      <list editable="bottom">
         <field name="x_studio_sequence" widget="handle"/>
         <field name="x_name"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -946,10 +932,10 @@
   <record id="studio_customization.default_list_view_fo_911b983d-dbf6-4d0e-a2a0-a5f5787af121" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree editable="bottom">
+      <list editable="bottom">
         <field name="x_name"/>
         <field name="x_color" widget="color_picker"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -963,9 +949,9 @@
   <record id="studio_customization.default_list_view_fo_cb409a65-9dd9-4093-a994-1cbe7b5c2d68" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree>
+      <list>
         <field name="x_name"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -979,7 +965,7 @@
   <record id="studio_customization.default_list_view_fo_cb5762c5-f384-46de-8159-2d5103066f93" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree>
+      <list>
         <field name="x_name"/>
         <field name="x_studio_partner_id"/>
         <field name="x_studio_user_id" widget="many2one_avatar_user"/>
@@ -987,7 +973,7 @@
         <field name="x_studio_value" sum="Total"/>
         <field name="x_studio_tag_ids" widget="many2many_tags" options="{'color_field': 'x_color'}"/>
         <field name="x_color" widget="color_picker"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -1001,9 +987,9 @@
   <record id="studio_customization.default_list_view_fo_e4b473a1-7ed1-4155-ba2b-16a8930557e0" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree>
+      <list>
         <field name="x_name"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -1228,9 +1214,9 @@
   <record id="studio_customization.default_tree_view_fo_776639b1-bcef-4f93-8e45-c7a5d936a8a8" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
-      <tree string="List of all Business Units">
+      <list string="List of all Business Units">
         <field name="name"/>
-      </tree>
+      </list>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
@@ -1343,7 +1329,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='name']" position="after">
+        <xpath expr="//list[1]/field[@name='name']" position="after">
           <field name="profisc_ubl_id" optional="show"/>
           <field name="profisc_fic" optional="show"/>
           <field name="x_studio_tax_id" optional="show"/>
@@ -1428,10 +1414,10 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='name']" position="after">
+        <xpath expr="//list[1]/field[@name='name']" position="after">
           <field name="profisc_fic" optional="show"/>
         </xpath>
-        <xpath expr="//tree[1]/field[@name='invoice_partner_display_name']" position="after">
+        <xpath expr="//list[1]/field[@name='invoice_partner_display_name']" position="after">
           <field name="x_studio_tax_id" optional="show"/>
           <field name="x_studio_related_field_1c7_1hutc6m55" optional="show"/>
         </xpath>
@@ -1468,20 +1454,20 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='name']" position="after">
+        <xpath expr="//list[1]/field[@name='name']" position="after">
           <field name="profisc_profile_id" optional="show"/>
           <field name="profisc_ubl_id" optional="show"/>
           <field name="profisc_iic" optional="show"/>
           <field name="profisc_fic" optional="show"/>
         </xpath>
-        <xpath expr="//tree[1]/field[@name='invoice_partner_display_name'][2]" position="after">
+        <xpath expr="//list[1]/field[@name='invoice_partner_display_name'][2]" position="after">
           <field optional="show" name="x_studio_related_field_1c7_1hutc6m55" string="City"/>
           <field optional="show" name="x_studio_tax_id"/>
         </xpath>
-        <xpath expr="//tree[1]/field[@name='invoice_date'][2]" position="after">
+        <xpath expr="//list[1]/field[@name='invoice_date'][2]" position="after">
           <field name="profisc_end_date" optional="show"/>
         </xpath>
-        <xpath expr="//tree[1]/field[@name='amount_total_in_currency_signed']" position="after">
+        <xpath expr="//list[1]/field[@name='amount_total_in_currency_signed']" position="after">
           <field name="invoice_payment_term_id" optional="show"/>
         </xpath>
         <xpath expr="//field[@name='payment_state']" position="after">
@@ -1504,7 +1490,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='invoice_partner_display_name']" position="after">
+        <xpath expr="//list[1]/field[@name='invoice_partner_display_name']" position="after">
           <field name="x_studio_related_field_1c7_1hutc6m55" optional="show"/>
           <field name="x_studio_tax_id" optional="show"/>
           <field name="profisc_fic" optional="show"/>
@@ -1819,7 +1805,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='name']" position="before">
+        <xpath expr="//list[1]/field[@name='name']" position="before">
           <field name="create_date" optional="show"/>
         </xpath>
       </data>
@@ -2157,7 +2143,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='name']" position="after">
+        <xpath expr="//list[1]/field[@name='name']" position="after">
           <field name="tag_ids" optional="show"/>
         </xpath>
       </data>
@@ -2772,7 +2758,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//tree[1]/field[@name='name']" position="before">
+        <xpath expr="//list[1]/field[@name='name']" position="before">
           <field name="create_date" optional="show"/>
         </xpath>
       </data>
@@ -2790,7 +2776,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='uom_lines']/field[@name='uom_ids']/tree[1]/field[@name='name']" position="after">
+        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='uom_lines']/field[@name='uom_ids']/list[1]/field[@name='name']" position="after">
           <field name="profisc_uom_val" optional="show"/>
         </xpath>
       </data>

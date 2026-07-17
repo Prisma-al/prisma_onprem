@@ -22,7 +22,7 @@
     <field name="type">ir.actions.act_window</field>
     <field name="usage" eval="False"/>
     <field name="view_id" ref="account.view_in_invoice_bill_tree"/>
-    <field name="view_mode">tree,kanban,form,activity,pivot</field>
+    <field name="view_mode">list,kanban,form,activity,pivot</field>
   </record>
   <record id="studio_customization.mail_microsoft_graph_33347579-0c59-4a6f-b8cb-f8d96e537101" model="ir.actions.act_window" context="{'studio': True}">
     <field name="binding_model_id" eval="False"/>
@@ -51,7 +51,7 @@
     <field name="type">ir.actions.act_window</field>
     <field name="usage" eval="False"/>
     <field name="view_id" eval="False"/>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">list,form</field>
   </record>
   <record id="studio_customization.online_payments_aadaafcf-6da6-4760-881f-1daa1ad4377a" model="ir.actions.act_window" context="{'studio': True}">
     <field name="binding_model_id" eval="False"/>
@@ -80,7 +80,7 @@
     <field name="type">ir.actions.act_window</field>
     <field name="usage" eval="False"/>
     <field name="view_id" eval="False"/>
-    <field name="view_mode">tree,form,map</field>
+    <field name="view_mode">list,form,map</field>
   </record>
   <record id="studio_customization.public_tender_tracki_12380f0c-fbbc-4a12-9fa5-88c21ed320f1" model="ir.actions.act_window" context="{'studio': True}">
     <field name="binding_model_id" eval="False"/>
@@ -109,7 +109,7 @@
     <field name="type">ir.actions.act_window</field>
     <field name="usage" eval="False"/>
     <field name="view_id" eval="False"/>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">list,form</field>
   </record>
   <record id="studio_customization.public_tender_tracki_3f3849fb-aeeb-46aa-80c1-673a0d2176a7" model="ir.actions.act_window" context="{'studio': True}">
     <field name="binding_model_id" eval="False"/>
@@ -138,7 +138,7 @@
     <field name="type">ir.actions.act_window</field>
     <field name="usage" eval="False"/>
     <field name="view_id" eval="False"/>
-    <field name="view_mode">kanban,tree,form,calendar,gantt,map,pivot,graph</field>
+    <field name="view_mode">kanban,list,form,calendar,gantt,map,pivot,graph</field>
   </record>
   <record id="studio_customization.public_tender_tracki_b4f7cf91-111a-43e0-95e2-5c2a53bb2517" model="ir.actions.act_window" context="{'studio': True}">
     <field name="binding_model_id" eval="False"/>
@@ -167,6 +167,6 @@
     <field name="type">ir.actions.act_window</field>
     <field name="usage" eval="False"/>
     <field name="view_id" eval="False"/>
-    <field name="view_mode">tree,form</field>
+    <field name="view_mode">list,form</field>
   </record>
 </odoo>
