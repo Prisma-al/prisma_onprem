@@ -6,7 +6,7 @@
             <field name="model">pos.order</field>
             <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
             <field name="arch" type="xml">
-                <xpath expr="//tree" position="inside">
+                <xpath expr="//list" position="inside">
                     <header>
                         <button name="action_show_update_profisc_subseq_wizard" string="Update Profisc Subseq"
                                 type="object"/>

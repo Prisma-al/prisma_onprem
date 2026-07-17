@@ -45,7 +45,7 @@
                     <field name="move_type" invisible="1"/>
                 </group>
 
-                <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="after">
+                <xpath expr="//field[@name='invoice_line_ids']/list/field[@name='quantity']" position="after">
                     <!--                    <field name="profisc_uom" optional="show"/>-->
                 </xpath>
                 <xpath expr="//field[@name='partner_id']" position="after">

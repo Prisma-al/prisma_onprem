@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="adding requirements">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/__manifest__.py" afterDir="false" />
-    </list>
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="changed the version of the studio custom module" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +108,7 @@
       <workItem from="1781879942614" duration="132000" />
       <workItem from="1782399534893" duration="849000" />
       <workItem from="1782722699373" duration="1782000" />
-      <workItem from="1784279964593" duration="6967000" />
+      <workItem from="1784279964593" duration="7322000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -137,7 +134,23 @@
       <option name="project" value="LOCAL" />
       <updated>1784294976122</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="deleting requirements from manifest">
+      <option name="closed" value="true" />
+      <created>1784296160418</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1784296160418</updated>
+    </task>
+    <task id="LOCAL-00005" summary="changed the version of the studio custom module">
+      <option name="closed" value="true" />
+      <created>1784296367820</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1784296367820</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,7 +171,9 @@
     <MESSAGE value="." />
     <MESSAGE value="changes : making modules compatible for version 18" />
     <MESSAGE value="adding requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding requirements" />
+    <MESSAGE value="deleting requirements from manifest" />
+    <MESSAGE value="changed the version of the studio custom module" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed the version of the studio custom module" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -104,7 +104,7 @@
             <field name="model">profisc.sale_book</field>
             <field name="inherit_id" ref="view_profisc_sale_book_tree"/>
             <field name="arch" type="xml">
-                <xpath expr="//tree" position="attributes">
+                <xpath expr="//list" position="attributes">
                     <attribute name="js_class">button_in_tree</attribute>
                 </xpath>
             </field>
