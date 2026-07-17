@@ -6,7 +6,7 @@
     'category': 'Hidden',
     'sequence': 350,
     'summary': 'Payment Acquirer: TetraPro Implementation',
-    'version': '2.0',
+    'version': '18.0.2.0',
     'author': 'Bruno Sholla',
     'website': 'https://tetrapro.al',
     'description': """TetraPro Payment Acquirer""",

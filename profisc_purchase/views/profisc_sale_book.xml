@@ -11,7 +11,7 @@
             <field name="name">profisc.sale_book.tree</field>
             <field name="model">profisc.sale_book</field>
             <field name="arch" type="xml">
-                <tree string="Purchase Books">
+                <list string="Purchase Books">
                     <field name="businessUnitCode"/>
                     <field name="buyerName"/>
                     <field name="buyerNuis"/>
@@ -24,7 +24,7 @@
                     <field name="iic"/>
                     <field name="paymentType"/>
                     <field name="salesTot"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -72,7 +72,7 @@
                         <notebook>
                             <page string="Book Lines">
                                 <field name="book_lines_ids">
-                                    <tree editable="bottom">
+                                    <list editable="bottom">
                                         <field name="itemName"/>
                                         <field name="itemCode"/>
                                         <field name="unitOfMeasure"/>
@@ -83,7 +83,7 @@
                                         <field name="allowanceValue"/>
                                         <field name="vatAmount"/>
                                         <field name="invoiceType"/>
-                                    </tree>
+                                    </list>
                                 </field>
                             </page>
                             <page string="Attachments">
@@ -136,7 +136,7 @@
         <record id="action_profisc_sale_book" model="ir.actions.act_window">
             <field name="name">Sales Book</field>
             <field name="res_model">profisc.sale_book</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
 

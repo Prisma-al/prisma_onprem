@@ -167,7 +167,7 @@
                             name="recalculateTaxes"
                             class="btn-primary"/>
                 </header>
-                <tree>
+                <list>
                     <field name="profisc_ubl_id" optional="hide"/>
                     <field name="amount_total_unsigned" sum="Total" optional="hide" on_change="1"/>
                     <!--Sale Tax Fields-->
@@ -219,7 +219,7 @@
                     <field name="profisc_regullime" sum="Total" optional="hide" on_change="1" column_invisible="context.get('default_move_type') in ('out_invoice', 'out_refund', 'out_receipt')"/>
                     <field name="profisc_borxh_i_keq_takse" sum="Total" optional="hide" on_change="1" column_invisible="context.get('default_move_type') in ('out_invoice', 'out_refund', 'out_receipt')"/>
                     <field name="profisc_borxh_i_keq" sum="Total" optional="hide" on_change="1" column_invisible="context.get('default_move_type') in ('out_invoice', 'out_refund', 'out_receipt')"/>
-                </tree>
+                </list>
             </field>
         </record>
     </data>

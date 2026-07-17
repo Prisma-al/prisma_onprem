@@ -1,10 +1,10 @@
 /** @odoo-module **/
 
-import { Order } from "@point_of_sale/app/store/models";
+import { PosOrder } from "@point_of_sale/app/models/pos_order";
 import { patch } from "@web/core/utils/patch";
 
-// Extend the Order model to add custom methods or properties
-Order.prototype.set_bkt_data = function(data) {
+// Extend the PosOrder model to add custom methods or properties
+PosOrder.prototype.set_bkt_data = function(data) {
     this.profisc_bkt_status = data.profisc_bkt_status || null;
     this.profisc_bkt_paymentType = data.profisc_bkt_paymentType || null;
     this.profisc_bkt_amount = data.profisc_bkt_amount || null;
@@ -12,7 +12,7 @@ Order.prototype.set_bkt_data = function(data) {
     this.profisc_bkt_paymentMethod = data.profisc_bkt_paymentMethod || null;
 };
 
-Order.prototype.get_bkt_data = function() {
+PosOrder.prototype.get_bkt_data = function() {
     return {
         profisc_bkt_status: this.profisc_bkt_status || null,
         profisc_bkt_paymentType: this.profisc_bkt_paymentType || null,
@@ -22,9 +22,9 @@ Order.prototype.get_bkt_data = function() {
     };
 };
 
-patch(Order.prototype, {
+patch(PosOrder.prototype, {
     export_for_printing() {
-        const data = super.export_for_printing();
+        const data = super.export_for_printing(...arguments);
         let order = this;
 
         // Add custom fields to the data object

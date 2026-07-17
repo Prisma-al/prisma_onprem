@@ -49,17 +49,17 @@
     <record id="action_profisc_wtn_vehicles" model="ir.actions.act_window">
         <field name="name">Vehicles</field>
         <field name="res_model">profisc.wtn_vehicles</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <record id="action_profisc_wtn_business_units" model="ir.actions.act_window">
         <field name="name">Business Units</field>
         <field name="res_model">profisc.business_units</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
     <record id="action_profisc_wtn_tcr" model="ir.actions.act_window">
         <field name="name">TCR</field>
         <field name="res_model">profisc.tcr</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="menu_profisc_management" name="Profisc" sequence="10"

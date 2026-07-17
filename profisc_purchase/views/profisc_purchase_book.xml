@@ -18,7 +18,7 @@
             <field name="name">profisc.purchase_book.tree</field>
             <field name="model">profisc.purchase_book</field>
             <field name="arch" type="xml">
-                    <tree string="Purchase Invoice on CIS">
+                    <list string="Purchase Invoice on CIS">
                             <header>
                             <!-- Add your custom button -->
                                 <button string="Import to Vendor Bill"
@@ -64,7 +64,7 @@
                         <field name="purch_total_in_currency" optional="hide"/>
                         <field name="purch_base_currency" optional="hide"/>
                         <field name="purch_exRate" optional="hide"/>
-                    </tree>
+                    </list>
             </field>
         </record>
 
@@ -151,7 +151,7 @@
                         <notebook>
                             <page string="Invoice Lines">
                                 <field name="book_lines_ids" readonly="1">
-                                    <tree>
+                                    <list>
                                         <field name="itemName"/>
                                         <field name="itemCode" optional="hide"/>
                                         <field name="unitOfMeasure" optional="hide"/>
@@ -160,7 +160,7 @@
                                         <field name="tax_ids" widget="many2one_tags"/>
                                         <field name="vatAmount"/>
                                         <field name="invoiceType" optional="hide"/>
-                                    </tree>
+                                    </list>
                                 </field>
                             </page>
                             <page string="Attachments">
@@ -180,10 +180,7 @@
                         </group>
                     </sheet>
                     <!-- Chatter -->
-                    <div class="oe_chatter">
-                        <field name="message_follower_ids"/>
-                        <field name="message_ids" options="{'post_refresh': 'always'}"/>
-                    </div>
+                    <chatter reload_on_post="True"/>
                     <!-- Attachment preview -->
                 </form>
             </field>
@@ -267,7 +264,7 @@
         <record id="action_profisc_purchase_book" model="ir.actions.act_window">
             <field name="name">Purchase Invoice on CIS</field>
             <field name="res_model">profisc.purchase_book</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">list,form</field>
         </record>
 
         <!--Menu Action: menu_profisc_purchase_book-->

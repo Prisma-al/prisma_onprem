@@ -18,9 +18,9 @@
             <field name="model">account.tax</field>
             <field name="inherit_id" ref="account.view_tax_tree"/>
             <field name="arch" type="xml">
-               <tree>
+               <list>
 <!--                   <field name="included_on_books" readonly="False"/>-->
-               </tree>
+               </list>
             </field>
         </record>
 

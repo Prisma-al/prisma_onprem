@@ -160,8 +160,8 @@ class PosOrder(models.Model):
         return fields
 
     @api.model
-    def _process_order(self, order, draft, existing_order):
-        order_id = super(PosOrder, self)._process_order(order, draft, existing_order)
+    def _process_order(self, order, existing_order):
+        order_id = super(PosOrder, self)._process_order(order, existing_order)
 
         # Use the returned order_id to fetch the order record
         return self.fiscalize_order(order_id, 'n_a')

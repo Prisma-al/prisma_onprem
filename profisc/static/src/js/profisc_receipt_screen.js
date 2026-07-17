@@ -3,7 +3,7 @@
 import { ReceiptScreen } from "@point_of_sale/app/screens/receipt_screen/receipt_screen";
 import { patch } from "@web/core/utils/patch";
 import {usePos} from "@point_of_sale/app/store/pos_hook";
-import { jsonrpc } from "@web/core/network/rpc_service";
+import { rpc } from "@web/core/network/rpc";
 
 patch(ReceiptScreen.prototype, {
     setup() {
@@ -19,7 +19,7 @@ patch(ReceiptScreen.prototype, {
 
         console.log("Update order", order);
 
-        const company = order.pos.company.id
+        const company = this.pos.company.id
 
 
         console.log("Update order", company);
@@ -30,7 +30,7 @@ patch(ReceiptScreen.prototype, {
         }
 
         try {
-            const result = await jsonrpc('/pos/get_bkt_status',
+            const result = await rpc('/pos/get_bkt_status',
                 {
                     iic: iic,
                     company_id: company

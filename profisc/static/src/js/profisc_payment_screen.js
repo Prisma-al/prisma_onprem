@@ -1,6 +1,6 @@
 /** @odoo-module **/
 
-import {ErrorPopup} from "@point_of_sale/app/errors/popups/error_popup";
+import {AlertDialog} from "@web/core/confirmation_dialog/confirmation_dialog";
 import {PaymentScreen} from "@point_of_sale/app/screens/payment_screen/payment_screen";
 import {patch} from "@web/core/utils/patch";
 import {_t} from "@web/core/l10n/translation";
@@ -12,9 +12,9 @@ patch(PaymentScreen.prototype, {
     setup() {
         super.setup();
         this.pos = usePos();
-        this.popup = useService("popup");
+        this.dialog = useService("dialog");
         console.log('df', this)
-        let pmt_mthods = this.pos.payment_methods;
+        let pmt_mthods = this.payment_methods_from_config;
         const order = this.pos.get_order();
         let profisc_fisc_type = parseInt(order.profisc_fisc_type);
 
@@ -46,7 +46,7 @@ patch(PaymentScreen.prototype, {
 
     _custom_validation_method(order) {
         let order_lines = order.get_orderlines();
-        let pmt_lines = order.get_paymentlines();
+        let pmt_lines = order.payment_ids;
         let cash_count_nr = 0;
         let non_cash_count_nr = 0;
         let has_zero_qty = 0;
@@ -59,14 +59,14 @@ patch(PaymentScreen.prototype, {
             }
         });
         pmt_lines.map(p => {
-            if (p.payment_method.is_cash_count) {
+            if (p.payment_method_id.is_cash_count) {
                 cash_count_nr += 1;
             } else {
                 non_cash_count_nr += 1;
             }
         });
         if (has_zero_qty > 0) {
-            this.popup.add(ErrorPopup, {
+            this.dialog.add(AlertDialog, {
                 title: _t('Produkte me sasi 0'),
                 body: _t('Error: One or more products has quantity = 0'),
             });
@@ -74,19 +74,19 @@ patch(PaymentScreen.prototype, {
         }
 
         if (cash_count_nr > 0 && non_cash_count_nr) {
-            this.popup.add(ErrorPopup, {
+            this.dialog.add(AlertDialog, {
                 title: _t('Multiple payment methods type'),
                 body: _t('Error: You must select only one payment method type, cash or noncash not both of them'),
             });
             return false;
         }
 
-        let selected_partner = order.partner;
+        let selected_partner = order.get_partner();
         // console.log({order, selected_partner})
 
         if (profisc_fisc_type === 2) {
             if (!selected_partner || selected_partner.profisc_customer_vat_type !== "9923") {
-                this.popup.add(ErrorPopup, {
+                this.dialog.add(AlertDialog, {
                     title: _t('Invalid Customer'),
                     body: _t('Error: In order to make an Electronic Invoice, you must select a valid customer'),
                 });
@@ -97,7 +97,7 @@ patch(PaymentScreen.prototype, {
         if (selected_partner && selected_partner.profisc_customer_vat_type === "9923") {
             let is_valid_nuis = this.validateNUIS(selected_partner.vat);
             if (!is_valid_nuis) {
-                this.popup.add(ErrorPopup, {
+                this.dialog.add(AlertDialog, {
                     title: _t('Invalid NUIS'),
                     body: _t('Error: The selected customer\'s vat_type is NUIS, so it\'s required to have a valid NUIS in vat field'),
                 });

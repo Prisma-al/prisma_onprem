@@ -11,7 +11,7 @@
     'author': "Tetra Pro",
     'website': "https://profisc.al/",
     'category': 'Accounting/Accounting',
-    'version': '1.0',
+    'version': '18.0.1.0',
     'license': 'LGPL-3',
 
     'external_dependencies': {'python': ['pyqrcode', 'pypng', 'pycountry']},

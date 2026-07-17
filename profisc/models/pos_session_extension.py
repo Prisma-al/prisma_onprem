@@ -10,11 +10,6 @@ _logger = logging.getLogger(__name__)
 class PosSession(models.Model):
     _inherit = 'pos.session'
 
-    def _loader_params_res_partner(self):
-        params = super(PosSession, self)._loader_params_res_partner()
-        params['search_params']['fields'].append("profisc_customer_vat_type")
-        return params
-
     def set_cashbox_pos(self, cashbox_value, notes):
         for session in self:
             super(PosSession, self).set_cashbox_pos(cashbox_value, notes)

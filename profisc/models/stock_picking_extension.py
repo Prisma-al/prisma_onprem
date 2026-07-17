@@ -43,16 +43,14 @@ class StockPickingExtension(models.Model):
     profisc_vehicle_ownership = fields.Selection([('OWNER', 'Owner'), ('THIRDPARTY', 'Third Party')],
                                                  string='VehOwnership', default='OWNER')
 
-    profisc_vehicle_plate = fields.Many2one('profisc.wtn_vehicles', string='VehiclePlate',
-                                            states={'done': [('readonly', True)]})
+    profisc_vehicle_plate = fields.Many2one('profisc.wtn_vehicles', string='VehiclePlate')
     profisc_wtn_type = fields.Selection([('n_a', 'None'), ('WTN', 'Wtn'), ('SALE', 'Sale')], string='Wtn type',
-                                        states={'done': [('readonly', True)]}, default='WTN')
+                                        default='WTN')
     profisc_destin_date = fields.Datetime(string='Destin Date', store=True,
                                           default=fields.Datetime.now, tracking=True,
-                                          states={'done': [('readonly', True)], 'cancel': [('readonly', True)]},
                                           help="Specify the moment when the package it's going to arrive at the "
                                                "specified destination")
-    profisc_invoice_id = fields.Char(string='Invoice Id', default=uuid.uuid4(), states={'done': [('readonly', True)]})
+    profisc_invoice_id = fields.Char(string='Invoice Id', default=uuid.uuid4())
     profisc_is_goods_flammable = fields.Boolean(string='Is Goods Flammable')
     profisc_is_escort_required = fields.Boolean(string='Is Escort Required')
 

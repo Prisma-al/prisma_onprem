@@ -18,16 +18,16 @@
         <field name="name">einvoice_profiles_form.tree</field>
         <field name="model">profisc.einvoice_profiles</field>
         <field name="arch" type="xml">
-            <tree string="Einvoice Profiles">
+            <list string="Einvoice Profiles">
                 <field name="name"/>
                 <field name="code"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="action_einvoice_profiles" model="ir.actions.act_window">
         <field name="name">Einvoice Profiles Management</field>
         <field name="res_model">profisc.einvoice_profiles</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="einvoice_profiles_tree"/>
     </record>
     <menuitem id="menu_einvoice_profiles" name="Einvoice Profiles Management" sequence="17"

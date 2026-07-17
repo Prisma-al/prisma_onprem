@@ -1,16 +1,13 @@
 /** @odoo-module **/
 
 import {patch} from "@web/core/utils/patch";
-import {Order} from "@point_of_sale/app/store/models";
+import {PosOrder} from "@point_of_sale/app/models/pos_order";
 import { pick } from "@web/core/utils/objects";
 
 import {PosStore} from "@point_of_sale/app/store/pos_store";
 
 patch(PosStore.prototype, {
     getReceiptHeaderData(order) {
-        console.log("order_fisc", order)
-        console.log("order.partner_id", order.partner)
-
         const result = super.getReceiptHeaderData(...arguments);
         if (!order) {
             return result;
@@ -20,14 +17,15 @@ patch(PosStore.prototype, {
             this.getOrderData(order)
         }
 
-        if(order.partner){
+        const partner = order.get_partner();
+        if (partner) {
             result.partner = pick(
-            order.partner,
-            "name",
-            "vat",
-            "address",
-            "city",
-            "phone"
+                partner,
+                "name",
+                "vat",
+                "address",
+                "city",
+                "phone"
             );
         }
 
@@ -50,25 +48,16 @@ patch(PosStore.prototype, {
 });
 
 
-patch(Order.prototype, {
+patch(PosOrder.prototype, {
     createQrImage(profisc_qr_code) {
         const codeWriter = new window.ZXing.BrowserQRCodeSvgWriter();
         let qr_code_svg = new XMLSerializer().serializeToString(codeWriter.write(profisc_qr_code, 150, 150));
         return 'data:image/svg+xml;base64,' + window.btoa(qr_code_svg);
     },
-    init_from_JSON(json) {
-        super.init_from_JSON(...arguments);
-        console.log({json})
-    },
     export_for_printing() {
         // Call the original method and get the result
         var result = super.export_for_printing(...arguments);
-        let order = this.pos.get_order();
-
-        if (!order.fiscData) {
-            this.pos.getOrderData(order); // Ensure ticket data is fetched if missing
-        }
-        console.log("order", order)
+        let order = this;
 
         result.profisc_iic = order.fiscData?.profisc_iic
         result.profisc_fic = order.fiscData?.profisc_fic

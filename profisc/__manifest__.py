@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Profisc",
-    'version': '2.0',
+    'version': '18.0.2.0',
     'summary': "Profisc Application",
     'sequence': 11,
     'description': """
@@ -45,7 +45,10 @@
         'point_of_sale.assets_prod': [
             'profisc/static/src/js/models.js',
             'profisc/static/src/js/profisc_custom_receipt.js',
-            'profisc/static/src/js/profisc_partner_details.js',
+            # profisc_partner_details.js dropped for Odoo 18: the POS PartnerDetailsEdit
+            # component was removed; partner editing now opens the res.partner form view
+            # (base.view_partner_form), which already shows profisc_customer_vat_type via
+            # views/res_partner_extension.xml.
             'profisc/static/src/js/profisc_payment_screen.js',
             'profisc/static/src/js/profisc_receipt_screen.js',
             'profisc/static/src/xml/pos_receipt.xml',
