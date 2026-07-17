@@ -4,36 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment=".">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="adding requirements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_translate_core/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_translate_core/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_translate_export/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_translate_export/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi_manual_currency_exchnage_rate/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/bi_manual_currency_exchnage_rate/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br_custom_requests/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/br_custom_requests/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br_custom_requests/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/br_custom_requests/views/views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hide_menu_user/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hide_menu_user/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hide_menu_user/views/res_users_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hide_menu_user/views/res_users_views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profisc/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/account_move_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/account_move_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/pos_order_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/pos_order_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/pos_session_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/pos_session_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/res_partner_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_partner_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/stock_picking_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/stock_picking_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/models.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/profisc_custom_receipt.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/profisc_custom_receipt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/profisc_payment_screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/profisc_payment_screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/profisc_receipt_screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/profisc_receipt_screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/xml/bkt_button_extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/xml/bkt_button_extension.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/account_move_extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/account_move_extension.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/account_tax_extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/account_tax_extension.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/profisc_einvoice_profiles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/profisc_einvoice_profiles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/profisc_payment_methods.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/profisc_payment_methods.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/profisc_profisc_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/profisc_profisc_management.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/profisc_uoms_management.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/profisc_uoms_management.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/views/profisc_purchase_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/views/profisc_purchase_book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/views/profisc_sale_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/views/profisc_sale_book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetra_pay/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tetra_pay/__manifest__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +111,7 @@
       <workItem from="1781879942614" duration="132000" />
       <workItem from="1782399534893" duration="849000" />
       <workItem from="1782722699373" duration="1782000" />
-      <workItem from="1784279964593" duration="1938000" />
+      <workItem from="1784279964593" duration="6967000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -148,15 +121,44 @@
       <option name="project" value="LOCAL" />
       <updated>1769440996697</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changes : making modules compatible for version 18">
+      <option name="closed" value="true" />
+      <created>1784281931179</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1784281931179</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adding requirements">
+      <option name="closed" value="true" />
+      <created>1784294976122</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1784294976122</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="changes : making modules compatible for version 18" />
+    <MESSAGE value="adding requirements" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding requirements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

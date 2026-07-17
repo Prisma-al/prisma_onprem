@@ -11,7 +11,6 @@
     'category': 'Accounting/Accounting',
     'website': "https://profisc.al/",
     'images': ['static/description/icon.png'],
-    'external_dependencies': {'python': ['pyqrcode==1.2.1', 'pypng==0.20220715.0', 'pycountry==22.3.5']},
     'depends': ['base', 'account', 'mail', 'hr', 'point_of_sale', 'stock'],
     'data': [
         'security/ir.model.access.csv',
