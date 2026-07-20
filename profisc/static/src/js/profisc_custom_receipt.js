@@ -4,7 +4,7 @@ import {patch} from "@web/core/utils/patch";
 import {PosOrder} from "@point_of_sale/app/models/pos_order";
 import { pick } from "@web/core/utils/objects";
 
-import {PosStore} from "@point_of_sale/app/store/pos_store";
+import {PosStore} from "@point_of_sale/app/services/pos_store";
 
 patch(PosStore.prototype, {
     getReceiptHeaderData(order) {

@@ -3,7 +3,7 @@ from odoo.http import request
 
 class PosCustomController(http.Controller):
 
-    @http.route('/pos/get_bkt_status', type='json', auth='user')
+    @http.route('/pos/get_bkt_status', type='jsonrpc', auth='user')
     def custom_action(self, iic, company_id):
         print(iic, company_id)
         order = request.env['pos.order'].search([('profisc_iic', '=', iic)], limit=1)

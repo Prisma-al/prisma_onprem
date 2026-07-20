@@ -195,10 +195,9 @@
                   <field name="sequence" widget="handle"/>
                   <field name="product_id" optional="show" widget="many2one_barcode" domain="                                                     context.get('default_move_type') in ('out_invoice', 'out_refund', 'out_receipt')                                                     and [('sale_ok', '=', True)]                                                     or [('purchase_ok', '=', True)]                                                "/>
                   <field name="name" widget="section_and_note_text" optional="show"/>
-                  <field name="account_id" context="{'partner_id': partner_id, 'move_type': parent.move_type}" groups="account.group_account_readonly" options="{'no_quick_create': True}" domain="[('deprecated', '=', False), ('account_type', 'not in', ('asset_receivable', 'liability_payable', 'off_balance')), ('company_id', 'parent_of', parent.company_id)]" required="display_type not in ('line_note', 'line_section')"/>
+                  <field name="account_id" context="{'partner_id': partner_id, 'move_type': parent.move_type}" groups="account.group_account_readonly" options="{'no_quick_create': True}" domain="[('deprecated', '=', False), ('account_type', 'not in', ('asset_receivable', 'liability_payable', 'off_balance')), ('company_ids', 'parent_of', parent.company_id)]" required="display_type not in ('line_note', 'line_section')"/>
                   <field name="analytic_distribution" widget="analytic_distribution" groups="analytic.group_analytic_accounting" optional="show" options="{'product_field': 'product_id', 'account_field': 'account_id', 'amount_field': 'price_subtotal'}" business_domain_compute="parent.move_type in ['out_invoice', 'out_refund', 'out_receipt'] and 'invoice' or parent.move_type in ['in_invoice', 'in_refund', 'in_receipt'] and 'bill' or 'general'"/>
                   <field name="quantity" optional="show"/>
-                  <field name="product_uom_category_id" column_invisible="True"/>
                   <field name="product_uom_id" string="UoM" groups="uom.group_uom" optional="show"/>
                   <field name="price_unit" string="Price"/>
                   <field name="discount" string="Disc.%" optional="hide"/>
@@ -222,7 +221,6 @@
                   <field name="price_subtotal" string="Tax excl."/>
                   <field name="price_total" string="Tax incl." optional="hide"/>
                   <field name="quantity"/>
-                  <field name="product_uom_category_id"/>
                   <field name="product_uom_id" groups="uom.group_uom"/>
                   <field name="price_unit"/>
                   <templates>
@@ -283,13 +281,12 @@
                     <group>
                       <field name="product_id" widget="many2one_barcode"/>
                       <field name="quantity"/>
-                      <field name="product_uom_category_id" invisible="1"/>
                       <field name="product_uom_id" groups="uom.group_uom"/>
                       <field name="price_unit"/>
                       <field name="discount" string="Disc.%"/>
                     </group>
                     <group>
-                      <field name="account_id" domain="[('company_id', 'parent_of', company_id), ('deprecated', '=', False)]" options="{'no_create': True}" context="{'partner_id': partner_id, 'move_type': parent.move_type}"/>
+                      <field name="account_id" domain="[('company_ids', 'parent_of', company_id), ('deprecated', '=', False)]" options="{'no_create': True}" context="{'partner_id': partner_id, 'move_type': parent.move_type}"/>
                       <field name="tax_ids" widget="many2many_tags"/>
                       <field name="analytic_distribution" widget="analytic_distribution" groups="analytic.group_analytic_accounting"/>
                     </group>
@@ -323,7 +320,7 @@
               <field name="line_ids" mode="tree,kanban" context="{                                            'default_move_type': context.get('default_move_type'),                                            'line_ids': line_ids,                                            'journal_id': journal_id,                                            'default_partner_id': commercial_partner_id,                                            'default_currency_id': currency_id or company_currency_id,                                            'kanban_view_ref': 'account.account_move_line_view_kanban_mobile',                                        }" invisible="payment_state == 'invoicing_legacy' and move_type != 'entry'" readonly="state != 'draft'">
                 <list editable="bottom" string="Journal Items" decoration-muted="display_type in ('line_section', 'line_note')" default_order="sequence, id">
                   <!-- Displayed fields -->
-                  <field name="account_id" invisible="display_type in ('line_section', 'line_note')" required="display_type not in ('line_section', 'line_note')" domain="[('company_id', 'parent_of', parent.company_id), ('deprecated', '=', False)]"/>
+                  <field name="account_id" invisible="display_type in ('line_section', 'line_note')" required="display_type not in ('line_section', 'line_note')" domain="[('company_ids', 'parent_of', parent.company_id), ('deprecated', '=', False)]"/>
                   <field name="partner_id" optional="show" domain="['|', ('parent_id', '=', False), ('is_company', '=', True)]" column_invisible="parent.move_type != 'entry'"/>
                   <field name="name" widget="section_and_note_text" optional="show"/>
                   <field name="analytic_distribution" widget="analytic_distribution" groups="analytic.group_analytic_accounting" optional="show" options="{'account_field': 'account_id'}" business_domain_compute="parent.move_type in ['out_invoice', 'out_refund', 'out_receipt'] and 'invoice' or parent.move_type in ['in_invoice', 'in_refund', 'in_receipt'] and 'bill' or 'general'"/>
@@ -353,7 +350,7 @@
                 <!-- Form view to cover mobile use -->
                 <form>
                   <group>
-                    <field name="account_id" domain="[('company_id', 'parent_of', parent.company_id), ('deprecated', '=', False)]"/>
+                    <field name="account_id" domain="[('company_ids', 'parent_of', parent.company_id), ('deprecated', '=', False)]"/>
                     <field name="partner_id" domain="['|', ('parent_id', '=', False), ('is_company', '=', True)]"/>
                     <field name="name"/>
                     <field name="analytic_distribution" widget="analytic_distribution" groups="analytic.group_analytic_accounting"/>
@@ -489,7 +486,6 @@
                   <field name="country_group_ids" widget="many2many_tags"/>
                 </group>
                 <group name="pricelist_discounts" string="Discounts">
-                  <field name="discount_policy" widget="radio"/>
                 </group>
               </group>
             </page>
@@ -1994,18 +1990,37 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='information']/group[@name='salary_info']/group[@name='salary']/div[@name='wage']" position="after">
+        <xpath expr="//page[@name='payroll_information']/group[@name='payroll_group']/group[@name='contract']/div[@name='wage']" position="after">
           <field name="x_studio_wage_net" string="Wage Net" help="Net bank salary"/>
           <field name="x_studio_cash_1" string="Cash" help="Cash payment (monthly)"/>
         </xpath>
       </data>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
-    <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
-    <field name="model">hr.contract</field>
-    <field name="name">Odoo Studio: hr.contract.form customization</field>
+    <field name="model">hr.employee</field>
+    <field name="name">Odoo Studio: hr.employee.form salary customization</field>
+    <field name="priority">160</field>
+    <field name="type">form</field>
+  </record>
+  <record id="studio_customization.odoo_studio_hr_versi_8c0285ae-1605-4208-a891-659b8f64566e" model="ir.ui.view" context="{'studio': True}">
+    <field name="active" eval="True"/>
+    <field name="arch" type="xml">
+      <data>
+        <xpath expr="//page[@name='information']/group[@name='salary_info']/group[@name='contract']/div[@name='wage']" position="after">
+          <field name="x_studio_wage_net" string="Wage Net" help="Net bank salary"/>
+          <field name="x_studio_cash_1" string="Cash" help="Cash payment (monthly)"/>
+        </xpath>
+      </data>
+    </field>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="inherit_id" ref="hr.hr_contract_template_form_view"/>
+    <field name="key" eval="False"/>
+    <field name="mode">extension</field>
+    <field name="model">hr.version</field>
+    <field name="name">Odoo Studio: hr.version contract template salary customization</field>
     <field name="priority">160</field>
     <field name="type">form</field>
   </record>
@@ -2051,7 +2066,6 @@
       <data>
         <xpath expr="//field[@name='employee_id']" position="after">
           <field name="analytic_distribution"/>
-          <field name="analytic_distribution_search"/>
         </xpath>
       </data>
     </field>
@@ -2215,7 +2229,7 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//form[1]/sheet[1]/group[1]/group[1]/field[@name='tag_ids']" position="after">
+        <xpath expr="//form/sheet/group/group/field[@name='tag_ids']" position="after">
           <field name="x_studio_task_type" string="Tipi i Taskut"/>
           <field name="x_studio_zhvillimi"/>
         </xpath>
@@ -2776,19 +2790,19 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <data>
-        <xpath expr="//form[1]/sheet[1]/notebook[1]/page[@name='uom_lines']/field[@name='uom_ids']/list[1]/field[@name='name']" position="after">
+        <xpath expr="//field[@name='name']" position="after">
           <field name="profisc_uom_val" optional="show"/>
         </xpath>
       </data>
     </field>
     <field name="groups_id" eval="[(6, 0, [])]"/>
-    <field name="inherit_id" ref="uom.product_uom_categ_form_view"/>
+    <field name="inherit_id" ref="uom.product_uom_tree_view"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
-    <field name="model">uom.category</field>
-    <field name="name">Odoo Studio: uom.category.form customization</field>
+    <field name="model">uom.uom</field>
+    <field name="name">Odoo Studio: uom.uom.list customization</field>
     <field name="priority">160</field>
-    <field name="type">form</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.report_invoice_with__b11dd232-8202-45a5-bd42-a7d25552d15c" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>

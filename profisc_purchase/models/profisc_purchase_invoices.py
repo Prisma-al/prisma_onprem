@@ -61,7 +61,7 @@ class ProfiscPurchaseInvocies(models.Model):
         _logger.info(f"Response:{response}")
 
     def extract_invoices(self):
-        active_ids = self._context.get('active_ids')
+        active_ids = self.env.context.get('active_ids')
         if not active_ids:
             raise UserError("Nuk u gjeten fatura per ridergim")
         for purchase_id in active_ids:

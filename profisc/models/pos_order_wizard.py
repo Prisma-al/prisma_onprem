@@ -17,7 +17,7 @@ class ProfiscInvoiceWizard(models.TransientModel):
     result = fields.Text('Result')
 
     def action_confirm(self):
-        active_ids = self._context.get('active_ids')
+        active_ids = self.env.context.get('active_ids')
         if not active_ids:
             raise UserError("Nuk u gjeten fatura per ridergim")
 

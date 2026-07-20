@@ -231,7 +231,7 @@ class AccountMoveExtension(models.Model):
 
     def recalculateTaxes(self):
 
-        invoices = self.env['account.move'].browse(self._context.get('active_ids'))
+        invoices = self.env['account.move'].browse(self.env.context.get('active_ids'))
         for invoice in invoices:
             invoice._compute_taxes()
 

@@ -4,7 +4,7 @@ import {AlertDialog} from "@web/core/confirmation_dialog/confirmation_dialog";
 import {PaymentScreen} from "@point_of_sale/app/screens/payment_screen/payment_screen";
 import {patch} from "@web/core/utils/patch";
 import {_t} from "@web/core/l10n/translation";
-import {usePos} from "@point_of_sale/app/store/pos_hook";
+import {usePos} from "@point_of_sale/app/hooks/pos_hook";
 import {useService} from "@web/core/utils/hooks";
 
 patch(PaymentScreen.prototype, {

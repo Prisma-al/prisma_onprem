@@ -111,7 +111,7 @@ class ProfiscPurchaseBook(models.Model):
 
     def import_bills(self):
 
-        active_invoices = self.env['profisc.purchase_book'].browse(self._context.get('active_ids'))
+        active_invoices = self.env['profisc.purchase_book'].browse(self.env.context.get('active_ids'))
 
         errors = self.env['profisc.book_actions'].import_bills(active_invoices)
 
@@ -156,7 +156,7 @@ class ProfiscPurchaseBook(models.Model):
 
         list_eic = []
         string = ''
-        active_invoices = self.env['profisc.purchase_book'].browse(self._context.get('active_ids'))
+        active_invoices = self.env['profisc.purchase_book'].browse(self.env.context.get('active_ids'))
 
         for bill in active_invoices:
             if bill.purch_eic:
@@ -175,7 +175,7 @@ class ProfiscPurchaseBook(models.Model):
 
         list_eic = []
         string = ''
-        active_invoices = self.env['profisc.purchase_book'].browse(self._context.get('active_ids'))
+        active_invoices = self.env['profisc.purchase_book'].browse(self.env.context.get('active_ids'))
 
         for bill in active_invoices:
             if bill.purch_eic:
@@ -237,7 +237,7 @@ class ProfiscPurchaseBook(models.Model):
 
     def delete(self):
 
-        active_invoices = self.env['profisc.purchase_book'].browse(self._context.get('active_ids'))
+        active_invoices = self.env['profisc.purchase_book'].browse(self.env.context.get('active_ids'))
         self.env['profisc.book_actions'].deleteInvoices(active_invoices)
 
 
