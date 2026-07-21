@@ -19,7 +19,7 @@ def get_wtn_issuer(company):
 
 
 class StockPickingExtension(models.Model):
-    _inherit = ['stock.picking']
+    _inherit = 'stock.picking'
 
     profisc_fisc_type = fields.Char(string='Fiscalization Type')
     profisc_fisc_status = fields.Char(string='Fiscal Status')

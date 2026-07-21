@@ -3,6 +3,7 @@ from odoo import api, fields, models, _
 
 class TetrapayPayments(models.Model):
     _name = 'tetrapay.payments'
+    _description = 'TetraPay Payments'
 
     ACQBIN = fields.Char('ACQBIN', default=None)
     AuthCode = fields.Char('AuthCode', default=False)

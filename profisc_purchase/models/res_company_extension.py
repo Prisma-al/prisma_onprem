@@ -3,7 +3,7 @@ from odoo.exceptions import UserError
 
 
 class PurchaseResCompanyExtension(models.Model):
-    _inherit = ['res.company']
+    _inherit = 'res.company'
 
     prof_pu_param1 = fields.Boolean(string='Import Items to Odoo Taxes', default=True,
                                     help='This option allows mapping purchase items to odoo items through TAX type.')

@@ -4,14 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="made changes for odoo 19" />
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="removed the external dependencies from manifest">
+      <change beforePath="$PROJECT_DIR$/profisc/models/account_payment_term_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/account_payment_term_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/account_tax_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/account_tax_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/res_company_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_company_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/res_partner_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_partner_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/res_users_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_users_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/stock_picking_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/stock_picking_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/uom_uom_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/uom_uom_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/purch_account_tax_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/purch_account_tax_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/res_company_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/res_company_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetra_pay/models/sale_order_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/tetra_pay/models/sale_order_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tetra_pay/models/tetrapay_payments.py" beforeDir="false" afterPath="$PROJECT_DIR$/tetra_pay/models/tetrapay_payments.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="354" />
+    <option name="cachedIndexableFilesCount" value="355" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -46,28 +58,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "mainV19",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/mnt/windows/GitNew/Odoo/prisma_onprem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;mainV19&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/mnt/windows/GitNew/Odoo/prisma_onprem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -111,6 +123,7 @@
       <workItem from="1784279964593" duration="10457000" />
       <workItem from="1784532819574" duration="1347000" />
       <workItem from="1784550982392" duration="4449000" />
+      <workItem from="1784616780353" duration="654000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -184,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784554825536</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="removed the external dependencies from manifest">
+      <option name="closed" value="true" />
+      <created>1784616978718</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1784616978718</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +232,7 @@
     <MESSAGE value="fixed all xpaths 2" />
     <MESSAGE value="fixed all xpaths 3" />
     <MESSAGE value="made changes for odoo 19" />
-    <option name="LAST_COMMIT_MESSAGE" value="made changes for odoo 19" />
+    <MESSAGE value="removed the external dependencies from manifest" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed the external dependencies from manifest" />
   </component>
 </project>
