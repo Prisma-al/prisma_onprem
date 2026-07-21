@@ -1,7 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <odoo>
   <record id="studio_customization.active_online_paymen_48c5b3c2-682a-46c3-9beb-562e776ec43a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -31,7 +30,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.active_public_tender_8bc7e0cf-5dc2-488b-bbb6-b3b056a7de40" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -61,7 +59,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.color_public_tender__57f381c2-12ec-450c-9906-64e0afae4789" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -91,7 +88,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.color_public_tender__88cfbab0-e238-4308-b55d-abc2b4d1ce91" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -121,7 +117,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.contact_online_payme_fc8fa0c4-4680-4f7b-a6da-66f0957a155e" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -151,7 +146,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.contact_public_tende_307b271a-8540-4424-97e8-8fde2e796c9e" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -181,7 +175,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.currency_public_tend_efc0f88a-e34b-46e2-9282-393ee46a966a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -211,7 +204,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.date_public_tender_t_2d66120d-97b8-4a64-87f6-5be002714eb3" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -241,7 +233,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.description_mail_mic_0e6ba3de-2f81-486c-9ee4-e6691ceca310" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -271,7 +262,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.description_online_p_5aca3715-bd1c-49f5-820b-8f88cdf15fc0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -301,7 +291,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.description_public_t_cd1bd997-ae07-493c-b857-1c6b20ac504f" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -331,7 +320,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.description_public_t_d261430f-fa0e-4014-b453-12ff7edd16f3" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -361,7 +349,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.description_server_d2174aca-af97-45e1-a830-5ff679d6f958" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -391,7 +378,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.description_server_p_c5b64000-0aba-40e2-8631-86693ea766f1" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -421,7 +407,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.email_online_payment_adcb6b5e-ecde-41f3-b7c0-06131d0ef77b" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -451,7 +436,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.email_public_tender__0e849c5f-4b57-42b2-a510-3194f82c56d0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -481,7 +465,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.employee_helpdesk_ti_e5eb0132-0a98-453c-a566-708455dfc55b" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -511,7 +494,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.end_date_public_tend_5d312129-47c7-40e4-a204-26d28b335d5a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -541,7 +523,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.high_priority_public_9ae48652-5bdc-4426-91da-5366efed1a81" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -571,7 +552,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.image_public_tender__6a1fff89-e438-407c-88a9-b3a91e7f55b6" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -601,7 +581,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.journal_entry_journa_144d18bb-e63a-45cd-9710-421e3b5315bb" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -631,7 +610,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.kanban_state_public__203c2173-93ad-4980-ab47-36eee2f1ff40" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -661,7 +639,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.name_public_tender_t_aa74cce0-b12a-4905-81d6-2b26ff4c3959" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -691,7 +668,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_journal_1ac7be56-eee2-48f9-b3f1-ae41fdbab2f9" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -721,7 +697,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_journal_1b88df2f-159f-4c72-9e1a-5bad34384a07" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -751,7 +726,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_journal_3d6a357a-478a-443e-8d9d-62556f30b0ba" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -781,7 +755,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_journal_51dd9786-8a8e-4c46-b026-bfc8ed09dd28" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -811,7 +784,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_journal_68f957e7-73ab-4355-bf66-73875b1ba0e3" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -841,7 +813,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_journal_7717b612-d473-4d2c-928d-5caf2e5917dd" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -871,7 +842,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_checkbox_sales_o_d616ea70-af8c-4a03-a783-68f6768af8a9" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -901,7 +871,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_helpdesk_ti_0978a43f-1acb-4fe3-b70e-380b88fecdc0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -931,7 +900,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_helpdesk_ti_4997a4d7-b5f7-466a-93a2-e73099e5aaa7" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -961,7 +929,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_journal_ent_8b7ac7cc-dfe9-4354-8d90-02f8b1cdcca4" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -991,7 +958,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_journal_ent_f64f854b-b99a-4cda-86c9-94194b6dc291" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1021,7 +987,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_journal_ent_f7290122-8fb2-49a9-a862-723e932c4abe" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1051,7 +1016,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_time_helpde_0dfb6c08-0962-4f4a-9603-a2b1239a1342" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1081,7 +1045,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_time_helpde_2533841c-f2bf-43db-a20f-853418ddd0bc" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1111,7 +1074,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_date_time_helpde_7bc7778c-64b3-48d5-82aa-5a961ae6ce10" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1141,7 +1103,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_decimal_helpdesk_13ccfd97-368f-469c-8520-725e0ecd7fba" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1171,7 +1132,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_decimal_helpdesk_3babb5ab-5695-4fbe-b9de-38fd9b87eaf7" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1201,7 +1161,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_helpdesk_ti_0d5f5a1f-385f-4497-96a6-81ec43ed5cf4" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1231,7 +1190,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_helpdesk_ti_1dc3c96c-1d2c-4c8c-aa1f-4a0111be8a64" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1261,7 +1219,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_helpdesk_ti_59380dca-5704-444b-b7f8-48eea599116f" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1291,7 +1248,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_helpdesk_ti_d540c8e8-1c50-41f0-9599-af86a846a0da" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1321,7 +1277,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_public_tend_a2b7ca70-163f-46f7-b0fc-db955a70694a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1351,7 +1306,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_public_tend_dd4e89f1-012d-43d1-bb70-2415af7498d3" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1381,7 +1335,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_public_tend_dfd9a1a2-6dac-4f3a-9c28-54063fa80c2f" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1411,7 +1364,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_html_public_tend_e896dc59-2454-497a-abe5-6e6d87e65196" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1441,7 +1393,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_image_journal_en_c47e3fa9-3f43-4403-9ad0-c2982d1f7cd6" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1471,7 +1422,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.public_tender_tracki_9049dbf7-d948-4a69-94ad-71ef6f7d556a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1501,7 +1451,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_lines_public_ten_156b412e-a441-42df-9b8a-e8fed7ca0001" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -1531,7 +1480,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2many_task_5719fe4e-6d4a-470c-b4ba-8fc95701d6e1" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1561,7 +1509,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2many_task_6ce3e22f-94a1-412a-9835-20c58b34f440" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1591,7 +1538,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2many_task_9d565e5e-a106-44e2-8228-cabc196b5de3" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1621,7 +1567,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2one_helpdes_1aea6274-7126-4a52-83ec-981b0eb8539d" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1651,7 +1596,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2one_helpdes_d3c1b0de-7e9a-440f-ab15-dc0f466d31a8" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1681,7 +1625,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2one_public__158eadb7-d042-426b-8454-82b9edeb0a43" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1711,7 +1654,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2one_public__326229ea-e875-4e21-a606-048ce5a6765c" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1741,7 +1683,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2one_public__a42b4134-6953-45aa-be54-0a9c34aec0be" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1771,7 +1712,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_many2one_task_99d018b4-f787-49d3-97e8-08b47e2e5c51" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1801,7 +1741,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_monetary_contrac_57ee75f4-9f0b-470e-a81d-c98d2b103ac6" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1831,7 +1770,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_monetary_contrac_78ca4742-1a13-48f6-a235-86432fb0fdfb" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1861,7 +1799,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_multiline_text_j_c785a484-dcf3-44ea-8d0a-78edacd95309" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1891,7 +1828,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_one2many_journal_108af73f-8d82-426d-beed-072178cf1239" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -1921,7 +1857,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_one2many_journal_e0770996-a3ae-480e-b560-d1d853a2673d" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -1951,7 +1886,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_priority_public__a5f03fc0-5186-42e6-a339-55cfbf89e6df" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -1981,7 +1915,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_he_6229716a-999f-42e8-87c6-03458323d45e" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2011,7 +1944,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_he_743617cc-7885-408f-9438-08fe1a32650e" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2041,7 +1973,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_he_d1a53475-3ad4-42d1-99aa-02b77515eb13" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2071,7 +2002,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_he_d620ff9c-f195-47b4-bb31-0f400861aff5" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2101,7 +2031,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_helpde_2721e7df-71f6-4622-a97b-19f581271842" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2131,7 +2060,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_he_e37d7b62-6da3-4091-ad97-26c2307fc337" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2161,7 +2089,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_jo_1d852986-8382-4e04-a8b2-a70086a51f05" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2191,7 +2118,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_jo_4a232f82-19e7-474f-9ea6-7cb080a8b519" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2221,7 +2147,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_jo_829d5e8b-c7b7-44a7-b004-5db8701414b1" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2251,7 +2176,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_pu_55086b57-4fb8-40f7-a535-192be020d199" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2281,7 +2205,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_related_field_pu_edc38d90-4be8-48a2-bda0-bb13375d1eea" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -2311,7 +2234,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_compan_c71a8b19-33ae-4a9a-8fa4-30c04c15466a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2341,7 +2263,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_contac_87f9b693-3b07-4678-8998-500809e5fdbe" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2371,7 +2292,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_employ_6a9eba22-cc99-4956-9706-cc55bc9501b4" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2401,7 +2321,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_helpde_5907d9ca-9e70-45e5-9789-fe3058f86d32" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2431,7 +2350,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_0b84e6f5-bd4a-417d-a7a3-41fca931f847" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2461,7 +2379,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_0fc7fcf0-0cba-4a15-8d88-20fe0ee6805c" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2491,7 +2408,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_12d6b474-f53f-4627-b998-31b6cea9e588" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2521,7 +2437,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_26de615e-23e6-4b82-96a2-f91f53248a75" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2551,7 +2466,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_4d5ca4c9-d4af-4670-8331-4b5396257182" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2581,7 +2495,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_682d6eec-cba0-4b47-9e9e-088849cf00c0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2611,7 +2524,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_84267883-36f7-4136-8cbd-4ce4e652e7c0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2641,7 +2553,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_92405205-5e50-4f83-baa5-400ff9275a20" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2671,7 +2582,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_97b8efc2-6215-4d25-b7a6-16f39d82ecdb" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2701,7 +2611,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_a05021eb-3ca0-4501-8316-f62b2a4c653d" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2731,7 +2640,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_de2ea225-8426-4165-8bee-d147a98f5a16" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2761,7 +2669,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_journa_f262c1a2-1370-4b0c-8409-f64b2a2725e0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2791,7 +2698,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_projec_9006121c-cf91-4838-82d9-f3c5e6576e05" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2821,7 +2727,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_task_7c64bec6-9da6-4116-ba11-621ac06cfecd" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2851,7 +2756,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_selection_task_f04c17be-75b1-45cc-a836-864fd509c857" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2881,7 +2785,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_companies_8763027d-b797-43bd-b02f-de64938ee228" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2911,7 +2814,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_helpdesk_ti_539e8fb2-f4d2-4370-9ad7-7a247770d03d" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2941,7 +2843,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_1110b6e4-5ac5-4415-828c-304c605e590b" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -2971,7 +2872,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_16eca665-26d5-45f2-ae67-1a49c143f1a8" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3001,7 +2901,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_1efca25d-163e-412b-bd85-350498f23196" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3031,7 +2930,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_32090a44-e161-489c-be56-e6b4f124e069" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3061,7 +2959,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_44fef2c2-023c-4ea3-b9d0-b44d40a4da9f" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3091,7 +2988,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_4aa4e886-7158-4b48-8656-6587708cf80e" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3121,7 +3017,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_79141aca-0a26-42b1-b278-d6a495f1d079" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3151,7 +3046,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_87260ddc-2d46-4a52-a5ed-1820e723e30f" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3181,7 +3075,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_dfc324b8-9b63-4af2-b0c7-99e5e7a30f25" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3211,7 +3104,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_journal_ent_e7a4d18c-c284-4e74-a84b-e2c0a62bdf4e" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3241,7 +3133,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_online_paym_4c49eddc-7362-46ac-81a5-e335ec7ea467" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3271,7 +3162,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_online_paym_95504c8c-2399-4851-a48f-fb49acf1bdfc" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3301,7 +3191,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_online_paym_c366f3c7-7dfc-495e-aad6-692dbf37f5d1" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3331,7 +3220,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_online_paym_c99fb585-f781-4b98-98a9-a641db3db325" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3361,7 +3249,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_payment_ter_65e0589d-90c1-4eb4-bc1b-d83072249d57" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3391,7 +3278,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_payment_ter_6c8c07ad-0e88-41a4-b1b5-10193b6b1e17" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3421,7 +3307,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_0d6f4c7d-4c18-43d6-8b4e-7f4b001b2977" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3451,7 +3336,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_0f8897ca-808f-4640-a539-cc02f92f2e7a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3481,7 +3365,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_2f175a77-b558-4dd2-9fd6-e03c77bbca5a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3511,7 +3394,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_86681abf-4610-410d-a6bb-6e9f64374686" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3541,7 +3423,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_a335dcbd-063b-4539-a9b6-068beca4e37a" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3571,7 +3452,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_e268cf58-3488-486b-ad0d-5bf9916f7710" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3601,7 +3481,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_public_tend_f643648a-cb3b-4ed7-8512-dc63b0c302a0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3631,7 +3510,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_tax_2715e034-f39f-4ede-8a16-0244c87da254" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3661,7 +3539,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_user_16557381-275b-4055-9980-e223a3454d82" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3691,7 +3568,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.new_text_user_9aea0f85-1e26-4168-9513-352b267fcf23" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3721,7 +3597,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.notes_public_tender__9fbd4aa1-827f-44c3-9f50-8f01914bf3cc" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3751,7 +3626,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.phone_online_payment_43d6683a-c5c2-4be3-86b8-c45709d3f7ba" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -3781,7 +3655,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.phone_public_tender__9aa9ba9d-b3e6-4e21-a21c-036e09d45fa1" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="False"/>
     <field name="depends" eval="False"/>
@@ -3811,7 +3684,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.responsible_public_t_d8494143-52e7-4029-8267-02758e32aecc" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3841,7 +3713,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.sequence_online_paym_1f94ebc1-2dfe-4a54-ae6b-ee262c1acf17" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3871,7 +3742,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.sequence_public_tend_01b65c72-e92c-4044-b93a-c0f9d15a54a8" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3901,7 +3771,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.sequence_public_tend_88fa6111-c675-46a4-bedd-ed6266f47747" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3931,7 +3800,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.sequence_public_tend_ba66e074-eedc-4121-95a2-b82c5d592515" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3961,7 +3829,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.server_profisc_helpd_30dd9788-ff6f-4107-a85c-41c720cf4e51" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -3991,7 +3858,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.stage_name_public_te_3ca0df6d-cf69-4ecd-9f80-d5fcf2a16c5c" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -4021,7 +3887,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.stage_public_tender__272ef797-4347-4e47-8f42-a7b549e46a87" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -4051,7 +3916,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.start_date_public_te_c73103b1-5774-4ca9-add9-bd35a570f8a0" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -4081,7 +3945,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.tags_public_tender_t_b2b1c51b-1421-4b00-9847-3ee1905b9ff8" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
@@ -4111,7 +3974,6 @@
     <field name="currency_field" eval="False"/>
   </record>
   <record id="studio_customization.value_public_tender__f1e8990d-00a5-4f94-ba46-6de0cd5ec45f" model="ir.model.fields" context="{'studio': True}">
-    <field name="complete_name" eval="False"/>
     <field name="compute" eval="False"/>
     <field name="copied" eval="True"/>
     <field name="depends" eval="False"/>
