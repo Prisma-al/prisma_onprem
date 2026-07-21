@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Profisc",
-    'version': '18.0.2.0',
+    'version': '19.0.2.0',
     'summary': "Profisc Application",
     'sequence': 11,
     'description': """
