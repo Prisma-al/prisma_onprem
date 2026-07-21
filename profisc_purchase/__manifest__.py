@@ -13,8 +13,6 @@
     'category': 'Accounting/Accounting',
     'version': '19.0.1.0',
     'license': 'LGPL-3',
-
-    'external_dependencies': {'python': ['pyqrcode', 'pypng', 'pycountry']},
     'depends': ['profisc'],
     'images': ['static/description/icon.png'],
     'data': [

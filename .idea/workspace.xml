@@ -4,28 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fixed all xpaths 3">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_translate_core/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_translate_core/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auto_translate_export/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_translate_export/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/br_custom_requests/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/br_custom_requests/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hide_menu_user/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/hide_menu_user/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/controllers/pos_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/controllers/pos_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/account_move_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/account_move_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/pos_order_wizard.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/pos_order_wizard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/profisc_custom_receipt.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/profisc_custom_receipt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/profisc_payment_screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/profisc_payment_screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/static/src/js/profisc_receipt_screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/static/src/js/profisc_receipt_screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/profisc_purchase_book.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/profisc_purchase_book.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/profisc_purchase_invoices.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/profisc_purchase_invoices.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/static/src/xml/get_purch_book.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/static/src/xml/get_purch_book.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/static/src/xml/get_purch_inv_button.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/static/src/xml/get_purch_inv_button.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio_customization/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_model_fields.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_model_fields.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetra_pay/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tetra_pay/__manifest__.py" afterDir="false" />
-    </list>
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="made changes for odoo 19" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +110,7 @@
       <workItem from="1782722699373" duration="1782000" />
       <workItem from="1784279964593" duration="10457000" />
       <workItem from="1784532819574" duration="1347000" />
-      <workItem from="1784550982392" duration="3772000" />
+      <workItem from="1784550982392" duration="4449000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -197,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784298480003</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="made changes for odoo 19">
+      <option name="closed" value="true" />
+      <created>1784554825536</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1784554825536</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +210,7 @@
     <MESSAGE value="fixed all xpaths" />
     <MESSAGE value="fixed all xpaths 2" />
     <MESSAGE value="fixed all xpaths 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed all xpaths 3" />
+    <MESSAGE value="made changes for odoo 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="made changes for odoo 19" />
   </component>
 </project>
