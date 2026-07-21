@@ -45,7 +45,7 @@ class AccountMoveExtension(models.Model):
     profisc_ubl_id = fields.Char(string='UBL ID')
     profisc_purchaseBill_id = fields.Integer(string='Purchase Bill ID', default=None)
     profisc_isEinvoice = fields.Boolean(string='Fiscal Downloaded')
-    attachment_ids = fields.Many2many('ir.attachment', string='Attachments')
+    # attachment_ids = fields.Many2many('ir.attachment', string='Attachments')
     profisc_currency_rate = fields.Char(compute='_generate_rate', string='Kursi ne CIS', default=1.00)
     amount_total_unsigned = fields.Monetary(string='Total (TVSH Included)', store=True, readonly=True, compute='_compute_amount_total_unsigned', currency_field='company_currency_id')
 
