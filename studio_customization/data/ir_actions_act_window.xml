@@ -7,7 +7,7 @@
     <field name="context">{'default_move_type': 'in_invoice', 'display_account_trust': True}</field>
     <field name="domain">[('move_type', '=', 'in_invoice')]</field>
     <field name="filter" eval="False"/>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
                 Create a vendor bill
               </p><p>
@@ -31,7 +31,7 @@
     <field name="context">{}</field>
     <field name="domain" eval="False"/>
     <field name="filter" eval="False"/>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
                     This is your new action.
                 </p>
@@ -60,7 +60,7 @@
     <field name="context">{}</field>
     <field name="domain" eval="False"/>
     <field name="filter" eval="False"/>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
                     This is your new action.
                 </p>
@@ -89,7 +89,7 @@
     <field name="context">{}</field>
     <field name="domain" eval="False"/>
     <field name="filter" eval="False"/>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
                     This is your new action.
                 </p>
@@ -118,7 +118,7 @@
     <field name="context">{}</field>
     <field name="domain" eval="False"/>
     <field name="filter" eval="False"/>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
                     This is your new action.
                 </p>
@@ -147,7 +147,7 @@
     <field name="context">{}</field>
     <field name="domain" eval="False"/>
     <field name="filter" eval="False"/>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="help"><![CDATA[<p class="o_view_nocontent_smiling_face">
                     This is your new action.
                 </p>

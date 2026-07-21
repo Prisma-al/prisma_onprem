@@ -419,7 +419,7 @@
         <chatter/>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -494,7 +494,7 @@
         <chatter/>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -508,7 +508,7 @@
     <field name="arch" type="xml">
       <calendar date_start="x_studio_date" create_name_field="x_name"/>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -535,7 +535,7 @@
         </sheet>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -562,7 +562,7 @@
         </sheet>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -589,7 +589,7 @@
         </sheet>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -643,7 +643,7 @@
         <chatter/>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -670,7 +670,7 @@
         </sheet>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -704,7 +704,7 @@
         <chatter/>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -731,7 +731,7 @@
         </sheet>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -758,7 +758,7 @@
         </sheet>
       </form>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -772,7 +772,7 @@
     <field name="arch" type="xml">
       <gantt date_start="x_studio_date_start" date_stop="x_studio_date_stop"/>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -789,7 +789,7 @@
         <field name="create_date" type="row"/>
       </graph>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -848,7 +848,7 @@
         </templates>
       </kanban>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -864,7 +864,7 @@
         <field name="x_name"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -881,7 +881,7 @@
         <field name="x_name"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -899,7 +899,7 @@
         <field name="x_studio_partner_id"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -916,7 +916,7 @@
         <field name="x_name"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -933,7 +933,7 @@
         <field name="x_color" widget="color_picker"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -949,7 +949,7 @@
         <field name="x_name"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -971,7 +971,7 @@
         <field name="x_color" widget="color_picker"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -987,7 +987,7 @@
         <field name="x_name"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1003,7 +1003,7 @@
         <field name="x_studio_partner_id" string="Partner"/>
       </map>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1019,7 +1019,7 @@
         <field name="x_studio_partner_id" string="Partner"/>
       </map>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1037,7 +1037,7 @@
         <field name="x_studio_date" type="row"/>
       </pivot>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1051,7 +1051,7 @@
     <field name="arch" type="xml">
       <pivot string="Journal Entry" sample="1"/>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1067,7 +1067,7 @@
         <field name="x_name"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1083,7 +1083,7 @@
         <field name="x_name"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1104,7 +1104,7 @@
         <filter name="groupby_x_partner" string="Partner" context="{'group_by': 'x_studio_partner_id'}" domain="[]"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1134,7 +1134,7 @@
         <filter name="x_studio_stage_id" string="Stage" context="{'group_by': 'x_studio_stage_id'}" domain="[]"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1150,7 +1150,7 @@
         <field name="x_name"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1166,7 +1166,7 @@
         <field name="x_name"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1182,7 +1182,7 @@
         <field name="x_name"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1198,7 +1198,7 @@
         <field name="x_name"/>
       </search>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1214,7 +1214,7 @@
         <field name="name"/>
       </list>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key" eval="False"/>
     <field name="mode">primary</field>
@@ -1255,7 +1255,7 @@
         </tr>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">sale.document_tax_totals_copy_1</field>
     <field name="mode">primary</field>
@@ -1312,7 +1312,7 @@
         </tr>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">account.document_tax_totals_copy_1</field>
     <field name="mode">primary</field>
@@ -1333,7 +1333,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_out_credit_note_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1358,7 +1358,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_account_invoice_filter"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1378,7 +1378,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_account_journal_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1397,7 +1397,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_move_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1419,7 +1419,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_in_invoice_bill_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1437,7 +1437,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_account_supplier_payment_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1473,7 +1473,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_out_invoice_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1493,7 +1493,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_in_invoice_refund_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1539,7 +1539,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_move_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1557,7 +1557,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account_asset.view_account_asset_search"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1576,7 +1576,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_move_line_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1594,7 +1594,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account_reports.view_archived_tag_move_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1613,7 +1613,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="account.view_payment_term_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1634,7 +1634,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1659,7 +1659,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="studio_customization.default_search_view__7f57d50d-c946-4c7c-bce8-f51ddc2457a5"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1727,7 +1727,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="studio_customization.default_form_view_fo_67201bf5-124d-4ded-baff-77a1d913fbb2"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1752,7 +1752,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="studio_customization.default_form_view_fo_c91f3238-1d29-4ed6-9539-b8b2a2d3fd0a"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1770,7 +1770,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="mail.email_template_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1788,7 +1788,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="mail.view_email_template_search"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1806,7 +1806,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="mail.view_email_server_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1851,7 +1851,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1869,7 +1869,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1887,7 +1887,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.ticket_list_view_group_stage"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1910,7 +1910,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1928,7 +1928,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.helpdesk_stage_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1946,7 +1946,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_search"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1977,7 +1977,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -1996,7 +1996,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="hr.view_employee_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2015,7 +2015,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="hr.hr_contract_template_form_view"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2033,7 +2033,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="hr.view_employee_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2051,7 +2051,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="hr.view_employee_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2069,7 +2069,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2087,7 +2087,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="base.ir_cron_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2105,7 +2105,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="base.ir_mail_server_list"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2123,7 +2123,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="mail.view_message_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2144,7 +2144,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="mail.mail_notification_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2162,7 +2162,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="mass_mailing.mailing_contact_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2180,7 +2180,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="payment.payment_transaction_list"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2198,7 +2198,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="stock.product_template_search_form_view_stock"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2216,7 +2216,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="profisc_purchase.view_profisc_purchase_book_search"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2238,7 +2238,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="project.view_task_form2"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2256,7 +2256,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="project.view_task_tree2"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2274,7 +2274,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="project.edit_project"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2604,7 +2604,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">account.report_invoice_document_copy_1</field>
     <field name="mode">primary</field>
@@ -2660,7 +2660,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="studio_customization.report_invoice_docum_bc0fe319-2fb2-4752-99b1-e3d8c59b36f3"/>
     <field name="key">gen_key.f47134</field>
     <field name="mode">extension</field>
@@ -2678,7 +2678,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="base.view_company_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2696,7 +2696,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="base.view_partner_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2721,7 +2721,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="base.view_partner_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2739,7 +2739,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="sale.view_order_form"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2759,7 +2759,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="sale_subscription.sale_subscription_view_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2777,7 +2777,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="base.view_server_action_tree"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2795,7 +2795,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="uom.product_uom_tree_view"/>
     <field name="key" eval="False"/>
     <field name="mode">extension</field>
@@ -2817,7 +2817,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">account.report_invoice_with_payments_copy_1</field>
     <field name="mode">primary</field>
@@ -3055,7 +3055,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">sale.report_saleorder_document_copy_1</field>
     <field name="mode">primary</field>
@@ -3075,7 +3075,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">sale.report_saleorder_raw_copy_1</field>
     <field name="mode">primary</field>
@@ -3119,7 +3119,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">account.tax_groups_totals_copy_2</field>
     <field name="mode">primary</field>
@@ -3164,7 +3164,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">account.tax_groups_totals_copy_1</field>
     <field name="mode">primary</field>
@@ -3202,7 +3202,7 @@
         <div class="oe_structure" t-else=""/>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._197_._web.address_layout_</field>
     <field name="mode">primary</field>
@@ -3220,7 +3220,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._4656_._sale.document_tax_totals_</field>
     <field name="mode">primary</field>
@@ -3288,7 +3288,7 @@
         </div>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._199_._web.external_layout_boxed_</field>
     <field name="mode">primary</field>
@@ -3470,7 +3470,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._1655_._sale.report_saleorder_document_</field>
     <field name="mode">primary</field>
@@ -3708,7 +3708,7 @@
         </t>
       </t>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._5069_._sale.report_saleorder_document_copy_1_</field>
     <field name="mode">primary</field>
@@ -3950,7 +3950,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._5065_._web_studio.report_editor_customization_full.view._sale.report_saleorder_document_</field>
     <field name="mode">primary</field>
@@ -4192,7 +4192,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._5078_._web_studio.report_editor_customization_full.view._sale.report_saleorder_document_copy_1_</field>
     <field name="mode">primary</field>
@@ -4228,7 +4228,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" eval="False"/>
     <field name="key">web_studio.__backup__._5075_._web_studio.report_editor_customization_full.view._web.address_layout_</field>
     <field name="mode">primary</field>
@@ -4268,7 +4268,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="web.address_layout"/>
     <field name="key">web_studio.report_editor_customization_full.view._web.address_layout</field>
     <field name="mode">extension</field>
@@ -4510,7 +4510,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="studio_customization.report_saleorder_doc_63db7061-2af8-4f0b-b33e-90a4a015b423"/>
     <field name="key">web_studio.report_editor_customization_full.view._sale.report_saleorder_document_copy_1</field>
     <field name="mode">extension</field>
@@ -4553,7 +4553,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="sale.document_tax_totals"/>
     <field name="key">web_studio.report_editor_customization_full.view._sale.document_tax_totals</field>
     <field name="mode">extension</field>
@@ -4623,7 +4623,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="web.external_layout_boxed"/>
     <field name="key">web_studio.report_editor_customization_full.view._web.external_layout_boxed</field>
     <field name="mode">extension</field>
@@ -4880,7 +4880,7 @@
         </xpath>
       </data>
     </field>
-    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="inherit_id" ref="sale.report_saleorder_document"/>
     <field name="key">web_studio.report_editor_customization_full.view._sale.report_saleorder_document</field>
     <field name="mode">extension</field>
