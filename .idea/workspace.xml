@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fix some versions for 19">
-      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_model_fields.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_model_fields.xml" afterDir="false" />
-    </list>
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fix some versions for 19" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
