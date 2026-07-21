@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fix code to be comaptible for odoo 19" />
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fix some versions for 19" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +111,7 @@
       <workItem from="1784279964593" duration="10457000" />
       <workItem from="1784532819574" duration="1347000" />
       <workItem from="1784550982392" duration="4449000" />
-      <workItem from="1784616780353" duration="4473000" />
+      <workItem from="1784616780353" duration="3958000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -201,15 +201,7 @@
       <option name="project" value="LOCAL" />
       <updated>1784617472497</updated>
     </task>
-    <task id="LOCAL-00012" summary="fix code to be comaptible for odoo 19">
-      <option name="closed" value="true" />
-      <created>1784633933304</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1784633933304</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,7 +230,6 @@
     <MESSAGE value="made changes for odoo 19" />
     <MESSAGE value="removed the external dependencies from manifest" />
     <MESSAGE value="fix some versions for 19" />
-    <MESSAGE value="fix code to be comaptible for odoo 19" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix code to be comaptible for odoo 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some versions for 19" />
   </component>
 </project>
