@@ -29,7 +29,7 @@ class AccountMoveExtension(models.Model):
     profisc_fisc_status = fields.Selection(
         [("DELIVERED", "DELIVERED"), ("ACCEPTED", "ACCEPTED"), ("REFUSED", "REFUSED"),
          ("PARTIALLY_PAID", "PARTIALLY PAID"), ("PAID", "PAID"), ("OVERPAID", "OVERPAID")], string='Cis Status',
-        deafult=None, tracking=True)
+        tracking=True)
     profisc_fisc_status_sale = fields.Char(string='Cis Sale Status', default=None)
     profisc_iic = fields.Char(string='IIC')
     profisc_fic = fields.Char(string='FIC')
@@ -37,7 +37,7 @@ class AccountMoveExtension(models.Model):
     profisc_qr_code = fields.Char(string='Qr Url')
     profisc_qr_code_check = fields.Binary(string='Qr Code', attachment=True)
     profisc_fisc_downloaded = fields.Boolean(string='Fiscal Downloaded')
-    profisc_einvoice_downloaded = fields.Boolean(string='E-Invoice Downloaded', deafult=None)
+    profisc_einvoice_downloaded = fields.Boolean(string='E-Invoice Downloaded')
     profisc_fic_error_code = fields.Char(string='FIC Error Code')
     profisc_fic_error_description = fields.Char(string='FIC Error Description')
     profisc_eic_error_code = fields.Char(string='EIC Error Code')

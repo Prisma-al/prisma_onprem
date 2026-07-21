@@ -202,25 +202,24 @@
                         <filter string="Customs" name="purch_is_custom" domain="[('purch_is_custom', '=', True)]"/>
                         <filter string="Only Fiscalization" name="purch_is_onlyFisc" domain="[('purch_is_onlyFisc', '=', True)]"/>
                         <separator/>
-                        <filter string="Not Imported" name="purch_is_imported" domain="[('purch_is_imported', '=', 'not_imported')]"/>
-                        <filter string="Imported" name="purch_is_imported" domain="[('purch_is_imported', '=', 'imported')]"/>
+                        <filter string="Not Imported" name="purch_not_imported" domain="[('purch_is_imported', '=', 'not_imported')]"/>
+                        <filter string="Imported" name="purch_imported" domain="[('purch_is_imported', '=', 'imported')]"/>
                         <separator/>
-                        <filter string="DELIVERED" name="purch_cis_status" domain="[('purch_cis_status', '=', 'DELIVERED')]"/>
-                        <filter string="ACCEPTED" name="purch_cis_status" domain="[('purch_cis_status', '=', 'ACCEPTED')]"/>
-                        <filter string="REFUSED" name="purch_cis_status" domain="[('purch_cis_status', '=', 'REFUSED')]"/>
-                        <filter string="PARTIALLY PAID" name="purch_cis_status" domain="[('purch_cis_status', '=', 'PARTIALLY_PAID')]"/>
-                        <filter string="PAID" name="purch_cis_status" domain="[('purch_cis_status', '=', 'PAID')]"/>
+                        <filter string="DELIVERED" name="purch_status_delivered" domain="[('purch_cis_status', '=', 'DELIVERED')]"/>
+                        <filter string="ACCEPTED" name="purch_status_accepted" domain="[('purch_cis_status', '=', 'ACCEPTED')]"/>
+                        <filter string="REFUSED" name="purch_status_refused" domain="[('purch_cis_status', '=', 'REFUSED')]"/>
+                        <filter string="PARTIALLY PAID" name="purch_status_partially_paid" domain="[('purch_cis_status', '=', 'PARTIALLY_PAID')]"/>
+                        <filter string="PAID" name="purch_status_paid" domain="[('purch_cis_status', '=', 'PAID')]"/>
                         <separator/>
                         <filter name="purch_issue_date" string="Invoice Date" date="purch_issue_date"/>
                         <filter name="purch_due_date" string="Due Date" date="purch_due_date"/>
-                        <group expand="1" string="Group By">
-                            <filter string="Tax Status" name="purch_cis_status" context="{'group_by' : 'purch_cis_status'}"/>
-                            <filter string="Imported Status" name="purch_is_imported" context="{'group_by' : 'purch_is_imported'}"/>
-                            <filter string="Payment Method" name="purch_paymentType" context="{'group_by' : 'purch_paymentType'}"/>
-                            <filter string="Invoice Date" name="purch_issue_date" context="{'group_by' : 'purch_issue_date'}"/>
-                            <filter string="Due Date" name="purch_due_date" context="{'group_by' : 'purch_due_date'}"/>
-                            <filter string="Invoice Period" name="purch_period" context="{'group_by' : 'purch_period'}"/>
-                        </group>
+                        <separator/>
+                        <filter string="Tax Status" name="group_purch_cis_status" context="{'group_by': 'purch_cis_status'}"/>
+                        <filter string="Imported Status" name="group_purch_is_imported" context="{'group_by': 'purch_is_imported'}"/>
+                        <filter string="Payment Method" name="group_purch_paymentType" context="{'group_by': 'purch_paymentType'}"/>
+                        <filter string="Invoice Date" name="group_purch_issue_date" context="{'group_by': 'purch_issue_date'}"/>
+                        <filter string="Due Date" name="group_purch_due_date" context="{'group_by': 'purch_due_date'}"/>
+                        <filter string="Invoice Period" name="group_purch_period" context="{'group_by': 'purch_period'}"/>
                     </search>
             </field>
         </record>

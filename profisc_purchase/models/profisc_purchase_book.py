@@ -44,7 +44,7 @@ class ProfiscPurchaseBook(models.Model):
     purch_supplier_odoo = fields.Char(string='Furitori (odoo)')
     purch_cis_status = fields.Selection([("DELIVERED", "DELIVERED"), ("ACCEPTED", "ACCEPTED"), ("REFUSED", "REFUSED"),
                                          ("PARTIALLY_PAID", "PARTIALLY PAID"), ("PAID", "PAID"), ("OVERPAID", "OVERPAID")], string='Cis Status',
-                                        deafult=None, tracking=True)
+                                        tracking=True)
     purch_debit_credit_invoice = fields.Selection([("1", "Debit"), ("2", "Credit")], string='Debit/Credit invoice')
     purch_start_date = fields.Date(string='Start Date')
     purch_end_date = fields.Date(string='End Date')

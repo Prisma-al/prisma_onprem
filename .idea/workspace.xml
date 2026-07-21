@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="removed the external dependencies from manifest">
-      <change beforePath="$PROJECT_DIR$/profisc/models/account_payment_term_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/account_payment_term_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/account_tax_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/account_tax_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/res_company_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_company_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/res_partner_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_partner_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/res_users_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_users_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/stock_picking_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/stock_picking_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/models/uom_uom_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/uom_uom_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/purch_account_tax_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/purch_account_tax_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/res_company_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/res_company_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetra_pay/models/sale_order_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/tetra_pay/models/sale_order_extension.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tetra_pay/models/tetrapay_payments.py" beforeDir="false" afterPath="$PROJECT_DIR$/tetra_pay/models/tetrapay_payments.py" afterDir="false" />
-    </list>
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fix some versions for 19" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -123,7 +111,7 @@
       <workItem from="1784279964593" duration="10457000" />
       <workItem from="1784532819574" duration="1347000" />
       <workItem from="1784550982392" duration="4449000" />
-      <workItem from="1784616780353" duration="654000" />
+      <workItem from="1784616780353" duration="3958000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -205,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784616978718</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix some versions for 19">
+      <option name="closed" value="true" />
+      <created>1784617472497</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1784617472497</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,6 +229,7 @@
     <MESSAGE value="fixed all xpaths 3" />
     <MESSAGE value="made changes for odoo 19" />
     <MESSAGE value="removed the external dependencies from manifest" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed the external dependencies from manifest" />
+    <MESSAGE value="fix some versions for 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix some versions for 19" />
   </component>
 </project>
