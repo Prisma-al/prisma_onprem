@@ -318,7 +318,7 @@
             </page>
             <page id="aml_tab" string="Journal Items" groups="account.group_account_readonly" name="aml_tab">
               <field name="line_ids" mode="tree,kanban" context="{                                            'default_move_type': context.get('default_move_type'),                                            'line_ids': line_ids,                                            'journal_id': journal_id,                                            'default_partner_id': commercial_partner_id,                                            'default_currency_id': currency_id or company_currency_id,                                            'kanban_view_ref': 'account.account_move_line_view_kanban_mobile',                                        }" invisible="payment_state == 'invoicing_legacy' and move_type != 'entry'" readonly="state != 'draft'">
-                <list editable="bottom" string="Journal Items" decoration-muted="display_type in ('line_section', 'line_note')" default_order="sequence, id">
+                <list name="journal_items" editable="bottom" string="Journal Items" decoration-muted="display_type in ('line_section', 'line_note')" default_order="sequence, id">
                   <!-- Displayed fields -->
                   <field name="account_id" invisible="display_type in ('line_section', 'line_note')" required="display_type not in ('line_section', 'line_note')" domain="[('company_ids', 'parent_of', parent.company_id), ('deprecated', '=', False)]"/>
                   <field name="partner_id" optional="show" domain="['|', ('parent_id', '=', False), ('is_company', '=', True)]" column_invisible="parent.move_type != 'entry'"/>
