@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Sequence -->
+    <data noupdate="1">
+        <record id="seq_cx3_call_log" model="ir.sequence">
+            <field name="name">3CX Call Log</field>
+            <field name="code">cx3.call.log</field>
+            <field name="prefix">3CX/</field>
+            <field name="padding">5</field>
+        </record>
+    </data>
+
+    <!-- Tree View -->
+    <record id="cx3_call_log_tree" model="ir.ui.view">
+        <field name="name">cx3.call.log.tree</field>
+        <field name="model">cx3.call.log</field>
+        <field name="arch" type="xml">
+            <list string="3CX Call Log" decoration-danger="call_type in ('Missed','Notanswered')">
+                <field name="name"/>
+                <field name="call_date"/>
+                <field name="caller_number"/>
+                <field name="caller_name"/>
+                <field name="partner_id"/>
+                <field name="agent"/>
+                <field name="call_type"/>
+                <field name="duration"/>
+                <field name="ticket_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="cx3_call_log_form" model="ir.ui.view">
+        <field name="name">cx3.call.log.form</field>
+        <field name="model">cx3.call.log</field>
+        <field name="arch" type="xml">
+            <form string="3CX Call Log">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Call Info">
+                            <field name="caller_number"/>
+                            <field name="caller_name"/>
+                            <field name="partner_id"/>
+                            <field name="agent"/>
+                            <field name="call_type"/>
+                            <field name="duration"/>
+                            <field name="call_date"/>
+                        </group>
+                        <group string="Helpdesk">
+                            <field name="ticket_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description" placeholder="Call notes..."/>
+                        </page>
+                        <page string="Transcription" name="transcription">
+                            <field name="transcription" placeholder="Call transcript from 3CX AI..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="cx3_call_log_search" model="ir.ui.view">
+        <field name="name">cx3.call.log.search</field>
+        <field name="model">cx3.call.log</field>
+        <field name="arch" type="xml">
+            <search string="3CX Calls">
+                <field name="caller_number"/>
+                <field name="caller_name"/>
+                <field name="partner_id"/>
+                <field name="agent"/>
+                <filter string="Missed" name="missed" domain="[('call_type','in',['Missed','Notanswered'])]"/>
+                <filter string="Inbound" name="inbound" domain="[('call_type','=','Inbound')]"/>
+                <filter string="Outbound" name="outbound" domain="[('call_type','=','Outbound')]"/>
+                <separator/>
+                <filter string="Today" name="today" domain="[('call_date','&gt;=', (context_today()).strftime('%%Y-%%m-%%d'))]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Call Type" name="group_type" context="{'group_by': 'call_type'}"/>
+                    <filter string="Agent" name="group_agent" context="{'group_by': 'agent'}"/>
+                    <filter string="Contact" name="group_partner" context="{'group_by': 'partner_id'}"/>
+                    <filter string="Date" name="group_date" context="{'group_by': 'call_date:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="cx3_call_log_action" model="ir.actions.act_window">
+        <field name="name">3CX Calls</field>
+        <field name="res_model">cx3.call.log</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="cx3_call_log_search"/>
+    </record>
+
+    <!-- Menu -->
+    <menuitem id="cx3_menu_root"
+              name="3CX Calls"
+              web_icon="3cx_helpdesk,static/description/icon.png"
+              sequence="90"/>
+
+    <menuitem id="cx3_menu_calls"
+              name="Call Log"
+              parent="cx3_menu_root"
+              action="cx3_call_log_action"
+              sequence="10"/>
+
+</odoo>

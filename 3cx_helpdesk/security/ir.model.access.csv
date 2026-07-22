@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cx3_call_log_user,cx3.call.log.user,model_cx3_call_log,base.group_user,1,1,1,0
+access_cx3_call_log_manager,cx3.call.log.manager,model_cx3_call_log,base.group_system,1,1,1,1
