@@ -5,7 +5,7 @@
     <field name="active" eval="False"/>
     <field name="group_ids" eval="[(6, 0, [])]"/>
     <field name="name">mail_microsoft_graph</field>
-    <field name="parent_id" ref="account_accountant.menu_accounting"/>
+    <field name="parent_id" ref="account.menu_finance"/>
     <field name="sequence">36</field>
     <field name="web_icon" eval="False"/>
   </record>

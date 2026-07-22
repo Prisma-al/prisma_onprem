@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="changes 6">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fixed xml file to be compatible for odoo 19">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +114,7 @@
       <workItem from="1784532819574" duration="1347000" />
       <workItem from="1784550982392" duration="4449000" />
       <workItem from="1784616780353" duration="3958000" />
-      <workItem from="1784703937913" duration="309000" />
+      <workItem from="1784703937913" duration="966000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -260,7 +260,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784642898820</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixed xml file to be compatible for odoo 19">
+      <option name="closed" value="true" />
+      <created>1784704597571</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1784704597571</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +304,7 @@
     <MESSAGE value="fixed the kanban view name to be compaitble for odoo 19" />
     <MESSAGE value="changes" />
     <MESSAGE value="changes 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes 6" />
+    <MESSAGE value="fixed xml file to be compatible for odoo 19" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed xml file to be compatible for odoo 19" />
   </component>
 </project>
