@@ -368,7 +368,7 @@
     <field name="model">x_server_profisc</field>
     <field name="name">Default list view for x_server_profisc</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_55f5ba69-0dff-4d1d-8290-bc047df040a3" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -385,7 +385,7 @@
     <field name="model">x_public_tender_tracki_stage</field>
     <field name="name">Default list view for x_public_tender_tracki_stage</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_785256ec-cec1-454d-8682-fce2d4d85b1e" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -403,7 +403,7 @@
     <field name="model">x_online_payments</field>
     <field name="name">Default list view for x_online_payments</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_7fa04744-3b7e-48a4-8117-d280e5cf2c01" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -420,7 +420,7 @@
     <field name="model">x_public_tender_tracki_line_84393</field>
     <field name="name">Default list view for x_public_tender_tracki_line_84393</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_911b983d-dbf6-4d0e-a2a0-a5f5787af121" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -437,7 +437,7 @@
     <field name="model">x_public_tender_tracki_tag</field>
     <field name="name">Default list view for x_public_tender_tracki_tag</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_cb409a65-9dd9-4093-a994-1cbe7b5c2d68" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -453,7 +453,7 @@
     <field name="model">x_mail_microsoft_graph</field>
     <field name="name">Default list view for x_mail_microsoft_graph</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_cb5762c5-f384-46de-8159-2d5103066f93" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -475,7 +475,7 @@
     <field name="model">x_public_tender_tracki</field>
     <field name="name">Default list view for x_public_tender_tracki</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_list_view_fo_e4b473a1-7ed1-4155-ba2b-16a8930557e0" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -491,7 +491,7 @@
     <field name="model">x_server</field>
     <field name="name">Default list view for x_server</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.default_map_view_for_4b88e849-493b-48dd-9179-9e8bb2e83ae0" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -718,7 +718,7 @@
     <field name="model">profisc.business_units</field>
     <field name="name">Default tree view for ir.model(1381,)</field>
     <field name="priority">16</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.document_tax_totals_59d44a68-263e-4382-b38f-b4ef78539ee5" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -837,7 +837,7 @@
     <field name="model">account.move</field>
     <field name="name">Odoo Studio: account.out.invoice.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__1157f31d-6d96-4842-80f1-303c74ae6b48" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -901,7 +901,7 @@
     <field name="model">account.move</field>
     <field name="name">Odoo Studio: account.move.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__38a837ce-690a-4a22-af50-dd79812fb7e3" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -923,7 +923,7 @@
     <field name="model">account.move</field>
     <field name="name">Odoo Studio: account.out.invoice.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__4057d46e-ca2f-4c4a-b8b6-ff7acdd88266" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -941,7 +941,7 @@
     <field name="model">account.payment</field>
     <field name="name">Odoo Studio: account.supplier.payment.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__477bdd51-5496-4155-a659-bb928564d05a" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -977,7 +977,7 @@
     <field name="model">account.move</field>
     <field name="name">Odoo Studio: account.out.invoice.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__7b3d0be0-59d0-474f-a6e9-7df8daa5ab0b" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -997,7 +997,7 @@
     <field name="model">account.move</field>
     <field name="name">Odoo Studio: account.out.invoice.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__8fa1448e-4fc7-44e1-9de4-c20babf20d03" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1080,7 +1080,7 @@
     <field name="model">account.move.line</field>
     <field name="name">Odoo Studio: account.move.line.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__b6c2ecbc-c091-44c6-8eeb-23aec40b12c0" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1098,7 +1098,7 @@
     <field name="model">account.move.line</field>
     <field name="name">Odoo Studio: account.archived.tax.tag.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_account__d6c40654-68c6-406b-9c52-2a0d0e338a7e" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1274,7 +1274,7 @@
     <field name="model">mail.template</field>
     <field name="name">Odoo Studio: email.template.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_email_te_ab5130bf-84bd-4528-9385-8d90cd296ea7" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1310,7 +1310,7 @@
     <field name="model">fetchmail.server</field>
     <field name="name">Odoo Studio: fetchmail.server.list customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_helpdesk_3ae7e429-97e7-4bd5-bfc9-487b3de1768a" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1373,7 +1373,7 @@
     <field name="model">helpdesk.ticket</field>
     <field name="name">Odoo Studio: helpdesk.ticket.tree customization</field>
     <field name="priority">900</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_helpdesk_609874ed-b32a-4fce-a271-ee2eb440093d" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1391,7 +1391,7 @@
     <field name="model">helpdesk.ticket</field>
     <field name="name">Odoo Studio: helpdesk.ticket.tree.group.stage customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_helpdesk_694dc1bf-e15a-4dfb-8666-adea597831c3" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="False"/>
@@ -1414,7 +1414,7 @@
     <field name="model">helpdesk.ticket</field>
     <field name="name">Odoo Studio: helpdesk.ticket.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_helpdesk_6b4ee9b1-733a-4a98-bfe2-66b7ec259beb" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1432,7 +1432,7 @@
     <field name="model">helpdesk.stage</field>
     <field name="name">Odoo Studio: helpdesk.stages.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_helpdesk_b66cbc0d-e923-4587-9680-d4916f0cc67a" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1537,7 +1537,7 @@
     <field name="model">hr.employee</field>
     <field name="name">Odoo Studio: hr.employee.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_hr_emplo_c972a52c-a5fd-4320-81cc-5e7306e39368" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1591,7 +1591,7 @@
     <field name="model">ir.cron</field>
     <field name="name">Odoo Studio: ir.cron tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_ir_mail__f482c0aa-1c36-464d-ac35-c19fe7ebaac8" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1609,7 +1609,7 @@
     <field name="model">ir.mail_server</field>
     <field name="name">Odoo Studio: ir.mail_server tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_mail_mes_03486efb-b266-450a-8c7e-57a47bdb4e33" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1627,7 +1627,7 @@
     <field name="model">mail.message</field>
     <field name="name">Odoo Studio: mail.message.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_mail_not_a4be4725-836a-4481-89b0-a444bc1967d0" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1648,7 +1648,7 @@
     <field name="model">mail.notification</field>
     <field name="name">Odoo Studio: mail.notification.view.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_mailing__363c7e84-7707-4145-a941-c8efbfe34f08" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1666,7 +1666,7 @@
     <field name="model">mailing.contact</field>
     <field name="name">Odoo Studio: mailing.contact.view.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_payment__36e1b3a6-0073-4d0a-9d25-55913b54ef2f" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1684,7 +1684,7 @@
     <field name="model">payment.transaction</field>
     <field name="name">Odoo Studio: payment.transaction.list customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_product__ba07f73a-326e-48f6-8058-1a0f02ac68ea" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -1760,7 +1760,7 @@
     <field name="model">project.task</field>
     <field name="name">Odoo Studio: project.task.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_project__97103554-4d23-4a5a-8479-bf54b1926517" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -2225,7 +2225,7 @@
     <field name="model">res.partner</field>
     <field name="name">Odoo Studio: res.partner.tree customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_sale_ord_568a5576-425f-49ba-b951-05eb8bdf746f" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -2263,7 +2263,7 @@
     <field name="model">sale.order</field>
     <field name="name">Odoo Studio: sale.subscription.order.tree customization</field>
     <field name="priority">99</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_server_a_04ccebae-75af-4943-8ed7-d0fddd118aef" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>
@@ -2281,7 +2281,7 @@
     <field name="model">ir.actions.server</field>
     <field name="name">Odoo Studio: Server Actions customization</field>
     <field name="priority">160</field>
-    <field name="type">tree</field>
+    <field name="type">list</field>
   </record>
   <record id="studio_customization.odoo_studio_uom_cate_b10ef2e9-c871-4bce-91d3-5f937801b155" model="ir.ui.view" context="{'studio': True}">
     <field name="active" eval="True"/>

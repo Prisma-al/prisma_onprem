@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="changes odoo 19" />
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="changes 6">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,6 +114,7 @@
       <workItem from="1784532819574" duration="1347000" />
       <workItem from="1784550982392" duration="4449000" />
       <workItem from="1784616780353" duration="3958000" />
+      <workItem from="1784703937913" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -225,7 +228,39 @@
       <option name="project" value="LOCAL" />
       <updated>1784638421663</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fixed studio custom module for odoo 19 3">
+      <option name="closed" value="true" />
+      <created>1784639124359</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1784639124359</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fixed the kanban view name to be compaitble for odoo 19">
+      <option name="closed" value="true" />
+      <created>1784639323251</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1784639323251</updated>
+    </task>
+    <task id="LOCAL-00017" summary="changes">
+      <option name="closed" value="true" />
+      <created>1784639585783</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1784639585783</updated>
+    </task>
+    <task id="LOCAL-00018" summary="changes 6">
+      <option name="closed" value="true" />
+      <created>1784642898820</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1784642898820</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,6 +292,10 @@
     <MESSAGE value="fix studio for odoo 19" />
     <MESSAGE value="fix studio for odoo 19 2" />
     <MESSAGE value="changes odoo 19" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes odoo 19" />
+    <MESSAGE value="fixed studio custom module for odoo 19 3" />
+    <MESSAGE value="fixed the kanban view name to be compaitble for odoo 19" />
+    <MESSAGE value="changes" />
+    <MESSAGE value="changes 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes 6" />
   </component>
 </project>
