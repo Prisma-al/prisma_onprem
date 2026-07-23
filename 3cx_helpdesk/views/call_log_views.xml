@@ -82,14 +82,6 @@
                 <filter string="Missed" name="missed" domain="[('call_type','in',['Missed','Notanswered'])]"/>
                 <filter string="Inbound" name="inbound" domain="[('call_type','=','Inbound')]"/>
                 <filter string="Outbound" name="outbound" domain="[('call_type','=','Outbound')]"/>
-                <separator/>
-                <filter string="Today" name="today" date="call_date"/>
-                <group string="Group By">
-                    <filter string="Call Type" name="group_type" context="{'group_by': 'call_type'}"/>
-                    <filter string="Agent" name="group_agent" context="{'group_by': 'agent'}"/>
-                    <filter string="Contact" name="group_partner" context="{'group_by': 'partner_id'}"/>
-                    <filter string="Date" name="group_date" context="{'group_by': 'call_date:day'}"/>
-                </group>
             </search>
         </field>
     </record>
@@ -105,7 +97,6 @@
     <!-- Menu -->
     <menuitem id="cx3_menu_root"
               name="3CX Calls"
-              web_icon="3cx_helpdesk,static/description/icon.png"
               sequence="90"/>
 
     <menuitem id="cx3_menu_calls"
