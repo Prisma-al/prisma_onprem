@@ -59,7 +59,7 @@ class Cx3Controller(http.Controller):
                 'name': partner.name or '',
                 'email': partner.email or '',
                 'phone': partner.phone or '',
-                'mobile': partner.mobile or '',
+                'mobile': getattr(partner, 'mobile', '') or '',
                 'company': partner.parent_id.name if partner.parent_id else (partner.company_name or ''),
             }]
             _logger.info("3CX Lookup found: %s for %s", partner.name, phone)

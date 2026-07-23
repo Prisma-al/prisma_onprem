@@ -51,27 +51,31 @@ class Cx3CallLog(models.Model):
 
     @api.model
     def _find_partner_by_phone(self, phone):
-        """Find a res.partner by phone or mobile number."""
+        """Find a res.partner by phone number."""
         if not phone:
             return False
         normalized = self._normalize_phone(phone)
         if not normalized:
             return False
-        # Try exact match first
-        partner = self.env['res.partner'].search([
-            '|',
-            ('phone', '!=', False),
-            ('mobile', '!=', False),
-        ], limit=500)
-        for p in partner:
-            if self._normalize_phone(p.phone) == normalized or \
-               self._normalize_phone(p.mobile) == normalized:
-                return p
+        # Check which phone fields exist on res.partner
+        partner_model = self.env['res.partner']
+        phone_fields = [f for f in ['phone', 'mobile'] if f in partner_model._fields]
+        if not phone_fields:
+            return False
+        # Build domain for partners that have a phone set
+        domain = ['|'] * (len(phone_fields) - 1) + [(f, '!=', False) for f in phone_fields]
+        partners = partner_model.search(domain, limit=500)
+        for p in partners:
+            for field in phone_fields:
+                val = getattr(p, field, False)
+                if val and self._normalize_phone(val) == normalized:
+                    return p
             # Also try matching last digits (international prefix variations)
             if len(normalized) >= 6:
-                if (p.phone and self._normalize_phone(p.phone).endswith(normalized[-9:])) or \
-                   (p.mobile and self._normalize_phone(p.mobile).endswith(normalized[-9:])):
-                    return p
+                for field in phone_fields:
+                    val = getattr(p, field, False)
+                    if val and self._normalize_phone(val).endswith(normalized[-9:]):
+                        return p
         return False
 
     def _create_helpdesk_ticket(self):
