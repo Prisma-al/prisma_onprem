@@ -31,7 +31,7 @@ class Cx3Controller(http.Controller):
         )
 
     # ─── 1. Caller Lookup ────────────────────────────────────────────────
-    @http.route('/api/3cx/lookup', type='http', auth='none', methods=['GET'], csrf=False)
+    @http.route('/api/3cx/lookup', type='http', auth='public', methods=['GET'], csrf=False)
     def lookup(self, **kwargs):
         """
         GET /api/3cx/lookup?phone=[Number]&api_key=[key]
@@ -69,7 +69,7 @@ class Cx3Controller(http.Controller):
         return self._json_response([])
 
     # ─── 2. Report Call ──────────────────────────────────────────────────
-    @http.route('/api/3cx/report-call', type='http', auth='none', methods=['POST'], csrf=False)
+    @http.route('/api/3cx/report-call', type='http', auth='public', methods=['POST'], csrf=False)
     def report_call(self, **kwargs):
         """
         POST /api/3cx/report-call
@@ -122,7 +122,7 @@ class Cx3Controller(http.Controller):
         })
 
     # ─── 3. Transcript Update ────────────────────────────────────────────
-    @http.route('/api/3cx/transcript', type='http', auth='none', methods=['POST'], csrf=False)
+    @http.route('/api/3cx/transcript', type='http', auth='public', methods=['POST'], csrf=False)
     def transcript(self, **kwargs):
         """
         POST /api/3cx/transcript
