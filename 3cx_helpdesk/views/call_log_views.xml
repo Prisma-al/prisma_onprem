@@ -83,7 +83,7 @@
                 <filter string="Inbound" name="inbound" domain="[('call_type','=','Inbound')]"/>
                 <filter string="Outbound" name="outbound" domain="[('call_type','=','Outbound')]"/>
                 <separator/>
-                <filter string="Today" name="today" date="call_date" default_period="today"/>
+                <filter string="Today" name="today" date="call_date"/>
                 <group string="Group By">
                     <filter string="Call Type" name="group_type" context="{'group_by': 'call_type'}"/>
                     <filter string="Agent" name="group_agent" context="{'group_by': 'agent'}"/>
