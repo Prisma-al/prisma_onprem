@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fixed xml file to be compatible for odoo 19">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fixed the external id to match odoo 19">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="355" />
+    <option name="cachedIndexableFilesCount" value="367" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -115,6 +115,8 @@
       <workItem from="1784550982392" duration="4449000" />
       <workItem from="1784616780353" duration="3958000" />
       <workItem from="1784703937913" duration="966000" />
+      <workItem from="1784794128488" duration="9209000" />
+      <workItem from="1784877883682" duration="1506000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
