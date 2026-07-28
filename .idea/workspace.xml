@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="fixed the external id to match odoo 19">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="test commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/views/account_move_extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/account_move_extension.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +119,9 @@
       <workItem from="1784703937913" duration="966000" />
       <workItem from="1784794128488" duration="9209000" />
       <workItem from="1784877883682" duration="1506000" />
+      <workItem from="1784904423058" duration="682000" />
+      <workItem from="1785134843157" duration="7359000" />
+      <workItem from="1785225733918" duration="2368000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -270,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1784704597571</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="test commit">
+      <option name="closed" value="true" />
+      <created>1784904480708</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1784904480708</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,6 +320,7 @@
     <MESSAGE value="changes" />
     <MESSAGE value="changes 6" />
     <MESSAGE value="fixed xml file to be compatible for odoo 19" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed xml file to be compatible for odoo 19" />
+    <MESSAGE value="test commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit" />
   </component>
 </project>
