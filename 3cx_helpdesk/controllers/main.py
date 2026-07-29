@@ -112,13 +112,16 @@ class Cx3Controller(http.Controller):
         }
 
         call_log = CallLog.create(log_vals)
-        ticket = call_log._create_helpdesk_ticket()
+        if log_vals['call_type'] != 'Outbound':
+            ticket = call_log._create_helpdesk_ticket()
+        else:
+            ticket = False
 
         return self._json_response({
             'success': True,
             'call_log_id': call_log.id,
-            'ticket_id': ticket.id,
-            'ticket_name': ticket.name,
+            'ticket_id': ticket.id if ticket else False,
+            'ticket_name': ticket.name if ticket else False,
         })
 
     # ─── 3. Transcript Update ────────────────────────────────────────────

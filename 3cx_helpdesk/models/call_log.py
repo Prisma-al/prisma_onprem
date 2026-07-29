@@ -81,9 +81,9 @@ class Cx3CallLog(models.Model):
     def _create_helpdesk_ticket(self):
         """Create a helpdesk ticket from this call log entry."""
         self.ensure_one()
-        team = self.env['helpdesk.team'].search([('name', '=', 'General')], limit=1)
+        team = self.env['helpdesk.team'].search([('name', '=', 'ProFisc')], limit=1)
         if not team:
-            team = self.env['helpdesk.team'].search([], limit=1)
+            team = self.env['helpdesk.team'].search([('name', '=', 'General')], limit=1)
         priority = '2' if self.call_type in ('Missed', 'Notanswered') else '0'
 
         subject = "3CX Call"
