@@ -78,6 +78,25 @@ class Cx3CallLog(models.Model):
                         return p
         return False
 
+    def _is_outgoing(self):
+        """Detect outgoing calls, including unanswered ones.
+
+        3CX reports an unanswered outgoing call as 'Notanswered', the same value
+        it uses for an unanswered inbound call, so for that case the direction is
+        only visible in the journal text 3CX sends as the description
+        ("Unanswered outgoing call from 133 to 0672065690").
+        """
+        self.ensure_one()
+        if self.call_type == 'Outbound':
+            return True
+        text = (self.description or '').lower()
+        return 'outgoing call' in text or 'outbound call' in text
+
+    def _should_create_ticket(self):
+        """Tickets are only created for calls coming in from the outside."""
+        self.ensure_one()
+        return not self._is_outgoing()
+
     def _create_helpdesk_ticket(self):
         """Create a helpdesk ticket from this call log entry."""
         self.ensure_one()

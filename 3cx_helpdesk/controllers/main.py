@@ -112,10 +112,11 @@ class Cx3Controller(http.Controller):
         }
 
         call_log = CallLog.create(log_vals)
-        if log_vals['call_type'] != 'Outbound':
+        if call_log._should_create_ticket():
             ticket = call_log._create_helpdesk_ticket()
         else:
             ticket = False
+            _logger.info("3CX: Skipping ticket for outgoing call %s", call_log.name)
 
         return self._json_response({
             'success': True,
