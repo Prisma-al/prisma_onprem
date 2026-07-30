@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import re
-
+import pytz
 from odoo import models, fields, api
 
 _logger = logging.getLogger(__name__)
@@ -11,6 +11,13 @@ class Cx3CallLog(models.Model):
     _name = 'cx3.call.log'
     _description = '3CX Call Log'
     _order = 'call_date desc'
+
+    # Vetem telefonatat drejtuar ketyre agjenteve behen ticket.
+    TICKET_AGENTS = ('200', '203')
+    # Numrat me kaq shifra ose me pak jane extension te brendshem 3CX.
+    MAX_EXTENSION_DIGITS = 4
+    # Timezone e paracaktuar nese kompania nuk ka nje te tille.
+    DEFAULT_TIMEZONE = 'Europe/Tirane'
 
     name = fields.Char(string='Call Reference', readonly=True, default='New')
     caller_number = fields.Char(string='Caller Number', required=True)
@@ -92,10 +99,22 @@ class Cx3CallLog(models.Model):
         text = (self.description or '').lower()
         return 'outgoing call' in text or 'outbound call' in text
 
+    def _is_internal_number(self, number):
+        """Nje extension i brendshem 3CX (p.sh. 200, 133) eshte i shkurter,
+        ndersa nje numer i vertete nga jashte eshte i gjate."""
+        return len(self._normalize_phone(number)) <= self.MAX_EXTENSION_DIGITS
+
     def _should_create_ticket(self):
-        """Tickets are only created for calls coming in from the outside."""
+        """Ticket krijohet vetem per telefonata qe vijne nga jashte 3CX
+        dhe qe i drejtohen agjenteve 200 ose 203."""
         self.ensure_one()
-        return not self._is_outgoing()
+        if self._is_outgoing():
+            return False
+        # Telefonatat brenda 3CX (extension -> extension) nuk behen ticket.
+        if self._is_internal_number(self.caller_number):
+            return False
+        # Vetem agjentet e caktuar.
+        return (self.agent or '').strip() in self.TICKET_AGENTS
 
     def _create_helpdesk_ticket(self):
         """Create a helpdesk ticket from this call log entry."""
@@ -127,14 +146,55 @@ class Cx3CallLog(models.Model):
         if self.transcription:
             body_parts.append(f"<br/><b>Transcript:</b><br/>{self.transcription}")
 
-        ticket_vals = {
+        body = '<br/>'.join(body_parts)
+
+        # Nese sot kemi marre nje telefonate tjeter nga i njejti numer, nuk krijojme
+        # ticket te ri por e shtojme informacionin te ticket-i ekzistues.
+        ticket = self._find_todays_ticket()
+        if ticket:
+            ticket.description = f"{ticket.description or ''}<hr/><b>{subject}</b><br/>{body}"
+            self.ticket_id = ticket.id
+            _logger.info("3CX: Added call %s to existing ticket %s", self.name, ticket.name)
+            return ticket
+
+        ticket = self.env['helpdesk.ticket'].create({
             'name': subject,
             'partner_id': self.partner_id.id if self.partner_id else False,
             'team_id': team.id if team else False,
             'priority': priority,
-            'description': '<br/>'.join(body_parts),
-        }
-        ticket = self.env['helpdesk.ticket'].create(ticket_vals)
+            'description': body,
+        })
         self.ticket_id = ticket.id
         _logger.info("3CX: Created helpdesk ticket %s for call %s", ticket.name, self.name)
+        return ticket
+
+    def _local_date(self, timestamp):
+        if not timestamp:
+            return False
+        tz_name = self.env.user.tz or self.env.company.partner_id.tz or self.DEFAULT_TIMEZONE
+        tz = pytz.timezone(tz_name)
+        return pytz.utc.localize(timestamp).astimezone(tz).date()
+
+    def _find_todays_ticket(self):
+        """Shohim mos ka ndonje rekord me te njejtin numer"""
+        self.ensure_one()
+        if not self.caller_number:
+            return False
+
+        previous_call = self.search([
+            ('id', '!=', self.id),
+            ('caller_number', '=', self.caller_number),
+            ('ticket_id', '!=', False),
+        ], order='call_date desc', limit=1)
+        if not previous_call:
+            return False
+
+        # A ishte ajo telefonate ne te njejten dite me kete?
+        if self._local_date(previous_call.call_date) != self._local_date(self.call_date):
+            return False
+
+        # Nese ticket-i eshte mbyllur, hapim nje te ri.
+        ticket = previous_call.ticket_id
+        if ticket.stage_id.fold:
+            return False
         return ticket
