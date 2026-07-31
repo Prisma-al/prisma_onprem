@@ -231,7 +231,8 @@ class profisc_actions(models.Model):
 
     def getQrCode(self, account_move_id):
         record = self.env['account.move'].browse(account_move_id)
-        if record.profisc_qr_code is None:
+        # Odoo e ruan fushen boshe si False, jo None.
+        if not record.profisc_qr_code:
             return False
         if record.profisc_qr_code_check:
             return False
