@@ -60,32 +60,26 @@ class Cx3CallLog(models.Model):
 
     @api.model
     def _find_partner_by_phone(self, phone):
-        """Find a res.partner by phone number."""
-        if not phone:
+        """Gjejme partnerin duke krahasuar 9 shifrat e fundit te numrit.
+
+        3CX dergon '0684364730' ndersa Odoo e ruan '+355 68 436 4730', ndaj
+        simbolet dhe hapesirat i heqim direkt ne SQL - keshtu kerkojme te
+        gjithe partneret me nje query te vetme, jo vetem 500 te paret.
+        """
+        digits = self._normalize_phone(phone)
+        if len(digits) < 6:
             return False
-        normalized = self._normalize_phone(phone)
-        if not normalized:
+        columns = [f for f in ('phone', 'mobile') if f in self.env['res.partner']._fields]
+        if not columns:
             return False
-        # Check which phone fields exist on res.partner
-        partner_model = self.env['res.partner']
-        phone_fields = [f for f in ['phone', 'mobile'] if f in partner_model._fields]
-        if not phone_fields:
-            return False
-        # Build domain for partners that have a phone set
-        domain = ['|'] * (len(phone_fields) - 1) + [(f, '!=', False) for f in phone_fields]
-        partners = partner_model.search(domain, limit=500)
-        for p in partners:
-            for field in phone_fields:
-                val = getattr(p, field, False)
-                if val and self._normalize_phone(val) == normalized:
-                    return p
-            # Also try matching last digits (international prefix variations)
-            if len(normalized) >= 6:
-                for field in phone_fields:
-                    val = getattr(p, field, False)
-                    if val and self._normalize_phone(val).endswith(normalized[-9:]):
-                        return p
-        return False
+        condition = r"regexp_replace(COALESCE({}, ''), '\D', '', 'g') LIKE %s"
+        where = ' OR '.join(condition.format(col) for col in columns)
+        self.env.cr.execute(
+            f"SELECT id FROM res_partner WHERE active AND ({where}) ORDER BY id LIMIT 1",
+            ['%' + digits[-9:]] * len(columns),
+        )
+        row = self.env.cr.fetchone()
+        return self.env['res.partner'].browse(row[0]) if row else False
 
     def _is_outgoing(self):
         """Detect outgoing calls, including unanswered ones.
