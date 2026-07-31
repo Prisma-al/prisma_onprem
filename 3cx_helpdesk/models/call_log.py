@@ -142,7 +142,8 @@ class Cx3CallLog(models.Model):
         if self.duration:
             body_parts.append(f"<b>Duration:</b> {self.duration}")
         if self.description:
-            body_parts.append(f"<b>Notes:</b> {self.description}")
+            # marrim vetem linjen e pare duke anashkalu recording edhe transcriptin
+            body_parts.append(f"<b>Notes:</b> {self.description.split('<br/>')[0]}")
         if self.transcription:
             body_parts.append(f"<br/><b>Transcript:</b><br/>{self.transcription}")
 
