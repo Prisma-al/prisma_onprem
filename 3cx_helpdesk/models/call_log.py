@@ -36,6 +36,9 @@ class Cx3CallLog(models.Model):
     partner_id = fields.Many2one('res.partner', string='Contact')
     ticket_id = fields.Many2one('helpdesk.ticket', string='Helpdesk Ticket')
 
+    # fush eboolean qe kontrollon a eshte kriju ticket nga 3cx
+    ticket_from_3cx = fields.Boolean(string="Is ticket from 3cx", default=False)
+
     @api.model_create_multi
     def create(self, vals_list):
         for vals in vals_list:
@@ -164,6 +167,7 @@ class Cx3CallLog(models.Model):
             'team_id': team.id if team else False,
             'priority': priority,
             'description': body,
+            'ticket_from_3cx': True
         })
         self.ticket_id = ticket.id
         _logger.info("3CX: Created helpdesk ticket %s for call %s", ticket.name, self.name)
