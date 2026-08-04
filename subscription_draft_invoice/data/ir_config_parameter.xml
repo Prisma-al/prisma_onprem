@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="param_keep_invoices_draft" model="ir.config_parameter">
+            <field name="key">sale_subscription.keep_invoices_draft</field>
+            <field name="value">True</field>
+        </record>
+    </data>
+</odoo>

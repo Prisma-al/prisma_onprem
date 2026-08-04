@@ -69,7 +69,7 @@ class SaleAdvancePaymentInv(models.TransientModel):
 class PricelistItem(models.Model):
     _inherit = 'product.pricelist.item'
 
-    def _compute_price(self, product, quantity, uom, date, currency=None):
+    def _compute_price(self, product, quantity, uom, date, currency=None, **kwargs):
         """Compute the unit price of a product in the context of a pricelist application.
 
         :param product: recordset of product (product.product/product.template)
@@ -81,13 +81,18 @@ class PricelistItem(models.Model):
         :returns: price according to pricelist rule, expressed in pricelist currency
         :rtype: float
         """
+        manual_currency_rate_active = product._context.get('manual_currency_rate_active')
+        if not manual_currency_rate_active:
+            # No manual rate to apply: use the standard computation so that layers
+            # stacked on top of us (sale_subscription passes plan_id, ...) keep working.
+            return super()._compute_price(product, quantity, uom, date, currency, **kwargs)
+
         product.ensure_one()
         uom.ensure_one()
 
         currency = currency or self.currency_id
         currency.ensure_one()
 
-        manual_currency_rate_active = product._context.get('manual_currency_rate_active')
         manual_currency_rate = product._context.get('manual_currency_rate')
         # Pricelist specific values are specified according to product UoM
         # and must be multiplied according to the factor between uoms
@@ -105,14 +110,14 @@ class PricelistItem(models.Model):
             else:
                 price = new_price
         elif self.compute_price == 'percentage':
-            base_price = self._compute_base_price(product, quantity, uom, date, currency)
+            base_price = self._compute_base_price(product, quantity, uom, date, currency, **kwargs)
             new_price = (base_price - (base_price * (self.percent_price / 100))) or 0.0 
             if manual_currency_rate_active:
                 price = new_price * manual_currency_rate
             else:
                 price = new_price
         elif self.compute_price == 'formula':
-            base_price = self._compute_base_price(product, quantity, uom, date, currency)
+            base_price = self._compute_base_price(product, quantity, uom, date, currency, **kwargs)
             # complete formula
             price_limit = base_price
             new_price = (base_price - (base_price * (self.price_discount / 100))) or 0.0 * manual_currency_rate
@@ -134,11 +139,11 @@ class PricelistItem(models.Model):
         else:  # empty self, or extended pricelist price computation logic
             if manual_currency_rate_active:
                 self = self.with_context(manual_currency_rate_active=manual_currency_rate_active,manual_currency_rate=manual_currency_rate)
-            price = self._compute_base_price(product, quantity, uom, date, currency)
+            price = self._compute_base_price(product, quantity, uom, date, currency, **kwargs)
         
         return price
 
-    def _compute_base_price(self, product, quantity, uom, date, target_currency):
+    def _compute_base_price(self, product, quantity, uom, date, target_currency, **kwargs):
         """ Compute the base price for a given rule
 
         :param product: recordset of product (product.product/product.template)
@@ -150,9 +155,14 @@ class PricelistItem(models.Model):
         :returns: base price, expressed in provided pricelist currency
         :rtype: float
         """
+        manual_currency_rate_active = product._context.get('manual_currency_rate_active')
+        if not manual_currency_rate_active:
+            # No manual rate to apply: use the standard computation so that layers
+            # stacked on top of us (sale_subscription passes plan_id, ...) keep working.
+            return super()._compute_base_price(product, quantity, uom, date, target_currency, **kwargs)
+
         target_currency.ensure_one()
 
-        manual_currency_rate_active = product._context.get('manual_currency_rate_active')
         manual_currency_rate = product._context.get('manual_currency_rate')
 
         rule_base = self.base or 'list_price'

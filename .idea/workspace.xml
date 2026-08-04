@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="test commit">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="ruajtja e QR code si False">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/profisc/views/account_move_extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/views/account_move_extension.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/studio_customization/data/ir_ui_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bi_manual_currency_exchnage_rate/models/sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/bi_manual_currency_exchnage_rate/models/sale.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="367" />
+    <option name="cachedIndexableFilesCount" value="371" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -53,6 +59,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
@@ -121,7 +128,12 @@
       <workItem from="1784877883682" duration="1506000" />
       <workItem from="1784904423058" duration="682000" />
       <workItem from="1785134843157" duration="7359000" />
-      <workItem from="1785225733918" duration="2368000" />
+      <workItem from="1785225733918" duration="7088000" />
+      <workItem from="1785308015009" duration="665000" />
+      <workItem from="1785316611753" duration="10379000" />
+      <workItem from="1785394686798" duration="7607000" />
+      <workItem from="1785483882489" duration="7777000" />
+      <workItem from="1785764385353" duration="5513000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -283,7 +295,79 @@
       <option name="project" value="LOCAL" />
       <updated>1784904480708</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fixed xml for odoo 19">
+      <option name="closed" value="true" />
+      <created>1785230954872</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1785230954872</updated>
+    </task>
+    <task id="LOCAL-00022" summary="1. Tickets krijohen ne ProFisc dhe fallback ne General nese ProFisc nuk gjendet.&#10;&#10;2. Tickets krijohen vetem nese call type nuk eshte outbound">
+      <option name="closed" value="true" />
+      <created>1785321383788</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1785321383788</updated>
+    </task>
+    <task id="LOCAL-00023" summary="find outgoing calls in notes">
+      <option name="closed" value="true" />
+      <created>1785336072432</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1785336072432</updated>
+    </task>
+    <task id="LOCAL-00024" summary="group descriptions if we get a call from an already created ticket and do not create tickets if calls are not send to 200 or 203 or inside 3cx">
+      <option name="closed" value="true" />
+      <created>1785398556959</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1785398556960</updated>
+    </task>
+    <task id="LOCAL-00025" summary="group descriptions if we get a call from an already created ticket and do not create tickets if calls are not send to 200 or 203 or inside 3cx">
+      <option name="closed" value="true" />
+      <created>1785484158871</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1785484158871</updated>
+    </task>
+    <task id="LOCAL-00026" summary="set a boolean field to determine wether the ticket is created from 3cx or not">
+      <option name="closed" value="true" />
+      <created>1785484407599</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1785484407599</updated>
+    </task>
+    <task id="LOCAL-00027" summary="added field in the right place">
+      <option name="closed" value="true" />
+      <created>1785484685172</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1785484685172</updated>
+    </task>
+    <task id="LOCAL-00028" summary="made the search through SQL comparison for numbers an mobile">
+      <option name="closed" value="true" />
+      <created>1785488854352</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1785488854352</updated>
+    </task>
+    <task id="LOCAL-00029" summary="ruajtja e QR code si False">
+      <option name="closed" value="true" />
+      <created>1785493817424</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1785493817424</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -301,9 +385,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="." />
-    <MESSAGE value="changes : making modules compatible for version 18" />
-    <MESSAGE value="adding requirements" />
     <MESSAGE value="deleting requirements from manifest" />
     <MESSAGE value="changed the version of the studio custom module" />
     <MESSAGE value="fixed all xpaths" />
@@ -321,6 +402,17 @@
     <MESSAGE value="changes 6" />
     <MESSAGE value="fixed xml file to be compatible for odoo 19" />
     <MESSAGE value="test commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="test commit" />
+    <MESSAGE value="fixed xml for odoo 19" />
+    <MESSAGE value="1. Tickets krijohen ne ProFisc dhe fallback ne General nese ProFisc nuk gjendet.&#10;&#10;2. Tickets krijohen vetem nese call type nuk eshte outbound" />
+    <MESSAGE value="find outgoing calls in notes" />
+    <MESSAGE value="group descriptions if we get a call from an already created ticket and do not create tickets if calls are not send to 200 or 203 or inside 3cx" />
+    <MESSAGE value="set a boolean field to determine wether the ticket is created from 3cx or not" />
+    <MESSAGE value="added field in the right place" />
+    <MESSAGE value="made the search through SQL comparison for numbers an mobile" />
+    <MESSAGE value="ruajtja e QR code si False" />
+    <option name="LAST_COMMIT_MESSAGE" value="ruajtja e QR code si False" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/prisma_onprem$test.coverage" NAME="test Coverage Results" MODIFIED="1785395133777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profisc/models" />
   </component>
 </project>
