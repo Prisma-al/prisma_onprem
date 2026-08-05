@@ -2,7 +2,7 @@
 <odoo noupdate="1">
 
         <record id="payment_acquirer_tpay" model="payment.provider">
-            <field name="name">Tetra Pay</field>
+            <field name="name">Prisma</field>
             <field name="code">tetra_pay</field>
             <field name="company_id" ref="base.main_company"/>
             <field name="redirect_form_view_id" ref="payment_mygateway_form"/>
