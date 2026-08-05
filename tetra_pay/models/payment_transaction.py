@@ -36,7 +36,7 @@ class payment_transaction(models.Model):
         rendering_values = {
             'clientid': payment_provider.tpay_clientid,
             'oid': self.reference,
-            'amount': format(order.amount_total, '.0f'),
+            'amount': format(order.amount_total, '.2f'),
             'okUrl': payment_provider.tpay_ok_url,
             'failUrl': payment_provider.tpay_fail_url,
             'api_url': self.provider_id._get_mygateway_form_action_url(),
