@@ -24,13 +24,13 @@ class TpayController(http.Controller):
     def success_process_transaction(self, **post):
         _logger.info("Handling success processing with data:\n%s", pprint.pformat(post))
 
-        tx_sudo = request.env['payment.transaction'].sudo()._get_tx_from_notification_data(
+        tx_sudo = request.env['payment.transaction'].sudo()._search_by_reference(
             'tetra_pay', post
         )
 
         self._verify_notification_signature(post, tx_sudo)
 
-        tx_sudo._handle_notification_data('tetra_pay', post)
+        tx_sudo._apply_updates(post)
 
         return request.redirect('/payment/status')
 

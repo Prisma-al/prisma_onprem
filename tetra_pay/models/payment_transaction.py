@@ -9,7 +9,7 @@ import hashlib
 from odoo.exceptions import ValidationError
 from odoo.http import request
 
-from odoo import models, _
+from odoo import api, models, _
 from odoo.addons.payment import utils as payment_utils
 
 _logger = logging.getLogger(__name__)
@@ -57,7 +57,7 @@ class payment_transaction(models.Model):
         rendering_values['hash'] = hash_value
         return rendering_values
 
-    def _get_tx_from_notification_data(self, provider_code, notification_data):
+    def _search_by_reference(self, provider_code, notification_data):
         """ Override of payment to find the transaction based on Adyen data.
 
         :param str provider_code: The code of the provider that handled the transaction
@@ -67,7 +67,7 @@ class payment_transaction(models.Model):
         :raise: ValidationError if inconsistent data were received
         :raise: ValidationError if the data match no transaction
         """
-        tx = super()._get_tx_from_notification_data(provider_code, notification_data)
+        tx = super()._search_by_reference(provider_code, notification_data)
         if provider_code != 'tetra_pay' or len(tx) == 1:
             return tx
 
@@ -77,14 +77,14 @@ class payment_transaction(models.Model):
         reference = notification_data.get('oid')
         tx = self.search([('reference', '=', reference), ('provider_code', '=', 'tetra_pay')])
 
-        _logger.info("Tetra Pay: _get_tx_from_notification_data:: %s" % pprint.pformat(tx.state))
+        _logger.info("Tetra Pay: _search_by_reference:: %s" % pprint.pformat(tx.state))
         if not tx:
             raise ValidationError(
                 "Tetra Pay: " + _("No transaction found matching reference %s.", reference)
             )
         return tx
 
-    def _process_notification_data(self, notification_data):
+    def _apply_updates(self, notification_data):
         """ Process the notification data received from the provider.
 
         Note: self.ensure_one()
@@ -93,7 +93,7 @@ class payment_transaction(models.Model):
         :return: None
         :raise: ValidationError if inconsistent data were received
         """
-        super()._process_notification_data(notification_data)
+        super()._apply_updates(notification_data)
         if self.provider_code != 'tetra_pay':
             return
 
@@ -174,7 +174,7 @@ class payment_transaction(models.Model):
         self.payment_method_id = payment_method or self.payment_method_id
         order = self.env['sale.order'].sudo().search([('reference', '=', notification_data.get('oid'))])
 
-        _logger.info("Tetra Pay: _process_notification_data:: %s" % pprint.pformat(self.payment_method_id))
+        _logger.info("Tetra Pay: _apply_updates:: %s" % pprint.pformat(self.payment_method_id))
         _logger.info("Tetra Pay: sale.order:: %s" % pprint.pformat(order))
 
         if status == '00':
