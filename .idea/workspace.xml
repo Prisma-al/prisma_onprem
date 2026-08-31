@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="ruajtja e QR code si False">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="changed also the name of merhant">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bi_manual_currency_exchnage_rate/models/sale.py" beforeDir="false" afterPath="$PROJECT_DIR$/bi_manual_currency_exchnage_rate/models/sale.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc/models/res_company_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc/models/res_company_extension.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/profisc_purchase/models/res_company_extension.py" beforeDir="false" afterPath="$PROJECT_DIR$/profisc_purchase/models/res_company_extension.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="371" />
+    <option name="cachedIndexableFilesCount" value="377" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -134,6 +135,12 @@
       <workItem from="1785394686798" duration="7607000" />
       <workItem from="1785483882489" duration="7777000" />
       <workItem from="1785764385353" duration="5513000" />
+      <workItem from="1785832402118" duration="3329000" />
+      <workItem from="1785912427360" duration="1549000" />
+      <workItem from="1785920861322" duration="7556000" />
+      <workItem from="1785998767295" duration="614000" />
+      <workItem from="1786529896985" duration="4666000" />
+      <workItem from="1788186186484" duration="2584000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -367,7 +374,39 @@
       <option name="project" value="LOCAL" />
       <updated>1785493817424</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="new module for setting the subscription invoice to draft">
+      <option name="closed" value="true" />
+      <created>1785832451652</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1785832451652</updated>
+    </task>
+    <task id="LOCAL-00031" summary="changed the names of the functions as they should be for odoo 19">
+      <option name="closed" value="true" />
+      <created>1785925415154</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1785925415154</updated>
+    </task>
+    <task id="LOCAL-00032" summary="round">
+      <option name="closed" value="true" />
+      <created>1785927522117</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1785927522117</updated>
+    </task>
+    <task id="LOCAL-00033" summary="changed also the name of merhant">
+      <option name="closed" value="true" />
+      <created>1785927661242</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1785927661242</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,10 +424,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="deleting requirements from manifest" />
-    <MESSAGE value="changed the version of the studio custom module" />
-    <MESSAGE value="fixed all xpaths" />
-    <MESSAGE value="fixed all xpaths 2" />
     <MESSAGE value="fixed all xpaths 3" />
     <MESSAGE value="made changes for odoo 19" />
     <MESSAGE value="removed the external dependencies from manifest" />
@@ -410,7 +445,11 @@
     <MESSAGE value="added field in the right place" />
     <MESSAGE value="made the search through SQL comparison for numbers an mobile" />
     <MESSAGE value="ruajtja e QR code si False" />
-    <option name="LAST_COMMIT_MESSAGE" value="ruajtja e QR code si False" />
+    <MESSAGE value="new module for setting the subscription invoice to draft" />
+    <MESSAGE value="changed the names of the functions as they should be for odoo 19" />
+    <MESSAGE value="round" />
+    <MESSAGE value="changed also the name of merhant" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed also the name of merhant" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/prisma_onprem$test.coverage" NAME="test Coverage Results" MODIFIED="1785395133777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/profisc/models" />
