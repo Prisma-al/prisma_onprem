@@ -22,7 +22,7 @@ class WhatsAppMessage(models.Model):
 
     def _create_or_update_helpdesk_ticket(self):
         is_incoming = self.state == 'received'
-        is_outgoing_reply = self.state == 'sent'
+        is_outgoing_reply = self.state in ('sent', 'outgoing')
 
         if not is_incoming and not is_outgoing_reply:
             return
@@ -34,6 +34,10 @@ class WhatsAppMessage(models.Model):
                     return
             except Exception:
                 pass
+            # Also skip if body looks like a template (contains template variables)
+            body_text = self.body or ''
+            if 'Pershendetje' in body_text and 'eshte perditesuar' in body_text:
+                return
 
         phone = self.mobile_number or ''
         if not phone:
@@ -83,7 +87,7 @@ class WhatsAppMessage(models.Model):
             'name': 'WhatsApp nga %s' % (partner.name or sender),
             'team_id': team.id if team else False,
             'partner_id': partner.id,
-            'description': '%s: %s' % (sender, clean_body),
+            'description': '<p>%s: %s</p>' % (sender, clean_body),
         })
         ticket.sudo().message_post(
             body='WhatsApp nga %s: %s' % (sender, clean_body),
@@ -100,10 +104,10 @@ class WhatsAppMessage(models.Model):
             subtype_xmlid='mail.mt_comment',
         )
         # Append to description
-        old_desc = self._strip_html_tags(ticket.description or '')
-        new_line = '%s: %s' % (sender, clean_body)
+        old_desc = ticket.description or ''
+        new_line = '<p>%s: %s</p>' % (sender, clean_body)
         if old_desc:
-            ticket.sudo().write({'description': '%s\n%s' % (old_desc, new_line)})
+            ticket.sudo().write({'description': '%s%s' % (old_desc, new_line)})
         else:
             ticket.sudo().write({'description': new_line})
 
