@@ -72,13 +72,22 @@ class WhatsAppMessage(models.Model):
         if is_outgoing_reply:
             sender = 'Support'
 
-        # Check for media attachments (stored on linked mail.message)
+        # Check for media attachments
         has_media = False
         attachment_ids = []
         try:
+            # Try mail.message attachments first
             if self.mail_message_id and self.mail_message_id.attachment_ids:
-                has_media = True
                 attachment_ids = self.mail_message_id.attachment_ids.ids
+            # Also check attachments linked directly to this whatsapp.message
+            if not attachment_ids:
+                direct_atts = self.env['ir.attachment'].sudo().search([
+                    ('res_model', '=', 'whatsapp.message'),
+                    ('res_id', '=', self.id),
+                ])
+                if direct_atts:
+                    attachment_ids = direct_atts.ids
+            has_media = bool(attachment_ids)
         except Exception:
             pass
 
@@ -128,16 +137,16 @@ class WhatsAppMessage(models.Model):
                     'res_id': ticket.id,
                 })
                 new_attachment_ids.append(new_att.id)
-                if att.mimetype and att.mimetype.startswith('image'):
-                    msg_body += '<br/><img src="/web/image/%s" style="max-width:300px;"/>' % new_att.id
 
         if not msg_body and has_media:
             msg_body = 'WhatsApp nga %s: [Media]' % sender
+        elif has_media:
+            msg_body += ' [Media]'
 
         ticket.sudo().message_post(
             body=msg_body,
             message_type='comment',
-            subtype_xmlid='mail.mt_note',
+            subtype_xmlid='mail.mt_comment',
             attachment_ids=new_attachment_ids or None,
         )
         _logger.info('Created helpdesk ticket #%s from WhatsApp message', ticket.id)
@@ -153,17 +162,17 @@ class WhatsAppMessage(models.Model):
                     'res_id': ticket.id,
                 })
                 new_attachment_ids.append(new_att.id)
-                if att.mimetype and att.mimetype.startswith('image'):
-                    msg_body += '<br/><img src="/web/image/%s" style="max-width:300px;"/>' % new_att.id
 
         if not msg_body and has_media:
             msg_body = 'WhatsApp nga %s: [Media]' % sender
+        elif has_media:
+            msg_body += ' [Media]'
 
-        # Post to chatter (as internal note, no email sent)
+        # Post to chatter
         ticket.sudo().message_post(
             body=msg_body,
             message_type='comment',
-            subtype_xmlid='mail.mt_note',
+            subtype_xmlid='mail.mt_comment',
             attachment_ids=new_attachment_ids or None,
         )
         # Append to description
