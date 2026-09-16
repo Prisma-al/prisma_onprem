@@ -13,6 +13,9 @@
     'author': 'Prisma',
     'website': 'https://prisma.al',
     'depends': ['whatsapp', 'helpdesk'],
+    'data': [
+        'data/cron.xml',
+    ],
     'installable': True,
     'auto_install': False,
     'license': 'LGPL-3',

@@ -1,5 +1,6 @@
 import logging
-from odoo import models, api
+from datetime import timedelta
+from odoo import models, api, fields as odoo_fields
 
 _logger = logging.getLogger(__name__)
 
@@ -185,6 +186,81 @@ class WhatsAppMessage(models.Model):
                 ticket.sudo().write({'description': '%s%s' % (old_desc, new_line)})
             else:
                 ticket.sudo().write({'description': new_line})
+
+    @api.model
+    def _cron_process_whatsapp_media(self):
+        """Cron job to attach media from recent WhatsApp messages to helpdesk tickets."""
+        cutoff = odoo_fields.Datetime.now() - timedelta(minutes=10)
+        recent_messages = self.search([
+            ('create_date', '>=', cutoff),
+            ('state', '=', 'received'),
+        ])
+        for msg in recent_messages:
+            try:
+                # Find attachments for this message
+                attachment_ids = []
+                if msg.mail_message_id and msg.mail_message_id.attachment_ids:
+                    attachment_ids = msg.mail_message_id.attachment_ids.ids
+                if not attachment_ids:
+                    direct_atts = self.env['ir.attachment'].sudo().search([
+                        ('res_model', '=', 'whatsapp.message'),
+                        ('res_id', '=', msg.id),
+                    ])
+                    if direct_atts:
+                        attachment_ids = direct_atts.ids
+                if not attachment_ids:
+                    continue
+
+                # Find the partner
+                phone = msg.mobile_number or ''
+                if not phone:
+                    continue
+                search_phone = phone[-9:]
+                partner = self.env['res.partner'].search(
+                    [('phone', 'ilike', search_phone)], limit=1
+                )
+                if not partner:
+                    continue
+
+                # Find open ticket for this partner
+                closed_stages = self.env['helpdesk.stage'].search(
+                    [('name', 'in', list(CLOSED_STAGE_NAMES))]
+                )
+                ticket = self.env['helpdesk.ticket'].search([
+                    ('partner_id', '=', partner.id),
+                    ('stage_id', 'not in', closed_stages.ids),
+                ], limit=1, order='create_date desc')
+                if not ticket:
+                    continue
+
+                # Check if these attachments are already on the ticket
+                existing_atts = self.env['ir.attachment'].sudo().search([
+                    ('res_model', '=', 'helpdesk.ticket'),
+                    ('res_id', '=', ticket.id),
+                ])
+                existing_names = set(existing_atts.mapped('name'))
+
+                new_attachment_ids = []
+                for att in self.env['ir.attachment'].browse(attachment_ids):
+                    if att.name not in existing_names:
+                        new_att = att.sudo().copy({
+                            'res_model': 'helpdesk.ticket',
+                            'res_id': ticket.id,
+                        })
+                        new_attachment_ids.append(new_att.id)
+
+                if new_attachment_ids:
+                    sender = partner.name or phone
+                    ticket.sudo().message_post(
+                        body='WhatsApp nga %s: [Media]' % sender,
+                        message_type='comment',
+                        subtype_xmlid='mail.mt_comment',
+                        attachment_ids=new_attachment_ids,
+                    )
+                    _logger.info('Attached %d media files to ticket #%s via cron',
+                                 len(new_attachment_ids), ticket.id)
+            except Exception:
+                _logger.exception('Error processing media for WhatsApp message %s', msg.id)
 
     @staticmethod
     def _strip_html_tags(text):
