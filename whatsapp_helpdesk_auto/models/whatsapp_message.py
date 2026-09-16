@@ -36,7 +36,7 @@ class WhatsAppMessage(models.Model):
                 pass
             # Also skip if body looks like a template (contains template text)
             body_text = self.body or ''
-            if 'Pershendetje' in body_text and 'eshte perditesuar' in body_text:
+            if 'Pershendetje' in body_text and ('eshte perditesuar' in body_text or 'eshte tani ne statusin' in body_text):
                 return
 
         phone = self.mobile_number or ''
@@ -98,16 +98,25 @@ class WhatsAppMessage(models.Model):
         if has_media:
             desc += '<p>%s: [Media]</p>' % sender
 
-        # Create ticket without sending auto-email to customer
-        ticket = self.env['helpdesk.ticket'].with_context(
+        # Create ticket silently - NO email, NO WhatsApp sent to customer
+        ticket = self.env['helpdesk.ticket'].sudo().with_context(
             mail_create_nosubscribe=True,
             mail_create_nolog=True,
-        ).sudo().create({
+            tracking_disable=True,
+        ).create({
             'name': 'WhatsApp nga %s' % (partner.name or sender),
             'team_id': team.id if team else False,
             'partner_id': partner.id,
             'description': desc,
         })
+        # Remove partner as follower to prevent any future auto-emails
+        follower = self.env['mail.followers'].sudo().search([
+            ('res_model', '=', 'helpdesk.ticket'),
+            ('res_id', '=', ticket.id),
+            ('partner_id', '=', partner.id),
+        ])
+        if follower:
+            follower.sudo().unlink()
 
         # Build chatter message
         msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
