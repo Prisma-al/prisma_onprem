@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+import uuid
+from odoo import models, fields
 
 
 class HelpdeskTicket(models.Model):
@@ -9,10 +10,12 @@ class HelpdeskTicket(models.Model):
         compute='_compute_wa_portal_url_path',
     )
 
-    @api.depends('access_token')
     def _compute_wa_portal_url_path(self):
         for ticket in self:
-            ticket._portal_ensure_token()
+            token = ticket.access_token
+            if not token:
+                token = str(uuid.uuid4())
+                ticket.sudo().write({'access_token': token})
             ticket.wa_portal_url_path = 'my/tickets/%s?access_token=%s' % (
-                ticket.id, ticket.access_token
+                ticket.id, token
             )
