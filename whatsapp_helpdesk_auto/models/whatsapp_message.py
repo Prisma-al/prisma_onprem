@@ -92,16 +92,16 @@ class WhatsAppMessage(models.Model):
         ticket.sudo().message_post(
             body='WhatsApp nga %s: %s' % (sender, clean_body),
             message_type='comment',
-            subtype_xmlid='mail.mt_comment',
+            subtype_xmlid='mail.mt_note',
         )
         _logger.info('Created helpdesk ticket #%s from WhatsApp message', ticket.id)
 
     def _update_ticket_from_whatsapp(self, ticket, sender, clean_body):
-        # Post to chatter
+        # Post to chatter (as internal note, no email sent)
         ticket.sudo().message_post(
             body='WhatsApp nga %s: %s' % (sender, clean_body),
             message_type='comment',
-            subtype_xmlid='mail.mt_comment',
+            subtype_xmlid='mail.mt_note',
         )
         # Append to description
         old_desc = ticket.description or ''
