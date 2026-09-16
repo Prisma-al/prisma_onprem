@@ -1,5 +1,4 @@
-import uuid
-from odoo import models, fields
+from odoo import models, fields, api
 
 
 class HelpdeskTicket(models.Model):
@@ -7,15 +6,16 @@ class HelpdeskTicket(models.Model):
 
     wa_portal_url_path = fields.Char(
         string='WhatsApp Portal URL Path',
-        compute='_compute_wa_portal_url_path',
     )
 
-    def _compute_wa_portal_url_path(self):
-        for ticket in self:
-            token = ticket.access_token
-            if not token:
-                token = str(uuid.uuid4())
-                ticket.sudo().write({'access_token': token})
-            ticket.wa_portal_url_path = 'my/tickets/%s?access_token=%s' % (
-                ticket.id, token
-            )
+    @api.model_create_multi
+    def create(self, vals_list):
+        tickets = super().create(vals_list)
+        for ticket in tickets:
+            ticket._portal_ensure_token()
+            ticket.sudo().write({
+                'wa_portal_url_path': 'my/tickets/%s?access_token=%s' % (
+                    ticket.id, ticket.access_token
+                ),
+            })
+        return tickets

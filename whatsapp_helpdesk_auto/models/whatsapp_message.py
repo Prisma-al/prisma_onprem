@@ -72,13 +72,13 @@ class WhatsAppMessage(models.Model):
         if is_outgoing_reply:
             sender = 'Support'
 
-        # Check for media attachments
+        # Check for media attachments (stored on linked mail.message)
         has_media = False
         attachment_ids = []
         try:
-            if self.attachment_ids:
+            if self.mail_message_id and self.mail_message_id.attachment_ids:
                 has_media = True
-                attachment_ids = self.attachment_ids.ids
+                attachment_ids = self.mail_message_id.attachment_ids.ids
         except Exception:
             pass
 
