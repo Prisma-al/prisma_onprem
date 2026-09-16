@@ -34,7 +34,7 @@ class WhatsAppMessage(models.Model):
                     return
             except Exception:
                 pass
-            # Also skip if body looks like a template (contains template variables)
+            # Also skip if body looks like a template (contains template text)
             body_text = self.body or ''
             if 'Pershendetje' in body_text and 'eshte perditesuar' in body_text:
                 return
@@ -44,8 +44,6 @@ class WhatsAppMessage(models.Model):
             return
 
         clean_body = self._strip_html_tags(self.body or '')
-        if not clean_body:
-            return
 
         # Find partner by phone number
         search_phone = phone[-9:]
@@ -74,42 +72,99 @@ class WhatsAppMessage(models.Model):
         if is_outgoing_reply:
             sender = 'Support'
 
-        if not existing_ticket and is_incoming:
-            self._create_ticket_from_whatsapp(partner, sender, clean_body)
-        elif existing_ticket:
-            self._update_ticket_from_whatsapp(existing_ticket, sender, clean_body)
+        # Check for media attachments
+        has_media = False
+        attachment_ids = []
+        try:
+            if self.attachment_ids:
+                has_media = True
+                attachment_ids = self.attachment_ids.ids
+        except Exception:
+            pass
 
-    def _create_ticket_from_whatsapp(self, partner, sender, clean_body):
+        if not clean_body and not has_media:
+            return
+
+        if not existing_ticket and is_incoming:
+            self._create_ticket_from_whatsapp(partner, sender, clean_body, has_media, attachment_ids)
+        elif existing_ticket:
+            self._update_ticket_from_whatsapp(existing_ticket, sender, clean_body, has_media, attachment_ids)
+
+    def _create_ticket_from_whatsapp(self, partner, sender, clean_body, has_media=False, attachment_ids=None):
         team = self.env['helpdesk.team'].search(
             [('name', '=', HELPDESK_TEAM_NAME)], limit=1
         )
-        ticket = self.env['helpdesk.ticket'].sudo().create({
+        desc = '<p>%s: %s</p>' % (sender, clean_body) if clean_body else ''
+        if has_media:
+            desc += '<p>%s: [Media]</p>' % sender
+
+        # Create ticket without sending auto-email to customer
+        ticket = self.env['helpdesk.ticket'].with_context(
+            mail_create_nosubscribe=True,
+            mail_create_nolog=True,
+        ).sudo().create({
             'name': 'WhatsApp nga %s' % (partner.name or sender),
             'team_id': team.id if team else False,
             'partner_id': partner.id,
-            'description': '<p>%s: %s</p>' % (sender, clean_body),
+            'description': desc,
         })
+
+        # Build chatter message
+        msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
+        if has_media:
+            msg_body += ' [Media]' if msg_body else 'WhatsApp nga %s: [Media]' % sender
+
+        # Copy attachments for the ticket
+        new_attachment_ids = []
+        if attachment_ids:
+            for att in self.env['ir.attachment'].browse(attachment_ids):
+                new_att = att.sudo().copy({
+                    'res_model': 'helpdesk.ticket',
+                    'res_id': ticket.id,
+                })
+                new_attachment_ids.append(new_att.id)
+
         ticket.sudo().message_post(
-            body='WhatsApp nga %s: %s' % (sender, clean_body),
+            body=msg_body,
             message_type='comment',
             subtype_xmlid='mail.mt_note',
+            attachment_ids=new_attachment_ids or None,
         )
         _logger.info('Created helpdesk ticket #%s from WhatsApp message', ticket.id)
 
-    def _update_ticket_from_whatsapp(self, ticket, sender, clean_body):
+    def _update_ticket_from_whatsapp(self, ticket, sender, clean_body, has_media=False, attachment_ids=None):
+        # Build message
+        msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
+        if has_media:
+            msg_body += ' [Media]' if msg_body else 'WhatsApp nga %s: [Media]' % sender
+
+        # Copy attachments for the ticket
+        new_attachment_ids = []
+        if attachment_ids:
+            for att in self.env['ir.attachment'].browse(attachment_ids):
+                new_att = att.sudo().copy({
+                    'res_model': 'helpdesk.ticket',
+                    'res_id': ticket.id,
+                })
+                new_attachment_ids.append(new_att.id)
+
         # Post to chatter (as internal note, no email sent)
         ticket.sudo().message_post(
-            body='WhatsApp nga %s: %s' % (sender, clean_body),
+            body=msg_body,
             message_type='comment',
             subtype_xmlid='mail.mt_note',
+            attachment_ids=new_attachment_ids or None,
         )
         # Append to description
         old_desc = ticket.description or ''
-        new_line = '<p>%s: %s</p>' % (sender, clean_body)
-        if old_desc:
-            ticket.sudo().write({'description': '%s%s' % (old_desc, new_line)})
-        else:
-            ticket.sudo().write({'description': new_line})
+        new_line = '<p>%s: %s</p>' % (sender, clean_body) if clean_body else ''
+        if has_media:
+            new_line += '<p>%s: [Media]</p>' % sender
+        if new_line:
+            if old_desc:
+                ticket.sudo().write({'description': '%s%s' % (old_desc, new_line)})
+            else:
+                ticket.sudo().write({'description': new_line})
 
     @staticmethod
     def _strip_html_tags(text):
