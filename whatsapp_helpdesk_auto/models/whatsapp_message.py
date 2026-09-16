@@ -118,12 +118,8 @@ class WhatsAppMessage(models.Model):
         if follower:
             follower.sudo().unlink()
 
-        # Build chatter message
+        # Copy attachments and build chatter message
         msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
-        if has_media:
-            msg_body += ' [Media]' if msg_body else 'WhatsApp nga %s: [Media]' % sender
-
-        # Copy attachments for the ticket
         new_attachment_ids = []
         if attachment_ids:
             for att in self.env['ir.attachment'].browse(attachment_ids):
@@ -132,6 +128,11 @@ class WhatsAppMessage(models.Model):
                     'res_id': ticket.id,
                 })
                 new_attachment_ids.append(new_att.id)
+                if att.mimetype and att.mimetype.startswith('image'):
+                    msg_body += '<br/><img src="/web/image/%s" style="max-width:300px;"/>' % new_att.id
+
+        if not msg_body and has_media:
+            msg_body = 'WhatsApp nga %s: [Media]' % sender
 
         ticket.sudo().message_post(
             body=msg_body,
@@ -142,12 +143,8 @@ class WhatsAppMessage(models.Model):
         _logger.info('Created helpdesk ticket #%s from WhatsApp message', ticket.id)
 
     def _update_ticket_from_whatsapp(self, ticket, sender, clean_body, has_media=False, attachment_ids=None):
-        # Build message
+        # Copy attachments and build message
         msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
-        if has_media:
-            msg_body += ' [Media]' if msg_body else 'WhatsApp nga %s: [Media]' % sender
-
-        # Copy attachments for the ticket
         new_attachment_ids = []
         if attachment_ids:
             for att in self.env['ir.attachment'].browse(attachment_ids):
@@ -156,6 +153,11 @@ class WhatsAppMessage(models.Model):
                     'res_id': ticket.id,
                 })
                 new_attachment_ids.append(new_att.id)
+                if att.mimetype and att.mimetype.startswith('image'):
+                    msg_body += '<br/><img src="/web/image/%s" style="max-width:300px;"/>' % new_att.id
+
+        if not msg_body and has_media:
+            msg_body = 'WhatsApp nga %s: [Media]' % sender
 
         # Post to chatter (as internal note, no email sent)
         ticket.sudo().message_post(
