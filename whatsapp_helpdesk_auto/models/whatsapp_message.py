@@ -53,7 +53,7 @@ class WhatsAppMessage(models.Model):
         )
         if not partner and is_incoming:
             partner = self.env['res.partner'].sudo().create({
-                'name': 'WhatsApp %s' % phone,
+                'name': 'Klient %s' % phone,
                 'phone': phone,
             })
 
@@ -108,7 +108,7 @@ class WhatsAppMessage(models.Model):
         if has_media:
             desc += '<p>%s: [Media]</p>' % sender
 
-        # Create ticket silently - NO email, NO WhatsApp sent to customer
+        # Create ticket WITHOUT partner to prevent email notification
         ticket = self.env['helpdesk.ticket'].sudo().with_context(
             mail_create_nosubscribe=True,
             mail_create_nolog=True,
@@ -116,9 +116,13 @@ class WhatsAppMessage(models.Model):
         ).create({
             'name': 'WhatsApp nga %s' % (partner.name or sender),
             'team_id': team.id if team else False,
-            'partner_id': partner.id,
             'description': desc,
         })
+        # Set partner after creation to avoid triggering email
+        ticket.sudo().with_context(
+            mail_create_nosubscribe=True,
+            tracking_disable=True,
+        ).write({'partner_id': partner.id})
         # Remove partner as follower to prevent any future auto-emails
         follower = self.env['mail.followers'].sudo().search([
             ('res_model', '=', 'helpdesk.ticket'),
