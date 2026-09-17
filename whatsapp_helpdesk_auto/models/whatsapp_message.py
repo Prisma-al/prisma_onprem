@@ -229,11 +229,11 @@ class WhatsAppMessage(models.Model):
         elif has_media:
             msg_body += ' [Media]'
 
-        # Post to chatter
+        # Post to chatter (mt_note = internal note, no email notifications)
         ticket.sudo().message_post(
             body=msg_body,
             message_type='comment',
-            subtype_xmlid='mail.mt_comment',
+            subtype_xmlid='mail.mt_note',
             attachment_ids=new_attachment_ids or None,
         )
         # Append to description
