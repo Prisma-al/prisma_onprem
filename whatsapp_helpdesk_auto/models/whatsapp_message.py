@@ -162,7 +162,9 @@ class WhatsAppMessage(models.Model):
         # Set partner after creation to avoid triggering email
         ticket.sudo().with_context(
             mail_create_nosubscribe=True,
+            mail_auto_subscribe_no_notify=True,
             tracking_disable=True,
+            mail_notrack=True,
         ).write({'partner_id': partner.id})
         # Remove partner as follower to prevent any future auto-emails
         follower = self.env['mail.followers'].sudo().search([
@@ -189,10 +191,13 @@ class WhatsAppMessage(models.Model):
         elif has_media:
             msg_body += ' [Media]'
 
-        ticket.sudo().message_post(
+        ticket.sudo().with_context(
+            mail_create_nosubscribe=True,
+            mail_auto_subscribe_no_notify=True,
+        ).message_post(
             body=msg_body,
             message_type='comment',
-            subtype_xmlid='mail.mt_comment',
+            subtype_xmlid='mail.mt_note',
             attachment_ids=new_attachment_ids or None,
         )
         _logger.info('Created helpdesk ticket #%s from WhatsApp message', ticket.id)
