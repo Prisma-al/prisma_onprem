@@ -25,11 +25,12 @@ class WhatsAppMessage(models.Model):
         return records
 
     def write(self, vals):
-        # Track which records are changing TO a processable state
+        # Only trigger on state change to 'received' (incoming messages)
+        # Outgoing messages are already handled by create()
         trigger_records = self.env['whatsapp.message']
-        if vals.get('state') in ('received', 'sent', 'outgoing'):
+        if vals.get('state') == 'received':
             for record in self:
-                if record.state != vals['state']:
+                if record.state != 'received':
                     trigger_records |= record
 
         res = super().write(vals)
@@ -174,6 +175,15 @@ class WhatsAppMessage(models.Model):
         ])
         if follower:
             follower.sudo().unlink()
+        # Delete any queued auto-emails (acknowledgment email)
+        queued_mail = self.env['mail.mail'].sudo().search([
+            ('res_id', '=', ticket.id),
+            ('model', '=', 'helpdesk.ticket'),
+            ('state', '=', 'outgoing'),
+        ])
+        if queued_mail:
+            queued_mail.sudo().unlink()
+            _logger.info('WA-HD: Deleted %d queued auto-emails for ticket #%s', len(queued_mail), ticket.id)
 
         # Copy attachments and build chatter message
         msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
