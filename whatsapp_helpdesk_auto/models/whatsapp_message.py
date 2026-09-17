@@ -5,7 +5,7 @@ from odoo import models, api, fields as odoo_fields
 _logger = logging.getLogger(__name__)
 
 HELPDESK_TEAM_NAME = 'General'
-CLOSED_STAGE_NAMES = ('Closed', 'Solved')
+CLOSED_STAGE_NAMES = ('Mbyllur', 'Zgjidhur')
 
 
 class WhatsAppMessage(models.Model):
