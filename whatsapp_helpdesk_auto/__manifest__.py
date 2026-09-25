@@ -15,6 +15,7 @@
     'depends': ['whatsapp', 'helpdesk'],
     'data': [
         'data/cron.xml',
+        'views/helpdesk_ticket_views.xml',
     ],
     'installable': True,
     'auto_install': False,

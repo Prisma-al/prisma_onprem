@@ -7,6 +7,10 @@ class HelpdeskTicket(models.Model):
     wa_portal_url_path = fields.Char(
         string='WhatsApp Portal URL Path',
     )
+    is_from_whatsapp = fields.Boolean(
+        string='Is ticket from WhatsApp',
+        default=False,
+    )
 
     @api.model_create_multi
     def create(self, vals_list):

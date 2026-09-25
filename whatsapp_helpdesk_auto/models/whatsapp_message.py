@@ -159,6 +159,7 @@ class WhatsAppMessage(models.Model):
             'name': 'WhatsApp nga %s' % (partner.name or sender),
             'team_id': team.id if team else False,
             'description': desc,
+            'is_from_whatsapp': True,
         })
         # Set partner after creation to avoid triggering email
         ticket.sudo().with_context(
