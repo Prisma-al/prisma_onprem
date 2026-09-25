@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="view_helpdesk_ticket_form_whatsapp" model="ir.ui.view">
-        <field name="name">helpdesk.ticket.form.whatsapp</field>
-        <field name="model">helpdesk.ticket</field>
-        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='partner_id']" position="before">
-                <field name="is_from_whatsapp" widget="boolean_toggle"/>
-            </xpath>
-        </field>
-    </record>
-
     <record id="view_helpdesk_ticket_search_whatsapp" model="ir.ui.view">
         <field name="name">helpdesk.ticket.search.whatsapp</field>
         <field name="model">helpdesk.ticket</field>
