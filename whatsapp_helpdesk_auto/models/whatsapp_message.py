@@ -100,6 +100,7 @@ class WhatsAppMessage(models.Model):
         existing_ticket = self.env['helpdesk.ticket'].search([
             ('partner_id', '=', partner.id),
             ('stage_id', 'not in', closed_stages.ids),
+            ('is_from_whatsapp', '=', True),
         ], limit=1, order='create_date desc')
         _logger.info('WA-HD: Existing open ticket for partner %s: %s (stage: %s)',
                       partner.id, existing_ticket.id if existing_ticket else None,
@@ -290,6 +291,7 @@ class WhatsAppMessage(models.Model):
                 ticket = self.env['helpdesk.ticket'].search([
                     ('partner_id', '=', partner.id),
                     ('stage_id', 'not in', closed_stages.ids),
+                    ('is_from_whatsapp', '=', True),
                 ], limit=1, order='create_date desc')
                 if not ticket:
                     continue
@@ -315,7 +317,7 @@ class WhatsAppMessage(models.Model):
                     ticket.sudo().message_post(
                         body='WhatsApp nga %s: [Media]' % sender,
                         message_type='comment',
-                        subtype_xmlid='mail.mt_comment',
+                        subtype_xmlid='mail.mt_note',
                         attachment_ids=new_attachment_ids,
                     )
                     _logger.info('Attached %d media files to ticket #%s via cron',
