@@ -151,10 +151,9 @@ class WhatsAppMessage(models.Model):
         if has_media:
             desc += '<p>%s: [Media]</p>' % sender
 
-        # Create ticket WITHOUT partner to prevent email notification
+        # Create ticket WITHOUT partner to prevent email to customer
         ticket = self.env['helpdesk.ticket'].sudo().with_context(
             mail_create_nosubscribe=True,
-            mail_create_nolog=True,
             tracking_disable=True,
         ).create({
             'name': 'WhatsApp nga %s' % (partner.name or sender),
@@ -177,15 +176,16 @@ class WhatsAppMessage(models.Model):
         ])
         if follower:
             follower.sudo().unlink()
-        # Delete any queued auto-emails (acknowledgment email)
+        # Delete only queued emails going to the CUSTOMER (not team notifications)
         queued_mail = self.env['mail.mail'].sudo().search([
             ('res_id', '=', ticket.id),
             ('model', '=', 'helpdesk.ticket'),
             ('state', '=', 'outgoing'),
+            ('recipient_ids', 'in', [partner.id]),
         ])
         if queued_mail:
             queued_mail.sudo().unlink()
-            _logger.info('WA-HD: Deleted %d queued auto-emails for ticket #%s', len(queued_mail), ticket.id)
+            _logger.info('WA-HD: Deleted %d queued customer emails for ticket #%s', len(queued_mail), ticket.id)
 
         # Copy attachments and build chatter message
         msg_body = 'WhatsApp nga %s: %s' % (sender, clean_body) if clean_body else ''
