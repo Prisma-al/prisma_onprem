@@ -13,7 +13,7 @@ class Cx3CallLog(models.Model):
     _order = 'call_date desc'
 
     # Vetem telefonatat drejtuar ketyre agjenteve behen ticket.
-    TICKET_AGENTS = ('200', '203')
+    TICKET_AGENTS = ('200', '203', '202')
     # Numrat me kaq shifra ose me pak jane extension te brendshem 3CX.
     MAX_EXTENSION_DIGITS = 4
     # Timezone e paracaktuar nese kompania nuk ka nje te tille.
@@ -102,7 +102,7 @@ class Cx3CallLog(models.Model):
 
     def _should_create_ticket(self):
         """Ticket krijohet vetem per telefonata qe vijne nga jashte 3CX
-        dhe qe i drejtohen agjenteve 200 ose 203."""
+        dhe qe i drejtohen agjenteve 200 ose 203. dhe anisa qe u shtu 202"""
         self.ensure_one()
         if self._is_outgoing():
             return False

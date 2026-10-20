@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="WhatsApp helpdesk auto ticket module fix">
+    <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="added tracking true to all profisc configuration fields to determine who change what">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whatsapp_helpdesk_auto/models/whatsapp_message.py" beforeDir="false" afterPath="$PROJECT_DIR$/whatsapp_helpdesk_auto/models/whatsapp_message.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3cx_helpdesk/models/call_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/3cx_helpdesk/models/call_log.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="377" />
+    <option name="cachedIndexableFilesCount" value="381" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -38,12 +38,12 @@
     &quot;assignee&quot;: &quot;jonidajci33&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Prisma-al/prisma_onprem.git",
-    "accountId": "516d7882-579d-4678-835f-2cfa431e6f37"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Prisma-al/prisma_onprem.git&quot;,
+    &quot;accountId&quot;: &quot;516d7882-579d-4678-835f-2cfa431e6f37&quot;
   }
-}]]></component>
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -88,7 +88,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-ca5e2b39c7df-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.308" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.29346.142" />
+        <option value="bundled-python-sdk-f2b7a9f6281b-6e1f45a539f7-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.29346.142" />
       </set>
     </attachedChunks>
   </component>
@@ -139,6 +140,7 @@
       <workItem from="1785998767295" duration="614000" />
       <workItem from="1786529896985" duration="4666000" />
       <workItem from="1788186186484" duration="2584000" />
+      <workItem from="1792496702827" duration="424000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
