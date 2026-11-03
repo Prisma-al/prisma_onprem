@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="payment_raiaccept_redirect">
+        <form t-att-action="api_url" method="get">
+            <input type="hidden" name="paymentSession" t-att-value="payment_session"/>
+        </form>
+    </template>
+</odoo>
