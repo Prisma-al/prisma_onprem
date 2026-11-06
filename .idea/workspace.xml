@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02bea9ff-855c-4cee-80b7-723a545b248f" name="Changes" comment="added tracking true to all profisc configuration fields to determine who change what">
-      <change afterPath="$PROJECT_DIR$/rai_accept/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/__manifest__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/controllers/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/data/raiaccept.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/models/payment_provider.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/models/payment_transaction.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/models/raiaccept_payments.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/security/ir.model.access.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/static/src/js/payment_form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/views/payment_provider_views.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rai_accept/views/payment_templates.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/__manifest__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/models/mail_compose_message.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/models/mail_mail.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/models/mail_template.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/views/mail_compose_message.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bcc_email_feature/views/mail_template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="381" />
+    <option name="cachedIndexableFilesCount" value="379" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -80,7 +76,7 @@
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "mainV19",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/OdooProjects/prisma_onprem",
+    "last_opened_file_path": "/mnt/windows/GitNew/Odoo/prisma_onprem",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -110,6 +106,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
@@ -130,6 +127,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
